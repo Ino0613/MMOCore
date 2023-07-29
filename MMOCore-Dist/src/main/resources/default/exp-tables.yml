@@ -1,48 +1,42 @@
-
-# Experience tables are separated into multiple items.
+# 经验表被分为多个项目。
 
 example_exp_table:
 
-  # Every item is fully independent and has its own chance
-  # of dropping every time a player passes a level! When an
-  # item drops, all its triggers are called.
+  # 每个项目都是完全独立的，并且在玩家升级时有自己的掉落几率！当项目掉落时，会调用所有的触发器。
   first_table_item:
 
-    # This item will drop every 3 level ups
+    # 这个项目每3级会掉落一次
     period: 3
 
-    # This item has a 80% chance to drop every 3 level ups
+    # 这个项目有80%的几率在每3级时掉落
     chance: 80
 
-    # Every successive drop failure the item will reduce the
-    # future risk by X%. With a 80% failure reduction rate,
-    # risks become:
+    # 每次掉落失败，项目都会减少未来风险的X％。使用80％的失败减少率，
+    # 风险变为：
     # - 80%
-    # - 96% (almost guaranteed)
-    # - 99.2% (almost guaranteed+)
-    # - 99.84% (almost guaranteed++)
-    # so on forever..
+    # - 96%（几乎保证）
+    # - 99.2%（几乎保证+）
+    # - 99.84%（几乎保证++）
+    # 以此类推，永远循环...
     #
-    # This is better than just increasing the claim chance by a
-    # certain amount each time because otherwise the claim chance
-    # just becomes/surpasses 100% at some point.
+    # 这比每次仅仅增加一定量的掉落几率要好，因为否则掉落几率
+    # 在某个时候就变成/超过了100％。
     fail-reduction: 80
 
-    # What happens when that item is claimed. Does it give exp?
-    # Does it perform a command, unlocks a skill? etc
-    # You can find the list of available triggers on the wiki
+    # 当该项目被获取时会发生什么。是否给予经验？
+    # 是否执行命令，解锁技能等等
+    # 您可以在wiki上找到可用触发器的列表
     triggers:
       - 'exp{amount=20}'
 
-  # This is a second item, fully independent of the previous one.
+  # 这是第二个项目，与前一个项目完全独立。
   second_table_item:
     period: 2
     triggers:
       - 'exp{amount=80}'
-      - 'command{format="broadcast Boy, %player_name% level up twice in one of his(her) professions!"}'
+      - 'command{format="broadcast 男孩，%player_name% 在他（她）的专业中连续升了两级！"}'
 
-# Exp table used by class to provide
-# one skill point every level up
+# 职业使用的经验表，每次升级提供一个技能点
 class_exp_table:
   skill_point:
     period: 1
@@ -51,15 +45,14 @@ class_exp_table:
 
 second_exp_table:
 
-  # Base exp every level up, sweet.
+  # 每次升级的基础经验，棒棒哒。
   some_item:
     period: 1
     triggers:
       - 'exp{amount=100}'
 
-    # Extra exp every 3 levels
+    # 每3级的额外经验
     some_other_item:
       period: 3
       triggers:
         - 'exp{amount=100}'
-

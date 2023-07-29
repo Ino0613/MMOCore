@@ -1,9 +1,7 @@
-
-# GUI display name
+# GUI 显示名称
 name: Party ({players}/{max})
 
-# Number of slots in your inventory. Must be
-# between 9 and 54 and must be a multiple of 9.
+# 在您的背包中的格子数。必须在 9 到 54 之间，并且必须是 9 的倍数。
 slots: 54
 
 items:
@@ -12,22 +10,22 @@ items:
         function: member
         empty:  
             item: GRAY_STAINED_GLASS_PANE
-            name: '&aNo Player'
+            name: '&a没有玩家'
         member:
             item: PLAYER_HEAD
             name: '&a{name}'
             lore:
-            - '&7Level {level} {class}'
-            - '&7Online Since: {since}'
+            - '&7等级 {level} {class}'
+            - '&7上线时间: {since}'
     leave:
         slots: [50]
         function: leave
         item: REDSTONE
-        name: '&cLeave Party'
+        name: '&c离开队伍'
         lore: {}
     request:
         slots: [48]
         function: invite
         item: WRITABLE_BOOK
-        name: '&aInvite a player..'
+        name: '&a邀请玩家加入..'
         lore: {}

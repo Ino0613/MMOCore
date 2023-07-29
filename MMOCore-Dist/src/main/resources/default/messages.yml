@@ -1,84 +1,84 @@
 # Level & Experience
 level-up:
   - ''
-  - '&eCongratulations, you reached level &6{level}&e!'
-  - '&eUse &6/p &eto see your new statistics!'
+  - '&e恭喜，你达到了等级 &6{level}&e！'
+  - '&e使用 &6/p &e查看你的新统计数据！'
   - ''
 profession-level-up:
-  - '&eYou are now level &6{level}&e in &6{profession}&e!'
+  - '&e你在 &6{profession}&e 中已经达到了等级 &6{level}&e！'
 exp-notification: '%&f{profession} &e{progress} &e{ratio}%'
-exp-hologram: '&e+{exp} EXP!'
-class-select: '&eYou are now a &6{class}&e!'
-already-on-class: '&cYou are already a {class}.'
+exp-hologram: '&e+{exp} 经验值！'
+class-select: '&e你现在是一个 &6{class}&e！'
+already-on-class: '&c你已经是一个 {class}。'
 death-exp-loss:
   - ''
-  - '&4You died and lost {loss} experience.'
+  - '&4你死亡并失去了 {loss} 经验值。'
   - ''
 
-# General
-not-enough-perms: '&cYou do not have enough permissions.'
+# 一般
+not-enough-perms: '&c你没有足够的权限。'
 
-# Experience boosters
+# 经验增益器
 booster-main:
   - '&e'
-  - '&eA &6{multiplier}x&e EXP multiplier is now active!'
+  - '&e现在激活了 &6{multiplier}x &e经验倍率！'
   - '&e'
 booster-skill:
   - '&e'
-  - '&eA &6{multiplier}x&e &6{profession} &eEXP multiplier is now active!'
+  - '&e现在激活了 &6{multiplier}x &e&6{profession} &e经验倍率！'
   - '&e'
-booster-expired: '&cExpired!'
+booster-expired: '&c已过期！'
 
-# PvP Mode
+# PvP 模式
 pvp-mode:
-  cooldown: '&cPlease wait {remaining} seconds to use this command again.'
+  cooldown: '&c请等待 {remaining} 秒后再使用此命令。'
 
-  # When you cannot hit another player
+  # 当你不能攻击另一个玩家时
   cannot-hit:
-    high-level-difference: '&cLevel difference is too high to fight this player.'
-    low-level-target: '&cYou cannot fight this player as their level is too low.'
-    low-level-self: '&cYour level is too low to fight other players.'
-    pvp-mode-disabled-target: '&cThis player has not toggled on PvP.'
-    pvp-mode-disabled-self: '&cYou have not toggled on PvP.'
-    invulnerable-self: '&cYou are still out of combat for {left} seconds.'
-    invulnerable-target: '&cThis player is out of combat for {left} seconds.'
+    high-level-difference: '&c等级差异太大，无法与该玩家战斗。'
+    low-level-target: '&c你不能攻击这个玩家，因为他们的等级太低。'
+    low-level-self: '&c你的等级太低，无法攻击其他玩家。'
+    pvp-mode-disabled-target: '&c此玩家尚未开启 PvP 模式。'
+    pvp-mode-disabled-self: '&c你尚未开启 PvP 模式。'
+    invulnerable-self: '&c你还有 {left} 秒处于无敌状态。'
+    invulnerable-target: '&c这个玩家还有 {left} 秒处于无敌状态。'
 
-  # When using /pvpmode
+  # 当使用 /pvpmode 命令时
   toggle:
-    on-safe: '&aYou will now be able to fight other players in dedicated areas.'
-    on-invulnerable: '&aYou will be able to fight other players in {time} seconds.'
-    off-safe: '&cYou can no longer fight other players.'
+    on-safe: '&a你现在可以在指定区域与其他玩家战斗。'
+    on-invulnerable: '&a你将在 {time} 秒内获得战斗无敌状态。'
+    off-safe: '&c你不能再与其他玩家战斗。'
 
-  # Entering/leaving regions
+  # 进入/离开区域
   leave:
-    pvp-allowed: '&cYou left a PVP zone but are still vulnerable for {remaining} seconds!'
-    pvp-denied: '&cYou left the PVP zone.'
+    pvp-allowed: '&c你离开了 PvP 区域，但仍然在 {remaining} 秒内是脆弱的！'
+    pvp-denied: '&c你离开了 PvP 区域。'
   enter:
-    pvp-mode-on: '&aYou entered a PVP zone and gained invulnerability for {time} seconds!'
-    pvp-mode-off: '&aYou entered a PVP zone. You may use /pvpmode to fight other players.'
+    pvp-mode-on: '&a你进入了 PvP 区域并获得了 {time} 秒的战斗无敌状态！'
+    pvp-mode-off: '&a你进入了 PvP 区域。你可以使用 /pvpmode 来与其他玩家战斗。'
 
-# Fishing Profession
-caught-fish: '&cYou caught a fish!'
-fish-out-water: '&aWell done!'
-fish-out-water-crit: '&aCritical Fish!'
+# 钓鱼职业
+caught-fish: '&c你钓到了一条鱼！'
+fish-out-water: '&a干得漂亮！'
+fish-out-water-crit: '&a关键一击鱼！'
 
-# Player Input
+# 玩家输入
 player-input:
   anvil:
-    friend-request: 'Friend name..'
-    party-invite: 'Player name..'
-    guild-invite: 'Player name..'
-    guild-creation-tag: 'Guild tag..'
-    guild-creation-name: 'Guild name..'
+    friend-request: '好友名称...'
+    party-invite: '玩家名称...'
+    guild-invite: '玩家名称...'
+    guild-creation-tag: '公会标签...'
+    guild-creation-name: '公会名称...'
   chat:
-    friend-request: '&eWrite in the chat the player name.'
-    party-invite: '&eWrite in the chat the player you want to invite.'
-    guild-invite: '&eWrite in the chat the player you want to invite.'
-    guild-creation-tag: '&eWrite in the chat the TAG of the Guild you want to create.'
-    guild-creation-name: '&eWrite in the chat the name of the Guild you want to create.'
-    cancel: '&eWrite &c''cancel'' &eto cancel.'
+    friend-request: '&e在聊天中输入玩家名称。'
+    party-invite: '&e在聊天中输入你想邀请的玩家名称。'
+    guild-invite: '&e在聊天中输入你想邀请的玩家名称。'
+    guild-creation-tag: '&e在聊天中输入你想创建的公会标签。'
+    guild-creation-name: '&e在聊天中输入你想创建的公会名称。'
+    cancel: '&e输入 &c''cancel'' &e来取消。'
 
-# Spell Casting
+# 施法
 casting:
   action-bar:
     ready: '&6[{index}] &a&l{skill}'
@@ -86,138 +86,138 @@ casting:
     no-mana: '&6[{index}] &9&l{skill}'
     no-stamina: '&6[{index}] &9&l{skill}'
   split: '&7 &7 - &7 '
-  no-longer: '%&cYou cancelled skill casting.'
-  no-mana: '&cYou do not have enough {mana}, {mana-required} more required!'
-  no-stamina: '&cYou do not have enough stamina!'
-  on-cooldown: '&cThis skill is on a {cooldown}s cooldown.'
+  no-longer: '%&c你取消了技能施法。'
+  no-mana: '&c你的 {mana} 不足，还需要 {mana-required} ！'
+  no-stamina: '&c你的体力不足！'
+  on-cooldown: '&c此技能处于 {cooldown} 秒冷却状态。'
 
-# Combat Log
-now-in-combat: '%&cYou are now in combat!'
-leave-combat: '%&aYou left combat.'
+# 战斗日志
+now-in-combat: '%&c你现在处于战斗状态！'
+leave-combat: '%&a你离开了战斗状态。'
 
-# Waypoints
-new-waypoint: '%&eYou unlocked the &6{waypoint} &ewaypoint!'
-new-waypoint-book: '%&eYou unlocked the &6{waypoint} &ewaypoint!'
-not-enough-stellium: '&cYou don''t have enough stellium: you need {more} more.'
-waypoint-cooldown: '&cPlease wait {cooldown} before using a waypoint again.'
-not-unlocked-waypoint: '&cYou have not unlocked that waypoint yet.'
-not-dynamic-waypoint: '&cYou many only teleport to a non-dynamic waypoint while standing on another waypoint.'
-standing-on-waypoint: '&cYou are already standing on this waypoint.'
-warping-canceled: '%&cWaypoint warping canceled.'
-warping-comencing: '%&cDO NOT MOVE!&e You will be warped in {left}sec.'
-cannot-teleport-to: '&cThe two waypoints are not linked.'
+# 传送点
+new-waypoint: '%&e你解锁了 &6{waypoint} &e传送点！'
+new-waypoint-book: '%&e你解锁了 &6{waypoint} &e传送点！'
+not-enough-stellium: '&c你没有足够的星星：还需要 {more} 星星。'
+waypoint-cooldown: '&c请等待 {cooldown} 后再次使用传送点。'
+not-unlocked-waypoint: '&c你还未解锁该传送点。'
+not-dynamic-waypoint: '&c你只能在站在另一个传送点上时传送到非动态传送点。'
+standing-on-waypoint: '&c你已经站在这个传送点上了。'
+warping-canceled: '%&c传送点传送被取消。'
+warping-comencing: '%&c不要动！&e 你将在 {left} 秒后传送。'
+cannot-teleport-to: '&c这两个传送点未连接。'
 
-# Cash
-deposit: '&eYou successfully deposited &6{worth}g&e.'
-withdrawing: '&eType in the chat the amount of &6gold&e you want to &6withdraw&e.'
-withdraw-cancel: '&eWithdrawing canceled.'
-withdrew: '&eYou successfully withdrew &6{worth}g&e.'
-wrong-number: '&c{arg} is not a valid number.'
-not-enough-money: '&cYou don''t have enough money, you need {left} more gold.'
-stand-near-enderchest: '&cYou must be standing near a bank to do that.'
+# 现金
+deposit: '&e你成功存入了 &6{worth}g &e金币。'
+withdrawing: '&e在聊天中输入你要 &6取出&e 的金币数量。'
+withdraw-cancel: '&e取款已取消。'
+withdrew: '&e你成功取出了 &6{worth}g &e金币。'
+wrong-number: '&c{arg} 不是有效的数字。'
+not-enough-money: '&c你的金币不足，还需要 {left} 金币。'
+stand-near-enderchest: '&c你必须站在银行附近才能这样做。'
 
-# Blocks
-cannot-break: '%&cYou do not have the right tool in order to break that block.'
+# 方块
+cannot-break: '%&c你没有合适的工具来破坏这个方块。'
 
-# Friends
-no-longer-friends: '&cYou and {unfriend} are no longer friends.'
-not-online-player: '&c{player} is not online.'
-sent-friend-request: '&eYou sent a friend request to &6{player}&e.'
-now-friends: '&eYou are now friends with &6{player}&e.'
-friend-request-cooldown: '&cPlease wait {cooldown}.'
-cant-request-to-yourself: '&cYou can''t send a request to yourself.'
-already-friends: '&cYou are already friends with {player}.'
+# 好友
+no-longer-friends: '&c你和 {unfriend} 不再是好友了。'
+not-online-player: '&c{player} 不在线。'
+sent-friend-request: '&e你向 &6{player} &e发送了好友请求。'
+now-friends: '&e你现在是 &6{player} &e的好友了。'
+friend-request-cooldown: '&c请等待 {cooldown} 后再邀请 {player}。'
+cant-request-to-yourself: '&c你不能向自己发送请求。'
+already-friends: '&c你已经是 {player} 的好友了。'
 friend-request:
   - '{"text":""}'
-  - '{"text":"&6{player} &ejust sent you a friend request!"}'
-  - '[{"text":"        ","hoverEvent":{}},{"text":"&8[&a&lACCEPT&8]","clickEvent":{"action":"run_command","value":"/friends accept {uuid}"},"hoverEvent":{"action":"show_text","value":"&eClick to accept!"}},{"text":"&r             ","hoverEvent":{}},{"text":"&8[&c&lDENY&8]","clickEvent":{"action":"run_command","value":"/friends deny {uuid}"},"hoverEvent":{"action":"show_text","value":"&eClick to deny."}}]'
+  - '{"text":"&6{player} &e刚刚向你发送了好友请求！"}'
+  - '[{"text":"        ","hoverEvent":{}},{"text":"&8[&a&l接受&8]","clickEvent":{"action":"run_command","value":"/friends accept {uuid}"},"hoverEvent":{"action":"show_text","value":"&e点击接受！"}},{"text":"&r             ","hoverEvent":{}},{"text":"&8[&c&l拒绝&8]","clickEvent":{"action":"run_command","value":"/friends deny {uuid}"},"hoverEvent":{"action":"show_text","value":"&e点击拒绝。"}}]'
   - '{"text":""}'
 
-# Parties
-party-chat: '&5[Party] {player}: {message}'
-sent-party-invite: '&eYou sent a party invite to &6{player}&e.'
-already-in-party: '&c{player} is already in your party.'
+# 队伍
+party-chat: '&5[队伍] {player}: {message}'
+sent-party-invite: '&e你向 &6{player} &e发送了队伍邀请。'
+already-in-party: '&c{player} 已经在你的队伍中了。'
 party-invite:
   - '{"text":""}'
-  - '{"text":"&6{player} &ehas invited you to their party!"}'
-  - '[{"text":"        "},{"text":"&8[&a&lACCEPT&8]","clickEvent":{"action":"run_command","value":"/party accept {uuid}"},"hoverEvent":{"action":"show_text","value":"&eClick to accept!"}},{"text":"&r             "},{"text":"&8[&c&lDENY&8]","clickEvent":{"action":"run_command","value":"/party deny {uuid}"},"hoverEvent":{"action":"show_text","value":"&eClick to deny."}}]'
+  - '{"text":"&6{player} &e邀请你加入他们的队伍！"}'
+  - '[{"text":"        "},{"text":"&8[&a&l接受&8]","clickEvent":{"action":"run_command","value":"/party accept {uuid}"},"hoverEvent":{"action":"show_text","value":"&e点击接受！"}},{"text":"&r             "},{"text":"&8[&c&l拒绝&8]","clickEvent":{"action":"run_command","value":"/party deny {uuid}"},"hoverEvent":{"action":"show_text","value":"&e点击拒绝。"}}]'
   - '{"text":""}'
-party-is-full: '&cSorry, your party is full.'
-party-joined: '&eYou successfully joined &6{owner}&e''s party.'
-party-joined-other: '&6{player}&e joined your party!'
-transfer-party-ownership: '&eYou were transfered the party ownership.'
-kick-from-party: '&eYou successfully kicked &6{player}&e.'
-party-invite-cooldown: '&cPlease wait {cooldown} before inviting {player}.'
-high-level-difference: '&cYou cannot invite {player} as the level difference is too high ({diff}).'
+party-is-full: '&c抱歉，你的队伍已满。'
+party-joined: '&e你成功加入了 &6{owner} &e的队伍。'
+party-joined-other: '&6{player} &e加入了你的队伍！'
+transfer-party-ownership: '&e队伍所有权已转移给你。'
+kick-from-party: '&e你成功将 &6{player} &e踢出了队伍。'
+party-invite-cooldown: '&c请等待 {cooldown} 后邀请 {player}。'
+high-level-difference: '&c你不能邀请 {player}，因为等级差距太大（{diff}）。'
 
-# Guilds
+# 公会
 guild-chat: '&a[{tag}] {player}: {message}'
-sent-guild-invite: '&eYou sent a guild invite to &6{player}&e.'
-already-in-guild: '&c{player} is already in your guild.'
+sent-guild-invite: '&e你向 &6{player} &e发送了公会邀请。'
+already-in-guild: '&c{player} 已经加入你的公会了。'
 guild-invite:
   - '{"text":""}'
-  - '{"text":"&6{player} &ehas invited you to their guild!"}'
-  - '[{"text":"        "},{"text":"&8[&a&lACCEPT&8]","clickEvent":{"action":"run_command","value":"/guild accept {uuid}"},"hoverEvent":{"action":"show_text","value":"&eClick to accept!"}},{"text":"&r             "},{"text":"&8[&c&lDENY&8]","clickEvent":{"action":"run_command","value":"/guild deny {uuid}"},"hoverEvent":{"action":"show_text","value":"&eClick to deny."}}]'
+  - '{"text":"&6{player} &e邀请你加入他们的公会！"}'
+  - '[{"text":"        "},{"text":"&8[&a&l接受&8]","clickEvent":{"action":"run_command","value":"/guild accept {uuid}"},"hoverEvent":{"action":"show_text","value":"&e点击接受！"}},{"text":"&r             "},{"text":"&8[&c&l拒绝&8]","clickEvent":{"action":"run_command","value":"/guild deny {uuid}"},"hoverEvent":{"action":"show_text","value":"&e点击拒绝。"}}]'
   - '{"text":""}'
-#guild-is-full: '&cSorry, your guild is full.' -Unused right now
-guild-joined: '&eYou successfully joined &6{owner}&e''s guild.'
-guild-joined-other: '&6{player}&e joined your guild!'
-transfer-guild-ownership: '&eYou were transfered the guild ownership.'
-kick-from-guild: '&eYou successfully kicked &6{player}&e from the guild.'
-guild-invite-cooldown: '&cPlease wait {cooldown} before inviting {player}.'
+#guild-is-full: '&c抱歉，你的公会已满。' -目前未使用
+guild-joined: '&e你成功加入了 &6{owner} &e的公会。'
+guild-joined-other: '&6{player} &e加入了你的公会！'
+transfer-guild-ownership: '&e公会所有权已转移给你。'
+kick-from-guild: '&e你成功将 &6{player} &e踢出了公会。'
+guild-invite-cooldown: '&c请等待 {cooldown} 后邀请 {player}。'
 guild-creation:
-  failed: "&cCouldn't create guild: {reason}"
+  failed: "&c无法创建公会：{reason}"
   reasons:
-    invalid-characters: "&eInvalid character(s)!"
-    invalid-length: "&eThe length must be between {min} and {max}!"
-    already-exists: "&eThat guild tag already exists!"
+    invalid-characters: "&e无效字符！"
+    invalid-length: "&e长度必须介于 {min} 和 {max} 之间！"
+    already-exists: "&e该公会标签已存在！"
 
-# Quests
-already-on-quest: '&cYou are already on a quest.'
-cancel-quest: '&eYou successfully canceled your ongoing quest.'
-quest-level-restriction: '&cYou need to be {level} {count}.'
-cant-redo-quest: '&cYou can''t start this quest twice.'
-quest-cooldown: '&cYou need to wait {delay}.'
-start-quest: '&eYou successfully started &6{quest}&e.'
+# 任务
+already-on-quest: '&c你已经在进行任务了。'
+cancel-quest: '&e你成功取消了当前任务。'
+quest-level-restriction: '&c你需要达到 {level} 级。'
+cant-redo-quest: '&c你不能重复开始这个任务。'
+quest-cooldown: '&c你需要等待 {delay} 后才能接受任务。'
+start-quest: '&e你成功开始了 &6{quest}&e 任务。'
 
-# Attributes
-no-attribute-points-spent: '&cYou have not spent any attribute points.'
-not-attribute-reallocation-point: '&cYou do not have 1 reallocation point.'
-not-attribute-point: '&cYou have no attribute point.'
-not-attribute-point-shift: '&cYou must have &4{shift_points} &cattribute points.'
-attribute-points-reallocated: '&eYou successfully reset your attributes. You now have &6{points} &eattribute points.'
-attribute-max-points-hit: '&cYou cannot level up this attribute anymore.'
-attribute-level-up: '&eYou successfully leveled up your &6{attribute}&e.' # {level}
+# 属性
+no-attribute-points-spent: '&c你还没有分配任何属性点。'
+not-attribute-reallocation-point: '&c你没有重分配点数。'
+not-attribute-point: '&c你没有属性点。'
+not-attribute-point-shift: '&c你需要 {shift_points} 属性点。'
+attribute-points-reallocated: '&e你成功重置了属性点。你现在有 &6{points} &e个属性点。'
+attribute-max-points-hit: '&c你不能再提升这个属性了。'
+attribute-level-up: '&e你成功提升了 &6{attribute} &e属性。' # {level}
 
-# Class selection
+# 职业选择
 cant-choose-new-class:
-  - '&cYou need one class point to perform this action.'
+  - '&c你需要一个职业点来执行此操作。'
 no-permission-for-class:
-  - "&cYou don't have the permission to choose this class."
+  - "&c你没有选择这个职业的权限。"
 
-# Skills
-no-class-skill: '&cYour class has no skill.'
-not-enough-skill-points: '&cYou need one skill point.'
-not-enough-skill-points-shift: '&cYou need {shift_points} skill points.'
-upgrade-skill: '&eYour &6{skill} &eis now Level &6{level}&e!'
-skill-level-not-met: '&cYou cannot use this skill yet.'
-no-skill-bound: '&cYou don''t have any skill bound to this slot.'
-not-compatible-skill: '&cThe selected skill is not compatible with this slot.'
-cant-manually-bind: "&cYou can't manually bind/unbind a skill to this slot."
-skill-max-level-hit: '&cYou already hit the max level for that skill.'
-no-skill-placeholder: 'No Skill Bound'
-not-skill-reallocation-point: '&cYou do not have 1 skill reallocation point.'
-no-skill-points-spent: '&cYou have not spent any skill points.'
-skill-points-reallocated: '&eYou successfully reset your skill points. You now have &6{points} &eskill points.'
-max-points-reached: '&cYou reached the maximum points you can spend. You need to reallocate your points to rollback.'
+# 技能
+no-class-skill: '&c你的职业没有技能。'
+not-enough-skill-points: '&c你需要一个技能点。'
+not-enough-skill-points-shift: '&c你需要 {shift_points} 技能点。'
+upgrade-skill: '&e你的 &6{skill} &e技能现在是 &6{level} 级 &e！'
+skill-level-not-met: '&c你现在还不能使用这个技能。'
+no-skill-bound: '&c你没有任何技能绑定到这个位置。'
+not-compatible-skill: '&c所选技能与此位置不兼容。'
+cant-manually-bind: "&c你不能手动绑定/解除绑定技能到该位置。"
+skill-max-level-hit: '&c你已经达到该技能的最大级别。'
+no-skill-placeholder: '未绑定技能'
+not-skill-reallocation-point: '&c你没有重分配技能点数。'
+no-skill-points-spent: '&c你还没有分配任何技能点数。'
+skill-points-reallocated: '&e你成功重置了技能点数。你现在有 &6{points} &e个技能点数。'
+max-points-reached: '&c你已达到可以使用的最大点数。你需要重分配点数来回退。'
 
-# Skill Trees
-no-skill-tree-points-spent: '&cYou have not spent any skill tree points.'
-locked-node: '&cThis skill is locked!'
-upgrade-skill-node: '&eYour skill node &6{skill-node} &eis now Level &6{level}&e!'
-skill-node-max-level-hit: '&cYou already hit the max level for that skill node.'
-missing-skill-node-permission: '&cYou do not have the permission to unlock this skill node.'
-not-enough-skill-tree-points: '&cYou need {point} skill tree point.'
-reallocated-points: '&eYou successfully reset the skill tree {skill-tree}. &eYou now have &6{points} &eskill tree points.'
-not-skill-tree-reallocation-point: '&cYou do not have 1 skill tree reallocation point.'
-no-skill-tree: '&cYour class doesn''t have any skill tree.'
+# 技能树
+no-skill-tree-points-spent: '&c你还没有分配任何技能树点数。'
+locked-node: '&c此技能已锁定！'
+upgrade-skill-node: '&e你的技能节点 &6{skill-node} &e现在是 &6{level} 级 &e！'
+skill-node-max-level-hit: '&c你已经达到该技能节点的最大级别。'
+missing-skill-node-permission: '&c你没有权限解锁此技能节点。'
+not-enough-skill-tree-points: '&c你需要 {point} 技能树点数。'
+reallocated-points: '&e你成功重置了技能树 {skill-tree} 。你现在有 &6{points} &e个技能树点数。'
+not-skill-tree-reallocation-point: '&c你没有重分配技能树点数。'
+no-skill-tree: '&c你的职业没有任何技能树。'

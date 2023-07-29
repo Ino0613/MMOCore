@@ -1,29 +1,26 @@
+# 显示选项
+name: 采矿
 
-# Display options
-name: Mining
-
-# Experience given to the main level
-# when leveling up this profession
+# 升级此专业时为主等级提供的经验值
 experience:
     base: 20
     per-level: 3
 
-# Must match an existing exp curve filename from the 'expcurves' folder
+# 必须与“expcurves”文件夹中现有的经验曲线文件名匹配
 exp-curve: mining
 
-# This part of the config is ONLY for custom mining.
-# Custom Mining must be setup in config.yml and it
-# will render any block not referenced in here as unminable.
-# If you do not wish to use custom mining it is recommended
-# to follow the format in woodcutting.yml for experience and
-# configure drop tables with MMOItems.
-# Block Regen is currently only possible using custom mining.
+# 此部分的配置仅适用于自定义采矿。
+# 自定义采矿必须在config.yml中进行设置，
+# 并且它将把任何未在此处引用的方块设为不可采掘。
+# 如果您不希望使用自定义采矿，
+# 建议按照woodcutting.yml中的经验值格式进行配置，
+# 并使用MMOItems配置掉落表。
+# 目前只能使用自定义采矿来进行方块再生。
 on-mine:
 
-    # Config example showing how you can bind drops and experience
-    # to custom player heads based on the skull texture.
+    # 配置示例，显示如何将掉落物和经验与基于头颅纹理的自定义玩家头颅绑定。
     diamond-skull:
-        # Diamond ore skull texture
+        # 钻石矿石头颅纹理
         material: 'skull{value="eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2EzYmI4NWRlYzEzMjlmZTgyOWNjNmNkY2QzNGUxYmQ2MGVlODMyZjU3MjYyOTY1MWYxNGI1ZTE0NTU1ZGJiMSJ9fX0="}'
         drop-table:
             items:
@@ -32,12 +29,12 @@ on-mine:
             vanilla-drops: false
         regen:
             time: 20
-            # Stone block skull texture
+            # 石头方块头颅纹理
             temp-block: 'skull{value="eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTU0ODE4MjMzYzgxMTg3M2U4NWY1YTRlYTQ0MjliNzVmMjNiNmFlMGVhNmY1ZmMwZjdiYjQyMGQ3YzQ3MSJ9fX0="}'
         triggers:
         - 'exp{profession=mining;amount=20}'
 
-    # Gold ore
+    # 金矿石
     gold:
         material: vanilla{type=GOLD_ORE}
         drop-table:
@@ -51,7 +48,7 @@ on-mine:
         triggers:
             - 'exp{profession=mining;amount=5}'
 
-    # Iron ore
+    # 铁矿石
     iron:
         material: vanilla{type=IRON_ORE}
         drop-table:
@@ -65,7 +62,7 @@ on-mine:
         triggers:
             - 'exp{profession=mining;amount=5}'
 
-    # Lapis ore
+    # 青金石矿石
     lapis:
         material: vanilla{type=LAPIS_ORE}
         drop-table:
@@ -79,7 +76,7 @@ on-mine:
         triggers:
             - 'exp{profession=mining;amount=13}'
 
-    # Redstone ore
+    # 红石矿石
     redstone:
         material: vanilla{type=REDSTONE_ORE}
         drop-table:
@@ -94,7 +91,7 @@ on-mine:
         triggers:
             - 'exp{profession=mining;amount=10}'
 
-    # Emerald ore
+    # 翡翠矿石
     emerald:
         material: vanilla{type=EMERALD_ORE}
         drop-table:
@@ -108,38 +105,37 @@ on-mine:
         triggers:
         - 'exp{profession=mining;amount=32}'
 
-    # Diamond ore
+    # 钻石矿石
     diamond:
-        # The material you need to mine
+        # 您需要挖掘的方块
         material: vanilla{type=DIAMOND_ORE}
 
-        # Refer to drop-tables.yml
-        # The drop table used by the block.
+        # 参考掉落表
+        # 方块使用的掉落表。
         drop-table:
             items:
             - 'vanilla{type=DIAMOND} 1 1-3'
            # - 'mmoitem{type=material;id=RARE_DIAMOND} .1 1-3'
            # - 'droptable{id=other-drop-table} .1'
         
-        # Triggers when destroying the block, can
-        # be used to give exp to a player!
+        # 销毁方块时触发，可
+        # 用于给玩家赋予经验！
         triggers:
         - 'exp{profession=mining;amount=20}'
         
         options:
-            # Set to false if you want to disable vanila drops.
+            # 设置为false，如果您想禁用原版掉落。
             vanilla-drops: false
         
         regen:
         
-            # Ticks the block takes to appear again
+            # 方块重新出现所需的时间
             time: 2000
             
-            # The temporary block which shows
-            # during the block regen time.
+            # 在方块再生时间期间显示的临时方块。
             #
-            # !! Warning !!
-            # When using the temp-block option, make sure you choose
-            # one temp block and don't use it anywhere else in the
-            # configuration so that block regens do not affect each other
+            # !! 警告 !!
+            # 使用temp-block选项时，确保选择一个临时方块，
+            # 并且不在配置中的其他地方使用它，
+            # 以便方块再生不会相互影响。
             temp-block: vanilla{type=STONE}

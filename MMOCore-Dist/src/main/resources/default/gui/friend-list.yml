@@ -1,9 +1,7 @@
+# GUI 显示名称
+name: 好友列表
 
-# GUI display name
-name: Friends
-
-# Number of slots in your inventory. Must be
-# between 9 and 54 and must be a multiple of 9.
+# 在您的背包中的格子数。必须在 9 到 54 之间，并且必须是 9 的倍数。
 slots: 54
 
 items:
@@ -11,32 +9,32 @@ items:
         slots: [10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34]
         function: friend
         
-        # No friend
+        # 没有好友
         item: GRAY_STAINED_GLASS_PANE
-        name: '&cNo Friend'
+        name: '&c没有好友'
         lore: {}
         
-        # Online friend
+        # 在线好友
         online:
             item: PLAYER_HEAD
-            name: '&a[Online] &f{name}'
+            name: '&a[在线] &f{name}'
             lore:
-            - '&7Level {level} {class}'
-            - '&7Online Since: {online_since}'
+            - '&7等级 {level} {class}'
+            - '&7在线时间: {online_since}'
             - ''
-            - '&cRight click to remove.'
+            - '&c右键点击移除好友.'
             
-        # Offline friend
+        # 离线好友
         offline:
             item: PLAYER_HEAD
-            name: '&c[Offline] &f{name}'
+            name: '&c[离线] &f{name}'
             lore:
-            - '&7Last Seen: {last_seen} ago'
+            - '&7上次在线: {last_seen} 之前'
             - ''
-            - '&cRight click to remove.'
+            - '&c右键点击移除好友.'
     request:
         slots: [49]
         function: request
         item: WRITABLE_BOOK
-        name: '&aNew Friend Request'
+        name: '&a新的好友请求'
         lore: {}

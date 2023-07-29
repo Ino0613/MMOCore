@@ -1,9 +1,7 @@
-
-# GUI display name
+# GUI 显示名称
 name: Your Character
 
-# Number of slots in your inventory. Must be
-# between 9 and 54 and must be a multiple of 9.
+# 在您的背包中的格子数。必须在 9 到 54 之间，并且必须是 9 的倍数。
 slots: 54
 
 items:
@@ -11,96 +9,94 @@ items:
         slots: [10]
         function: profession_mining
         item: IRON_PICKAXE
-        name: '&aMining'
+        name: '&a采矿'
         hide-flags: true
         lore:
         - ''
-        - '&7Current Level: &e{level}'
+        - '&7当前等级： &e{level}'
         - '&8[&e{progress}&8] &e{percent}%'
         - ''
-        - '&7&oMining unlocks rare ores and raw materials.'
-        - '&7&oThis is vital to your rise in power and strength,'
-        - '&7&omine frequently for unique and rare drops.'
+        - '&7&o采矿解锁稀有矿石和原材料。'
+        - '&7&o这对于你的崛起和力量至关重要，'
+        - '&7&o频繁挖矿可以获得独特和稀有的掉落。'
     woodcutting-profession:
         slots: [11]
         function: profession_woodcutting
         item: IRON_AXE
-        name: '&aWoodcutting'
+        name: '&a伐木'
         hide-flags: true
         lore:
         - ''
-        - '&7Current Level: &e{level}'
+        - '&7当前等级： &e{level}'
         - '&8[&e{progress}&8] &e{percent}%'
         - ''
-        - '&7&oThough it may seem like a boring task, woodcutting'
-        - '&7&ois vital to obtaining materials used for crafting and trade,'
-        - '&7&oand will help give you the upper hand in the arcane ways.'
+        - '&7&o虽然这可能看起来是一项乏味的任务，伐木'
+        - '&7&ois 采集用于制作和交易的材料的重要途径，'
+        - '&7&o它将帮助你在奥术领域中占据上风。'
     farming-profession:
         slots: [12]
         function: profession_farming
         item: IRON_HOE
-        name: '&aFarming'
+        name: '&a农耕'
         hide-flags: true
         lore:
         - ''
-        - '&7Current Level: &e{level}'
+        - '&7当前等级： &e{level}'
         - '&8[&e{progress}&8] &e{percent}%'
         - ''
-        - '&7&oWith tons of new food and consumable recipes,'
-        - '&7&oyou will need to stay on top of the crops in order'
-        - '&7&oto obtain the best food and drinks to keep yourself healthy.'
+        - '&7&o有了大量新的食物和消耗品配方，'
+        - '&7&o你需要时刻关注作物，以获得最好的食物和饮料，保持健康。'
     fishing-profession:
         slots: [19]
         function: profession_fishing
         item: FISHING_ROD
-        name: '&aFishing'
+        name: '&a钓鱼'
         hide-flags: true
         lore:
         - ''
-        - '&7Current Level: &e{level}'
+        - '&7当前等级： &e{level}'
         - '&8[&e{progress}&8] &e{percent}%'
         - ''
-        - '&7&oFishing may give you unique drops you'
-        - '&7&ocan''t find anywhere else. The more you'
-        - '&7&ofish, the easier it becomes to find these.'
+        - '&7&o钓鱼可能给你独特的掉落，这些掉落在其他地方找不到。'
+        - '&7&o你钓得越多，越容易找到这些独特的掉落。'
         - ''
-        - '&7Fishing Strength: &c{fishing_strength}%'
-        - '&7Crit Fishing Rate: &c{critical_fishing_chance}%'
-        - '&7Crit Failure Rate: &c{critical_fishing_failure_chance}%'
+        - '&7钓鱼强度： &c{fishing_strength}%'
+        - '&7暴击钓鱼几率： &c{critical_fishing_chance}%'
+        - '&7暴击钓鱼失败几率： &c{critical_fishing_failure_chance}%'
     alchemy-profession:
         slots: [20]
         function: profession_alchemy
         item: BREWING_STAND
-        name: '&aAlchemy'
+        name: '&a炼金术'
         lore:
         - ''
-        - '&7Current Level: &e{level}'
+        - '&7当前等级： &e{level}'
         - '&8[&e{progress}&8] &e{percent}%'
         - ''
-        - '&7&oIn a world where you are no longer limited to'
-        - '&7&osimple potions, try learning tons of new brewing'
-        - '&7&orecipes to give yourself the edge on the battlefield.'
+        - '&7&o在一个不再局限于简单药水的世界里，'
+        - '&7&o尝试学习大量新的酿造配方，'
+        - '&7&o以在战场上获得优势。'
     smithing-profession:
         slots: [21]
         function: profession_smithing
         item: ANVIL
-        name: '&aSmithing'
+        name: '&a锻造'
         lore:
         - ''
-        - '&7Current Level: &e{level}'
+        - '&7当前等级： &e{level}'
         - '&8[&e{progress}&8] &e{percent}%'
         - ''
-        - '&7&oStabbing enemies and having them laugh is the worst,'
-        - '&7&oPractice makes perfect when it comes to smithing.'
-        - '&7&o&nWar is won by the man with the pointiest stick.'
+        - '&7&o刺杀敌人，而他们在笑是最糟糕的，'
+        - '&7&o练习使人变得更完美，尤其是在锻造方面。'
+        - '&7&o&n战争是由拿着最尖锐的棍子的人赢得的。'
     enchanting-profession:
         slots: [28]
         function: profession_enchanting
         item: ENCHANTED_BOOK
-        name: '&aEnchanting'
+        name: '&a附魔'
         lore:
         - ''
-        - '&7Current Level: &e{level}'
+        - '&7当前等级： &e{level}'
         - '&8[&e{progress}&8] &e{percent}%'
         - ''
         - '&7&oLorem ipsum dolor sit amet, consectetur'
@@ -110,10 +106,10 @@ items:
         slots: [29]
         function: profession_smelting
         item: FURNACE
-        name: '&aSmelting'
+        name: '&a冶炼'
         lore:
         - ''
-        - '&7Current Level: &e{level}'
+        - '&7当前等级： &e{level}'
         - '&8[&e{progress}&8] &e{percent}%'
         - ''
         - '&7&oSinging your eyebrows will become standard.'
@@ -125,55 +121,55 @@ items:
         item: BARRIER
         no-boost:
             item: GRAY_STAINED_GLASS_PANE
-            name: '&aNo Booster'
+            name: '&a无增益器'
             lore: {}
         
-        # Profession experience boosters
+        # 职业经验加成器
         profession:
             item: EXPERIENCE_BOTTLE
-            name: '&aEXP Boost'
+            name: '&a经验加成'
             lore:
-            - '&7Amount: &6+{value}%'
-            - '&7Time left: &6{left}'
-            - '&7Profession: &6{profession}'
+            - '&7数值： &6+{value}%'
+            - '&7剩余时间： &6{left}'
+            - '&7职业： &6{profession}'
             - '&7'
-            - '&eStarted by {author}'
+            - '&e由 {author} 发起'
         
-        # Main class experience boosters
+        # 主职业经验加成器
         main-level:
             item: EXPERIENCE_BOTTLE
-            name: '&aEXP Boost'
+            name: '&a经验加成'
             lore:
-            - '&7Amount: &6+{value}%'
-            - '&7Time left: &6{left}'
+            - '&7数值： &6+{value}%'
+            - '&7剩余时间： &6{left}'
             - '&7'
-            - '&eStarted by {author}'
+            - '&e由 {author} 发起'
     boost-next:
         slots: [52]
         function: boost-next
         item: PLAYER_HEAD
         texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTliZjMyOTJlMTI2YTEwNWI1NGViYTcxM2FhMWIxNTJkNTQxYTFkODkzODgyOWM1NjM2NGQxNzhlZDIyYmYifX19
-        name: '&aNext'
+        name: '&a下一页'
         lore: {}
     boost-prev:
         slots: [46]
         function: boost-previous
         item: PLAYER_HEAD
         texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ2OWUwNmU1ZGFkZmQ4NGU1ZjNkMWMyMTA2M2YyNTUzYjJmYTk0NWVlMWQ0ZDcxNTJmZGM1NDI1YmMxMmE5In19fQ==
-        name: '&aPrevious'
+        name: '&a上一页'
         lore: {}
     party:
         slots: [16]
         function: party
         item: CAKE
-        name: '&aParty Morale'
+        name: '&a团队士气'
         lore:
-        - '&7&oPlaying with your friends'
+        - '&7&o与朋友一起游戏'
         - '&7&ogreatly encourages you!'
         - ''
-        - '&7Party Bonuses ({count}):'
-        - '&8+{buff_additional_experience} Experience Earned!'
-        - '&8+{buff_health_regeneration} Health Regeneration'
+        - '&7队伍奖励 ({count}):'
+        - '&8+{buff_additional_experience} 经验值获取！'
+        - '&8+{buff_health_regeneration} 生命值回复'
     stats:
         slots: [15]
         function: profile
@@ -181,62 +177,62 @@ items:
         name: '&e{player}'
         lore:
         - ''
-        - '&7Current Level: &e{level}'
-        - '&7Progression: &e{exp} / {next_level}'
+        - '&7当前等级： &e{level}'
+        - '&7进度： &e{exp} / {next_level}'
         - '&8[&e{progress}&8] &e{percent}%'
-        - '&7Skill Points: &6{skill_points}'
+        - '&7技能点数： &6{skill_points}'
         - ''
-        - '&7Current Class: &c{class}'
-        - '&7Class Points: &c{class_points}'
+        - '&7当前职业： &c{class}'
+        - '&7职业点数： &c{class_points}'
     phys:
         slots: [32]
         function: stats
-        name: '&cPhysical'
+        name: '&c体能'
         item: GOLDEN_APPLE
         hide-flags: true
         lore:
         - ''
-        - 'Current Strength: &c&l{attribute_strength}'
+        - '当前力量： &c&l{attribute_strength}'
         - ''
-        - '✦ Attack Damage: &c{attack_damage} &7(&c{attack_damage_base} &7+ &c{attack_damage_extra}&7)'
-        - '✦ Attack Speed: &c{attack_speed} &7(&c{attack_speed_base} &7+ &c{attack_speed_extra}&7)'
+        - '✦ 攻击伤害： &c{attack_damage} &7(&c{attack_damage_base} &7+ &c{attack_damage_extra}&7)'
+        - '✦ 攻击速度： &c{attack_speed} &7(&c{attack_speed_base} &7+ &c{attack_speed_extra}&7)'
         - ''
-        - '❤ Max Health: &c{max_health} &7(&c{max_health_base} &7+ &c{max_health_extra}&7)'
-        - '❤ Health Regen: &c{health_regeneration} &7(&c{health_regeneration_base} &7+ &c{health_regeneration_extra}&7)'
+        - '❤ 最大生命值： &c{max_health} &7(&c{max_health_base} &7+ &c{max_health_extra}&7)'
+        - '❤ 生命回复： &c{health_regeneration} &7(&c{health_regeneration_base} &7+ &c{health_regeneration_extra}&7)'
         - ''
-        - '✤ Max Stamina: &9{max_stamina} &7(&9{max_stamina_base} &7+ &9{max_stamina_extra}&7)'
-        - '✤ Stamina Regen: &9{stamina_regeneration} &7(&9{stamina_regeneration_base} &7+ &9{stamina_regeneration_extra}&7)'
+        - '✤ 最大体力： &9{max_stamina} &7(&9{max_stamina_base} &7+ &9{max_stamina_extra}&7)'
+        - '✤ 体力回复： &9{stamina_regeneration} &7(&9{stamina_regeneration_base} &7+ &9{stamina_regeneration_extra}&7)'
         - ''
-        - '❖ Armor: &c{armor} &7(&c{armor_base} &7+ &c{armor_extra}&7)'
-        - '❖ Armor Toughness: &c{armor_toughness} &7(&c{armor_toughness_base} &7+ &c{armor_toughness_extra}&7)'
+        - '❖ 护甲值： &c{armor} &7(&c{armor_base} &7+ &c{armor_extra}&7)'
+        - '❖ 护甲韧性： &c{armor_toughness} &7(&c{armor_toughness_base} &7+ &c{armor_toughness_extra}&7)'
     dex:
         slots: [33]
         function: stats
-        name: '&aDexterity'
+        name: '&a灵巧'
         item: LEATHER_BOOTS
         hide-flags: true
         lore:
         - ''
-        - 'Current Dexterity: &a&l{attribute_dexterity}'
+        - '当前灵巧： &a&l{attribute_dexterity}'
         - ''
-        - '✤ Knockback Resistance: &f{knockback_resistance} &7(&f{knockback_resistance_base} &7+ &f{knockback_resistance_extra}&7)'
-        - '✤ Movement Speed: &f{movement_speed} &7(&f{movement_speed_base} &7+ &f{movement_speed_extra}&7)'
-        - '✤ Speed Malus Reduction: &f{speed_malus_reduction}% &7(&f{speed_malus_reduction_base} &7+ &f{speed_malus_reduction_extra}&7)'
+        - '✤ 击退抵抗： &f{knockback_resistance} &7(&f{knockback_resistance_base} &7+ &f{knockback_resistance_extra}&7)'
+        - '✤ 移动速度： &f{movement_speed} &7(&f{movement_speed_base} &7+ &f{movement_speed_extra}&7)'
+        - '✤ 速度减益减少： &f{speed_malus_reduction}% &7(&f{speed_malus_reduction_base} &7+ &f{speed_malus_reduction_extra}&7)'
     int:
         slots: [34]
         function: stats
-        name: '&bIntellect'
+        name: '&b智力'
         item: BOOK
         hide-flags: true
         lore:
         - ''
-        - 'Current Intelligence: &b&l{attribute_intelligence}'
+        - '当前智力： &b&l{attribute_intelligence}'
         - ''
-        - '✤ Max Mana: &9{max_mana} &7(&9{max_mana_base} &7+ &9{max_mana_extra}&7)'
-        - '✤ Mana Regen: &9{mana_regeneration} &7(&9{mana_regeneration_base} &7+ &9{mana_regeneration_extra}&7)'
+        - '✤ 最大魔法值： &9{max_mana} &7(&9{max_mana_base} &7+ &9{max_mana_extra}&7)'
+        - '✤ 魔法回复： &9{mana_regeneration} &7(&9{mana_regeneration_base} &7+ &9{mana_regeneration_extra}&7)'
         - ''
-        - '✤ Skill Cooldown Reduction: &9{cooldown_reduction} &7(&9{cooldown_reduction_base} &7+ &9{cooldown_reduction_extra}&7)'
-        - '✤ Extra Experience: &9{additional_experience} &7(&9{additional_experience_base} &7+ &9{additional_experience_extra}&7)'
+        - '✤ 技能冷却缩减： &9{cooldown_reduction} &7(&9{cooldown_reduction_base} &7+ &9{cooldown_reduction_extra}&7)'
+        - '✤ 额外经验： &9{additional_experience} &7(&9{additional_experience_base} &7+ &9{additional_experience_extra}&7)'
         - ''
-        - '❊ Max Stellium: &9{max_stellium} &7(&9{max_stellium_base} &7+ &9{max_stellium_extra}&7)'
-        - '❊ Stellium Regen: &9{stellium_regeneration} &7(&9{stellium_regeneration_base} &7+ &9{stellium_regeneration_extra}&7)'
+        - '❊ 最大星石值： &9{max_stellium} &7(&9{max_stellium_base} &7+ &9{max_stellium_extra}&7)'
+        - '❊ 星石回复： &9{stellium_regeneration} &7(&9{stellium_regeneration_base} &7+ &9{stellium_regeneration_extra}&7)'

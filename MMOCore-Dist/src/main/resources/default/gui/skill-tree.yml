@@ -1,8 +1,7 @@
-# GUI display name
-name: '&eCurrent Skill Tree: &6{skill-tree-name}'
+# GUI显示名称
+name: '&e当前技能树: &6{skill-tree-name}'
 
-# Number of slots in your inventory. Must be
-# between 9 and 54 and must be a multiple of 9.
+# 背包中的槽位数量。必须在9和54之间，并且必须是9的倍数。
 slots: 54
 
 items:
@@ -10,25 +9,25 @@ items:
   up:
     function: up
     item: PLAYER_HEAD
-    name: "Up"
+    name: "上"
     texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTk5YWFmMjQ1NmE2MTIyZGU4ZjZiNjI2ODNmMmJjMmVlZDlhYmI4MWZkNWJlYTFiNGMyM2E1ODE1NmI2NjkifX19
     slots: [ 50 ]
   down:
     function: down
     item: PLAYER_HEAD
-    name: "Down"
+    name: "下"
     texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzkxMmQ0NWIxYzc4Y2MyMjQ1MjcyM2VlNjZiYTJkMTU3NzdjYzI4ODU2OGQ2YzFiNjJhNTQ1YjI5YzcxODcifX19
     slots: [ 49 ]
   right:
     function: right
     item: PLAYER_HEAD
-    name: "Right"
+    name: "右"
     texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTNmYzUyMjY0ZDhhZDllNjU0ZjQxNWJlZjAxYTIzOTQ3ZWRiY2NjY2Y2NDkzNzMyODliZWE0ZDE0OTU0MWY3MCJ9fX0=
     slots: [ 51 ]
   left:
     function: left
     item: PLAYER_HEAD
-    name: "Left"
+    name: "左"
     texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWYxMzNlOTE5MTlkYjBhY2VmZGMyNzJkNjdmZDg3YjRiZTg4ZGM0NGE5NTg5NTg4MjQ0NzRlMjFlMDZkNTNlNiJ9fX0=
     slots: [ 48 ]
 
@@ -38,14 +37,14 @@ items:
     slots: [ 9,18,27 ]
     lore:
       - ''
-      - '&aDescription:'
+      - '&a描述:'
       - '{tree-lore}'
       - ''
       - '--------------------'
-      - '&e◆Max points&e: &6{max-point-spent}'
-      - '&e◆Points spent&e:&6 {point-spent}'
-      - '&e◆Current {name} &epoints: &6{skill-tree-points}'
-      - '&e◆Current Global points: &6{global-points}'
+      - '&e◆最大点数&e: &6{max-point-spent}'
+      - '&e◆已使用点数&e:&6 {point-spent}'
+      - '&e◆当前{name} &e技能点数: &6{skill-tree-points}'
+      - '&e◆当前全局技能点数: &6{global-points}'
 
   next-tree-list-page:
     function: 'next-tree-list-page'
@@ -63,55 +62,54 @@ items:
     function: reallocation
     item: CAULDRON
     slots: [ 45 ]
-    name: '&aReallocate Skill Tree Points'
+    name: '&a重置技能树点数'
     lore:
       - ''
-      - '&7You have spent a total of &6{point-spent}&7 skill tree points.'
-      - '&7The maximum points that can be spent is: &6{max-point-spent}'
-      - '&7Right click to reallocate them.'
+      - '&7你总共花费了 &6{point-spent}&7 技能树点数。'
+      - '&7最大可使用点数为: &6{max-point-spent}'
+      - '&7右键点击以重置它们。'
       - ''
-      - '&eCosts 1 attribute reallocation point.'
-      - '&e◆ Skill Tree Reallocation Points: &6{realloc-points}'
+      - '&e需消耗 1 技能树重置点。'
+      - '&e◆ 技能树重置点数: &6{realloc-points}'
 
   skill-tree-node:
 
     function: 'skill-tree-node'
     slots: [ 1,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,19,20,21,22,23,24,25,26,28,29,30,31,32,33,34,35,37,38,39,40,41,42,43,44 ]
-    #The lore that will be displayed after the lore of the node.
-    #The {node-lore} placeholder will be replaced by the lore specified in the skill tree node config.
-    #All the placeholders you see here can also be used in the node lore.
-    #For debugging custom display you can use the {display-type} placeholder.
+    # 在节点信息的下方显示的描述信息。
+    # {node-lore}占位符将被替换为在技能树节点配置中指定的信息。
+    # 这里出现的所有占位符也可以在节点信息中使用。
+    # 对于自定义显示的调试，您可以使用{display-type}占位符。
     lore:
-      - '&7Current State: &6{current-state}'
-      - '&7Current Level: &6{current-level}'
-      - '&7Max Level: &6{max-level}'
-      - '&7Max Children: &6{max-children}'
-      - '&7Points required: &6{point-consumed}'
-      - '&7Size: &6{size}'
+      - '&7当前状态: &6{current-state}'
+      - '&7当前等级: &6{current-level}'
+      - '&7最大等级: &6{max-level}'
+      - '&7最大子节点: &6{max-children}'
+      - '&7所需点数: &6{point-consumed}'
+      - '&7大小: &6{size}'
       - '--------------------'
-      - '&7⧆ &6Requirements: '
-      - '&fStrong Parents: '
+      - '&7⧆ &6要求: '
+      - '&f强父节点: '
       - '{strong-parents}'
       - ''
-      - '&fSoft Parents: '
+      - '&f弱父节点: '
       - '{soft-parents}'
       - '--------------------'
       - '{node-lore}'
       - '--------------------'
-      - '&e◆Max points for {skill-tree}&e: &6{max-point-spent}'
-      - '&e◆Points spent for {skill-tree}&e:&6 {point-spent}'
-      - '&e◆Current {skill-tree} &epoints: &6{skill-tree-points}'
-      - '&e◆Current &6global&e points: &6{global-points}'
+      - '&e◆{skill-tree}最大点数: &6{max-point-spent}'
+      - '&e◆{skill-tree}已使用点数: &6{point-spent}'
+      - '&e◆当前{skill-tree}技能点数: &6{skill-tree-points}'
+      - '&e◆当前全局技能点数: &6{global-points}'
     path-lore:
       - ''
 
-#This is the name that will be displayed for each status.
+# 这是每种状态将显示的名称。
 status-names:
-  unlocked: 'Unlocked'
-  unlockable: 'Unlockable'
-  locked: 'Locked'
-  fully-locked: 'Fully Locked'
-
+  unlocked: '已解锁'
+  unlockable: '可解锁'
+  locked: '已锁定'
+  fully-locked: '完全锁定'
 
 display:
   paths:
@@ -400,4 +398,3 @@ display:
       no-path:
         item: "BLACK_CONCRETE"
         custom-model-data: 0
-

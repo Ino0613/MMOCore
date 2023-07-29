@@ -1,9 +1,8 @@
+# GUI 显示名称
+name: 职业选择
 
-# GUI display name
-name: Class Selection
 
-# Number of slots in your inventory. Must be
-# between 9 and 54 and must be a multiple of 9.
+# 在您的背包中的格子数。必须在 9 到 54 之间，并且必须是 9 的倍数。
 slots: 27
 
 items:
@@ -11,7 +10,7 @@ items:
     class-rogue:
         slots: [11]
         function: class-rogue
-        name: '&a&lThe Rogue'
+        name: '&a&l盗贼'
         hide-flags: true
         lore:
             - '{lore}'
@@ -21,7 +20,7 @@ items:
     class-mage:
       slots: [12]
       function: class-mage
-      name: '&a&lThe Mage'
+      name: '&a&l法师'
       hide-flags: true
       lore:
         - '{lore}'
@@ -31,7 +30,7 @@ items:
     class-marksman:
       slots: [13]
       function: class-marksman
-      name: '&a&lThe Marksman'
+      name: '&a&l神射手'
       hide-flags: true
       lore:
         - '{lore}'
@@ -41,7 +40,7 @@ items:
     class-warrior:
         slots: [14]
         function: class-warrior
-        name: '&a&lThe Warrior'
+        name: '&a&l战士'
         hide-flags: true
         lore:
             - '{lore}'
@@ -51,7 +50,7 @@ items:
     class-paladin:
         slots: [15]
         function: class-paladin
-        name: '&a&lThe Paladin'
+        name: '&a&l圣骑士'
         hide-flags: true
         lore:
         - '{lore}'

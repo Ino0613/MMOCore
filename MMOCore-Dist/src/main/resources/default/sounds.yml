@@ -1,12 +1,11 @@
-# Format = SOUND,VOLUME,PITCH
-# If only the sound name is specified, the
-# volume and pitch will be set to 1.
+# 格式 = 声音,音量,音调
+# 如果仅指定声音名称，则音量和音调将设置为1。
 
 level-up: ENTITY_PLAYER_LEVELUP,1,2
 
 warp-cancelled: ENTITY_VILLAGER_NO,1,0.5
 warp-teleport: ENTITY_ENDERMAN_TELEPORT,1,0.5
-warp-charge: BLOCK_NOTE_BLOCK_BELL #Uses a special pitch method, so pitch and volume is not changeable
+warp-charge: BLOCK_NOTE_BLOCK_BELL # 使用特殊音调方法，因此无法更改音调和音量
 warp-unlock: UI_TOAST_CHALLENGE_COMPLETE,1,1.2
 
 spell-cast-begin: BLOCK_END_PORTAL_FRAME_FILL,1,2

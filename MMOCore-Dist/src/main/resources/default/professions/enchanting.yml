@@ -1,34 +1,29 @@
+# 显示选项
+name: 附魔
 
-# Display options
-name: Enchanting
-
-# Experience given to the main level
-# when leveling up this profession
+# 升级此专业时为主等级提供的经验值
 experience:
     base: 10
     per-level: 2
 
-# Must match an existing exp curve filename from the 'expcurves' folder
+# 必须与“expcurves”文件夹中现有的经验曲线文件名匹配
 exp-curve: levels
 
-# Remove the 'enchant' parameter from the line config
-# to make the profession get EXP with ANY enchant.
+# 从行配置中删除'enchant'参数，以使专业获得任何附魔的经验。
 
-# Specifying enchants like that lets you create different
-# enchanting professions, like DESTRUCTION for offense enchants
-# (Smite, Bane of Arth., Sharpness, Power, Fire Aspect, Flame)
-# and ALTERATION for strategic enchants for example.
+# 指定附魔项，可以创建不同的附魔专业，例如DESTRUCTION专业用于进攻附魔
+# （惩戒、亚瑟之灭、锋利、力量、火焰）和ALTERATION专业用于策略性附魔。
 #
-# Use enchantitem{} to have it apply for any enchant.
+# 使用enchantitem{}使其适用于任何附魔。
 #
-# Use enchantitem{enchant="sharpness,power"} for multiple enchants
+# 使用enchantitem{enchant="sharpness,power"}指定多个附魔
 exp-sources:
 - 'enchantitem{}'
 
-# When enchanting an item, players earn Enchanting experience.
-# Experience given by an item is the sum of the EXP given by every extra enchantment.
-# Enchantment experience depends on the enchant itself + the enchant level.
-# Enchant exp = <enchant-level> * <base-enchant-exp>
+# 当附魔物品时，玩家会获得附魔经验值。
+# 物品提供的经验值是每个额外附魔所提供的经验值之和。
+# 附魔经验值取决于附魔本身 + 附魔等级。
+# 附魔经验 = <附魔等级> * <基础附魔经验值>
 base-enchant-exp:
     fire_protection: 10
     sharpness: 10

@@ -1,29 +1,28 @@
-
-# Display options
-name: 'The Beginning of an Adventure'
+# 显示选项
+name: '冒险的开始'
 lore:
-- 'Yet another quest example.'
+- '又一个任务示例。'
 - ''
-- '&eRewards:'
-- '&7► Stone Tools'
-- '&7► 30 EXP'
+- '&e奖励:'
+- '&7► 石制工具'
+- '&7► 30经验值'
 
-# Parent quests
+# 父任务
 parent:
-- 'tutorial'
+- '教程'
 
-# Quest objectives
+# 任务目标
 objectives:
     1:
         type: 'goto{world="world";x=120;y=46;z=652;range=10}'
-        lore: 'Head to the camp.'
+        lore: '前往营地。'
         triggers:
-        - 'message{format="Good job!"}'
+        - 'message{format="干得好！"}'
     2:
         type: 'talkto{npc=0}'
-        lore: 'Go talk to the Blacksmith.'
+        lore: '去找铁匠交谈。'
         triggers:
-        - 'message{format="The blacksmith told you to come see me... ?"}'
+        - 'message{format="铁匠叫你来找我……?"}'
         - 'item{type=STONE_SWORD}'
         - 'item{type=STONE_AXE}'
         - 'item{type=STONE_PICKAXE}'

@@ -1,69 +1,62 @@
-
-# Levels players must have in
-# order to unlock this quest.
+# 解锁任务所需的玩家等级。
 level-req:
     main: 10
     mining: 5
 
-# Quest name displayed in the quest menu.
-name: 'A Whole New World'
+# 任务名在任务菜单中显示。
+name: '崭新的世界'
 
-# Quest lore displayed in the quest menu.
+# 在任务菜单中显示的任务描述。
 lore:
-- 'This is the tutorial quest.'
-- 'Lore example...'
+- '这是新手教程任务。'
+- '说明样例...'
 - ''
-- '&eRewards:'
-- '&7► Wooden Tools'
-- '&7► Leather Armor'
-- '&7► 100 EXP'
+- '&e奖励:'
+- '&7► 木质工具'
+- '&7► 皮革护甲'
+- '&7► 100经验值'
 
-# Quests the player must finish
-# in order to unlock this one.
+# 解锁此任务所需完成的前置任务。
 parent: []
 
-# Cooldown in hours. Don't put any
-# to make the quest a one-time quest.
-# Put it to 0 to make it instantly redoable.
+# 冷却时间，单位为小时。设置为0表示任务可以立即再次进行。
 delay: 12
 
-# Objectives the player needs to
-# complete. Once they're all complete,
-# the quest will end.
+# 玩家需要完成的任务目标。一旦所有目标都完成，任务就会结束。
 objectives:
     1:
         type: 'goto{world="world";x=56;y=68;z=115;range=5}'
-        lore: 'Head to the camp.'
+        lore: '前往营地。'
         triggers:
-        - 'message{format="&aBlacksmith> &fHello, %player%! I am currently looking for some help."}'
-        - 'message{format="&aBlacksmith> &fCould you please get me 3 oak logs?"}'
+        - 'message{format="&a铁匠> &f你好，%player%! 我正在寻找一些帮助。"}'
+        - 'message{format="&a铁匠> &f你能给我弄3个橡木原木吗？"}'
         - 'sound{sound=ENTITY_EXPERIENCE_ORB_PICKUP}'
     2:
         type: 'mineblock{type="OAK_LOG";amount=3}'
-        lore: 'Get three oak logs!'
+        lore: '获取三个橡木原木！'
         triggers:
-        - 'message{format="&aBlacksmith> &fGood job, now bring these logs back to me!"}'
+        - 'message{format="&a铁匠> &f干得漂亮，现在把这些原木带回来给我！"}'
         - 'sound{sound="ENTITY_EXPERIENCE_ORB_PICKUP"}'
     3:
         type: 'getitem{type="OAK_LOG";amount=3;npc=0}'
-        lore: 'Give these oak logs to the blacksmith.'
+        lore: '将这些橡木原木交给铁匠。'
         triggers:
-        - 'message{format="&aBlacksmith> &fGood job, now talk to the blacksmith again to claim your weapons!"}'
+        - 'message{format="&a铁匠> &f干得漂亮，现在再次与铁匠交谈，领取你的武器！"}'
         - 'sound{sound=ENTITY_EXPERIENCE_ORB_PICKUP}'
     4:
         type: 'talkto{npc=0}'
-        lore: 'Get your weapons from the blacksmith!'
+        lore: '从铁匠那里拿到你的武器！'
         triggers:
         - 'item{type=WOODEN_SWORD}'
         - 'item{type=WOODEN_AXE}'
         - 'item{type=BOW}'
-        - 'message{format="&aBlacksmith> &fNow go kill 5 skeletal knights to finish tutorial!"}'
+        - 'message{format="&a铁匠> &f现在去杀死5个骷髅骑士来完成新手教程！"}'
         - 'sound{sound=ENTITY_PLAYER_LEVELUP}'
     5:
         type: 'killmythicmob{name="SkeletalKnight";amount=5}'
-        lore: 'Kill 5 skeletal knights!'
+        lore: '击败5个骷髅骑士！'
         triggers:
-        - 'message{format="&aYou have successfully finished the tutorial!"}'
+        - 'message{format="&a你成功完成了教程！"}'
         - 'sound{sound="ENTITY_PLAYER_LEVELUP"}'
         - 'mmoitem{type=SWORD;id=CUTLASS}'
         - 'experience{amount=100}'

@@ -1,7 +1,7 @@
-#Example
+# 示例
 test-condition:
   - 'level{amount=10}'
-  #Will load the 2 conditions from test-condition-2.
+  # 将从test-condition-2加载2个条件。
   - 'from{source=test-condition-2}'
 
 test-condition-2:

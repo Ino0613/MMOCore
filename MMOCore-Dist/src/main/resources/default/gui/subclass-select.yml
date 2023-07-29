@@ -1,9 +1,7 @@
+# GUI显示名称
+name: 选择你的道路...
 
-# GUI display name
-name: Choose your path...
-
-# Number of slots in your inventory. Must be
-# between 9 and 54 and must be a multiple of 9.
+# 背包槽位数量。必须在9和54之间，并且必须是9的倍数。
 slots: 27
 
 items:
@@ -11,13 +9,13 @@ items:
         function: back
         slots: [26]
         item: RED_STAINED_GLASS_PANE
-        name: '&aBack to Class Selection'
+        name: '&a返回职业选择'
         lore: []
     arcane-mage:
         slots: [13]
         function: sub-class-arcane-mage
-        name: '&a&lThe Arcane Mage'
+        name: '&a&l奥术法师'
         lore:
-        - '{lore}'
+        - '{传说}'
         - ''
-        - '{attribute-lore}'
+        - '{属性传说}'

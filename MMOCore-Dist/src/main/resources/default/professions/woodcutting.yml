@@ -1,14 +1,12 @@
+# 显示选项
+name: 伐木
 
-# Display options
-name: Woodcutting
-
-# Experience given to the main level
-# when leveling up this profession
+# 升级此专业时为主等级提供的经验值
 experience:
     base: 13
     per-level: 2.5
 
-# Must match an existing exp curve filename from the 'expcurves' folder
+# 必须与“expcurves”文件夹中现有的经验曲线文件名匹配
 exp-curve: levels
 
 exp-sources:

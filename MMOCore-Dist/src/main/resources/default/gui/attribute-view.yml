@@ -1,10 +1,8 @@
+# GUI 显示名称
+name: 玩家属性
 
-# GUI display name
-name: Player Attributes
 
-
-# Number of slots in your inventory. Must be
-# between 9 and 54 and must be a multiple of 9.
+# 在您的背包中的格子数。必须在 9 到 54 之间，并且必须是 9 的倍数。
 slots: 27
 
 items:
@@ -12,30 +10,30 @@ items:
         slots: [26]
         function: reallocation
         item: CAULDRON
-        name: '&aAttribute Points'
+        name: '&a属性点数'
         lore:
             - ''
-            - 'You have spent a total of &6{total}&7 attribute points.'
-            - '&7Right click to reallocate them.'
+            - '您已经使用了 &6{total}&7 属性点。'
+            - '&7右键点击以重新分配属性点。'
             - ''
-            - '&eCosts 1 attribute reallocation point.'
-            - '&e◆ Attribute Reallocation Points: &6{points}'
+            - '&e需要 1 个属性重分配点。'
+            - '&e◆ 属性重分配点数: &6{points}'
     str:
         slots: [11]
         function: attribute_strength
         name: '&a{name}'
         item: GOLDEN_APPLE
-        lore: # {buffs} returns amount of buffs
+        lore: # {buffs} 返回增益的数量
             - ''
-            - '&7Points Spent: &6{spent}&7/&6{max}'
-            - '&7Current {name}: &6&l{current}'
+            - '&7已使用点数: &6{spent}&7/&6{max}'
+            - '&7当前{name}: &6&l{current}'
             - ''
-            - '&8When Leveled Up:'
-            - '&7  +{buff_weapon_damage}% Weapon Damage (&a+{total_weapon_damage}%&7)'
-            - '&7  +{buff_max_health} Max Health (&a+{total_max_health}&7)'
+            - '&8升级后:'
+            - '&7  +{buff_weapon_damage}% 武器伤害 (&a+{total_weapon_damage}%&7)'
+            - '&7  +{buff_max_health} 最大生命值 (&a+{total_max_health}&7)'
             - ''
-            - '&eClick to level up for 1 attribute point.'
-            - '&e◆ Current Attribute Points: {attribute_points}'
+            - '&e点击升级，需要 1 个属性点。'
+            - '&e◆ 当前属性点数: {attribute_points}'
     dex:
         slots: [13]
         function: attribute_dexterity
@@ -44,16 +42,16 @@ items:
         hide-flags: true
         lore:
             - ''
-            - '&7Points Spent: &6{spent}&7/&6{max}'
-            - '&7Current {name}: &6&l{current}'
+            - '&7已使用点数: &6{spent}&7/&6{max}'
+            - '&7当前{name}: &6&l{current}'
             - ''
-            - '&8When Leveled Up:'
-            - '&7  +{buff_physical_damage}% Physical Damage (&a+{total_physical_damage}%&7)'
-            - '&7  +{buff_projectile_damage}% Projectile Damage (&a+{total_projectile_damage}%&7)'
-            - '&7  +{buff_attack_speed} Attack Speed (&a+{total_attack_speed}&7)'
+            - '&8升级后:'
+            - '&7  +{buff_physical_damage}% 物理伤害 (&a+{total_physical_damage}%&7)'
+            - '&7  +{buff_projectile_damage}% 投射物伤害 (&a+{total_projectile_damage}%&7)'
+            - '&7  +{buff_attack_speed} 攻击速度 (&a+{total_attack_speed}&7)'
             - ''
-            - '&eClick to level up for 1 attribute point.'
-            - '&e◆ Current Attribute Points: {attribute_points}'
+            - '&e点击升级，需要 1 个属性点。'
+            - '&e◆ 当前属性点数: {attribute_points}'
     int:
         slots: [15]
         function: attribute_intelligence
@@ -61,12 +59,12 @@ items:
         item: BOOK
         lore:
             - ''
-            - '&7Points Spent: &6{spent}&7/&6{max}'
-            - '&7Current {name}: &6&l{current}'
+            - '&7已使用点数: &6{spent}&7/&6{max}'
+            - '&7当前{name}: &6&l{current}'
             - ''
-            - '&8When Leveled Up:'
-            - '&7  +{buff_magic_damage}% Magic Damage (&a+{total_magic_damage}%&7)'
-            - '&7  +{buff_cooldown_reduction}% Cooldown Reduction (&a+{total_cooldown_reduction}%&7)'
+            - '&8升级后:'
+            - '&7  +{buff_magic_damage}% 魔法伤害 (&a+{total_magic_damage}%&7)'
+            - '&7  +{buff_cooldown_reduction}% 冷却时间缩减 (&a+{total_cooldown_reduction}%&7)'
             - ''
-            - '&eClick to level up for 1 attribute point.'
-            - '&e◆ Current Attribute Points: {attribute_points}'
+            - '&e点击升级，需要 1 个属性点。'
+            - '&e◆ 当前属性点数: {attribute_points}'

@@ -1,21 +1,18 @@
-
-# Attribute ID
+# 属性ID
 strength:
 
-    name: Strength
+    name: 力量
     
-    # Maximum amount of points players 
-    # may spend in this attribute.
+    # 玩家可以在此属性中花费的最大点数。
     max-points: 40
     
-    # Buffs given every 1 attribute point spent
-    # in this specific attribute.
+    # 每花费1点在该特定属性上的属性点时提供的增益。
     buff:
         weapon_damage: 2
         max_health: 1%
 
 dexterity:
-    name: Dexterity
+    name: 敏捷
     max-points: 40
     buff:
         physical_damage: 1.5
@@ -23,7 +20,7 @@ dexterity:
         attack_speed: 0.5%
 
 intelligence:
-    name: Intelligence
+    name: 智力
     max-points: 40
     buff:
         magic_damage: 2

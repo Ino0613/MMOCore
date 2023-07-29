@@ -9,48 +9,48 @@ softdepend: [ Vault,MythicMobs,MMOProfiles,PlaceholderAPI,Residence,Citizens,Pro
 api-version: 1.13
 commands:
   mmocore:
-    description: Main command.
-    aliases: [ rpg ]
+    description: 主命令。
+    aliases: [rpg]
 permissions:
   mmocore.admin:
-    description: Access to /mmocore
+    description: 允许使用 /mmocore 命令
     default: op
   mmocore.waypoints:
-    description: Access to /waypoints
+    description: 允许使用 /waypoints 命令
     default: op
   mmocore.pvpmode:
-    description: Access to /pvpmode
+    description: 允许使用 /pvpmode 命令
     default: op
   mmocore.currency:
-    description: Access to /deposit and /withdraw
+    description: 允许使用 /deposit 和 /withdraw 命令
     default: op
   mmocore.bypass-waypoint-wait:
-    description: Bypass waypoint waiting time
+    description: 绕过路径点等待时间
     default: op
   mmocore.class-select:
-    description: Access to /class
+    description: 允许使用 /class 命令
     default: op
   mmocore.attributes:
-    description: Access to /attributes
+    description: 允许使用 /attributes 命令
     default: true
   mmocore.skills:
-    description: Access to /skills
+    description: 允许使用 /skills 命令
     default: true
   mmocore.profile:
-    description: Access to /profile
+    description: 允许使用 /profile 命令
     default: true
   mmocore.friends:
-    description: Access to /friends
+    description: 允许使用 /friends 命令
     default: true
   mmocore.guild:
-    description: Access to /guild
+    description: 允许使用 /guild 命令
     default: true
   mmocore.party:
-    description: Access to /party
+    description: 允许使用 /party 命令
     default: true
   mmocore.skilltrees:
-    description: Access to /skilltrees
+    description: 允许使用 /skilltrees 命令
     default: true
   mmocore.quests:
-    description: Access to /quests
+    description: 允许使用 /quests 命令
     default: true

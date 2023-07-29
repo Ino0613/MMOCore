@@ -2,15 +2,15 @@ id: 'rogue-marksman'
 name: '&4Rogue&Marksman'
 type: 'custom'
 item: 'DIAMOND_AXE'
-lore: 
-- '&6This skill tree is used for Rogue & Marksman class only!'
+lore:
+  - '&6This skill tree is used for Rogue & Marksman class only!'
 max-point-spent: 21
 
 nodes:
 
 #### A
   a1:
-    name: 'Additional Experience'
+    name: '额外经验值'
     coordinates:
       x: -3
       y: 0
@@ -25,17 +25,17 @@ nodes:
           - 'stat{stat="ADDITIONAL_EXPERIENCE";amount=2;type="FLAT"}'
     lores:
       0:
-        - "&eAdditional MMOCore main class experience +%2"
+        - "&e额外MMOCore主职业经验值 +%2"
       1:
-        - "&eAdditional MMOCore main class experience +%2"
+        - "&e额外MMOCore主职业经验值 +%2"
   a2:
-    name: 'Additional Experience'
+    name: '额外经验值'
     coordinates:
       x: -2
       y: 0
 
-    parents: 
-      strong: 
+    parents:
+      strong:
         a1: 1
 
     max-level: 1
@@ -47,19 +47,19 @@ nodes:
           - 'stat{stat="ADDITIONAL_EXPERIENCE";amount=3;type="FLAT"}'
     lores:
       0:
-        - "&eAdditional MMOCore main class experience +%3"
+        - "&e额外MMOCore主职业经验值 +%3"
       1:
-        - "&eAdditional MMOCore main class experience +%3"
+        - "&e额外MMOCore主职业经验值 +%3"
   a3:
-    name: 'Additional Experience'
+    name: '额外经验值'
     coordinates:
       x: -1
       y: 0
-      
-    parents: 
-      strong: 
+
+    parents:
+      strong:
         a2: 1
-        
+
     max-level: 1
     size: 1
     point-consumed: 1
@@ -69,14 +69,14 @@ nodes:
           - 'stat{stat="ADDITIONAL_EXPERIENCE";amount=5;type="FLAT"}'
     lores:
       0:
-        - "&eAdditional MMOCore main class experience +%5"
+        - "&e额外MMOCore主职业经验值 +%5"
       1:
-        - "&eAdditional MMOCore main class experience +%5"
+        - "&e额外MMOCore主职业经验值 +%5"
 
 ## B
 
   b1:
-    name: 'Arrow Velocity'
+    name: '箭矢速度'
     coordinates:
       x: -1
       y: -1
@@ -94,11 +94,11 @@ nodes:
           - 'stat{stat="ARROW_VELOCITY";amount=10;type="RELATIVE"}'
     lores:
       0:
-        - "&eDetermines how far your weapon can shoot +%10"
+        - "&e决定你的武器能射出多远的箭矢 +%10"
       1:
-        - "&eDetermines how far your weapon can shoot +%10"
+        - "&e决定你的武器能射出多远的箭矢 +%10"
   b2:
-    name: 'Arrow Velocity'
+    name: '箭矢速度'
     coordinates:
       x: -1
       y: -2
@@ -116,11 +116,11 @@ nodes:
           - 'stat{stat="ARROW_VELOCITY";amount=15;type="RELATIVE"}'
     lores:
       0:
-        - "&eDetermines how far your weapon can shoot +%15"
+        - "&e决定你的武器能射出多远的箭矢 +%15"
       1:
-        - "&eDetermines how far your weapon can shoot +%15"
+        - "&e决定你的武器能射出多远的箭矢 +%15"
   b3:
-    name: 'Arrow Velocity'
+    name: '箭矢速度'
     coordinates:
       x: 0
       y: -2
@@ -138,14 +138,14 @@ nodes:
           - 'stat{stat="ARROW_VELOCITY";amount=25;type="RELATIVE"}'
     lores:
       0:
-        - "&eDetermines how far your weapon can shoot +%25"
+        - "&e决定你的武器能射出多远的箭矢 +%25"
       1:
-        - "&eDetermines how far your weapon can shoot +%25"
+        - "&e决定你的武器能射出多远的箭矢 +%25"
 
 ## C
 
   c1:
-    name: 'Life Steal'
+    name: '生命偷取'
     coordinates:
       x: 1
       y: -2
@@ -163,11 +163,11 @@ nodes:
           - 'stat{stat="LIFESTEAL";amount=2;type="FLAT"}'
     lores:
       0:
-        - "&ePercentage of damage you gain back as health when inflicting weapon damage +%1"
+        - "&e攻击造成伤害时回复生命值的百分比 +%1"
       1:
-        - "&ePercentage of damage you gain back as health when inflicting weapon damage +%1"
+        - "&e攻击造成伤害时回复生命值的百分比 +%1"
   c2:
-    name: 'Life Steal'
+    name: '生命偷取'
     coordinates:
       x: 2
       y: -2
@@ -185,11 +185,11 @@ nodes:
           - 'stat{stat="LIFESTEAL";amount=2;type="FLAT"}'
     lores:
       0:
-        - "&ePercentage of damage you gain back as health when inflicting weapon damage +%2"
+        - "&e攻击造成伤害时回复生命值的百分比 +%2"
       1:
-        - "&ePercentage of damage you gain back as health when inflicting weapon damage +%2"
+        - "&e攻击造成伤害时回复生命值的百分比 +%2"
   c3:
-    name: 'Life Steal'
+    name: '生命偷取'
     coordinates:
       x: 3
       y: -2
@@ -207,14 +207,14 @@ nodes:
           - 'stat{stat="LIFESTEAL";amount=2;type="FLAT"}'
     lores:
       0:
-        - "&ePercentage of damage you gain back as health when inflicting weapon damage +%2"
+        - "&e攻击造成伤害时回复生命值的百分比 +%2"
       1:
-        - "&ePercentage of damage you gain back as health when inflicting weapon damage +%2"
+        - "&e攻击造成伤害时回复生命值的百分比 +%2"
 
 ## D
 
   d1:
-    name: 'Knockback Resistance'
+    name: '击退抵抗'
     coordinates:
       x: 3
       y: -1
@@ -232,11 +232,11 @@ nodes:
           - 'stat{stat="KNOCKBACK_RESISTANCE";amount=5;type="FLAT"}'
     lores:
       0:
-        - "&eThe chance of you to block the knockback +%5"
+        - "&e阻止你被击退的几率 +%5"
       1:
-        - "&eThe chance of you to block the knockback +%5"
+        - "&e阻止你被击退的几率 +%5"
   d2:
-    name: 'Knockback Resistance'
+    name: '击退抵抗'
     coordinates:
       x: 4
       y: -1
@@ -254,11 +254,11 @@ nodes:
           - 'stat{stat="KNOCKBACK_RESISTANCE";amount=5;type="FLAT"}'
     lores:
       0:
-        - "&eThe chance of you to block the knockback +%5"
+        - "&e阻止你被击退的几率 +%5"
       1:
-        - "&eThe chance of you to block the knockback +%5"
+        - "&e阻止你被击退的几率 +%5"
   d3:
-    name: 'Knockback Resistance'
+    name: '击退抵抗'
     coordinates:
       x: 4
       y: 0
@@ -276,14 +276,14 @@ nodes:
           - 'stat{stat="KNOCKBACK_RESISTANCE";amount=5;type="FLAT"}'
     lores:
       0:
-        - "&eThe chance of you to block the knockback +%5"
+        - "&e阻止你被击退的几率 +%5"
       1:
-        - "&eThe chance of you to block the knockback +%5"
+        - "&e阻止你被击退的几率 +%5"
 
 ## E
 
   e1:
-    name: 'Critical Strike Chance'
+    name: '暴击几率'
     coordinates:
       x: 4
       y: 1
@@ -301,11 +301,11 @@ nodes:
           - 'stat{stat="CRITICAL_STRIKE_CHANCE";amount=2;type="FLAT"}'
     lores:
       0:
-        - "&eCritical Strikes deal more damage in +%2 chance"
+        - "&e暴击造成更多伤害的几率 +%2"
       1:
-        - "&eCritical Strikes deal more damage in +%2 chance"
+        - "&e暴击造成更多伤害的几率 +%2"
   e2:
-    name: 'Critical Strike Chance'
+    name: '暴击几率'
     coordinates:
       x: 4
       y: 2
@@ -323,11 +323,12 @@ nodes:
           - 'stat{stat="CRITICAL_STRIKE_CHANCE";amount=3;type="FLAT"}'
     lores:
       0:
-        - "&eCritical Strikes deal more damage in +%3 chance"
+        - "&e暴击造成更多伤害的几率 +%3"
       1:
-        - "&eCritical Strikes deal more damage in +%3 chance"
+        - "&e暴击造成更多伤害的几率 +%3"
+
   e3:
-    name: 'Critical Strike Chance'
+    name: '暴击几率'
     coordinates:
       x: 3
       y: 2
@@ -345,14 +346,14 @@ nodes:
           - 'stat{stat="CRITICAL_STRIKE_CHANCE";amount=5;type="FLAT"}'
     lores:
       0:
-        - "&eCritical Strikes deal more damage in +%5 chance"
+        - "&e暴击造成更多伤害的几率 +%5"
       1:
-        - "&eCritical Strikes deal more damage in +%5 chance"
+        - "&e暴击造成更多伤害的几率 +%5"
 
 ## F
 
   f1:
-    name: 'Movement Speed'
+    name: '移动速度'
     coordinates:
       x: 2
       y: 2
@@ -370,11 +371,11 @@ nodes:
           - 'stat{stat="MOVEMENT_SPEED";amount=2;type="RELATIVE"}'
     lores:
       0:
-        - "&eMovement Speed increase walk speed. +%2"
+        - "&e移动速度增加行走速度。 +%2"
       1:
-        - "&eMovement Speed increase walk speed. +%2"
+        - "&e移动速度增加行走速度。 +%2"
   f2:
-    name: 'Movement Speed'
+    name: '移动速度'
     coordinates:
       x: 2
       y: 1
@@ -392,11 +393,11 @@ nodes:
           - 'stat{stat="MOVEMENT_SPEED";amount=2;type="RELATIVE"}'
     lores:
       0:
-        - "&eMovement Speed increase walk speed. +%2"
+        - "&e移动速度增加行走速度。 +%2"
       1:
-        - "&eMovement Speed increase walk speed. +%2"
+        - "&e移动速度增加行走速度。 +%2"
   f3:
-    name: 'Movement Speed'
+    name: '移动速度'
     coordinates:
       x: 1
       y: 1
@@ -414,14 +415,14 @@ nodes:
           - 'stat{stat="MOVEMENT_SPEED";amount=6;type="RELATIVE"}'
     lores:
       0:
-        - "&eMovement Speed increase walk speed. +%6"
+        - "&e移动速度增加行走速度。 +%6"
       1:
-        - "&eMovement Speed increase walk speed. +%6"
+        - "&e移动速度增加行走速度。 +%6"
 
 ## G
 
   g1:
-    name: 'Projectile Damage'
+    name: '抛射物伤害'
     coordinates:
       x: 0
       y: 1
@@ -439,11 +440,11 @@ nodes:
           - 'stat{stat="PROJECTILE_DAMAGE";amount=2;type="RELATIVE"}'
     lores:
       0:
-        - "&eAdditional skill/weapon projectile damage +%2"
+        - "&e额外技能/武器抛射物伤害 +%2"
       1:
-        - "&eAdditional skill/weapon projectile damage +%2"
+        - "&e额外技能/武器抛射物伤害 +%2"
   g2:
-    name: 'Projectile Damage'
+    name: '抛射物伤害'
     coordinates:
       x: 0
       y: 2
@@ -461,11 +462,11 @@ nodes:
           - 'stat{stat="PROJECTILE_DAMAGE";amount=2;type="RELATIVE"}'
     lores:
       0:
-        - "&eAdditional skill/weapon projectile damage +%2"
+        - "&e额外技能/武器抛射物伤害 +%2"
       1:
-        - "&eAdditional skill/weapon projectile damage +%2"
+        - "&e额外技能/武器抛射物伤害 +%2"
   g3:
-    name: 'Projectile Damage'
+    name: '抛射物伤害'
     coordinates:
       x: -1
       y: 2
@@ -483,302 +484,6 @@ nodes:
           - 'stat{stat="PROJECTILE_DAMAGE";amount=6;type="RELATIVE"}'
     lores:
       0:
-        - "&eAdditional skill/weapon projectile damage +%6"
+        - "&e额外技能/武器抛射物伤害 +%6"
       1:
-        - "&eAdditional skill/weapon projectile damage +%6"
-
-
-
-
-# This section is to have a specific display for the skill tree in the GUI.
-# It is optional as if you don't fill it the config in gui/skill-tree.yml will be used.
-# For each node it will first look if the node has a specific display, if not it will look if
-# the display is defined in this section. If not it will use the default display in gui/skill-tree.yml.
-#
-#display:
-#  paths:
-#    unlocked:
-#      up:
-#        item: "WHITE_DYE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "WHITE_DYE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "WHITE_DYE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "WHITE_DYE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "WHITE_DYE"
-#        custom-model-data: 0
-#      right:
-#        item: "WHITE_DYE"
-#        custom-model-data: 0
-#      default:
-#        item: "WHITE_DYE"
-#        custom-model-data: 0
-#    unlockable:
-#      up:
-#        item: "BLUE_DYE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "BLUE_DYE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "BLUE_DYE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "BLUE_DYE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "BLUE_DYE"
-#        custom-model-data: 0
-#      right:
-#        item: "BLUE_DYE"
-#        custom-model-data: 0
-#      default:
-#        item: "BLUE_DYE"
-#        custom-model-data: 0
-#    locked:
-#      up:
-#        item: "GRAY_DYE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "GRAY_DYE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "GRAY_DYE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "GRAY_DYE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "GRAY_DYE"
-#        custom-model-data: 0
-#      right:
-#        item: "GRAY_DYE"
-#        custom-model-data: 0
-#      default:
-#        item: "GRAY_DYE"
-#        custom-model-data: 0
-#    fully-locked:
-#      up:
-#        item: "BLACK_DYE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "BLACK_DYE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "BLACK_DYE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "BLACK_DYE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "BLACK_DYE"
-#        custom-model-data: 0
-#      right:
-#        item: "BLACK_DYE"
-#        custom-model-data: 0
-#      default:
-#        item: "BLACK_DYE"
-#        custom-model-data: 0
-#  nodes:
-#    unlocked:
-#      up-right-down-left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      up-right-down:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      up-right-left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      up-down-left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      down-right-left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      up-down:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      right-left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      right:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      up:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      down:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      no-path:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#    locked:
-#      up-right-down-left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      up-right-down:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      up-right-left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      up-down-left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      down-right-left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      up-down:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      right-left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      right:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      up:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      down:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      no-path:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#    unlockable:
-#      up-right-down-left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      up-right-down:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      up-right-left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      up-down-left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      down-right-left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      up-down:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      right-left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      right:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      up:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      down:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      no-path:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#    fully-locked:
-#      up-right-down-left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      up-right-down:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      up-right-left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      up-down-left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      down-right-left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      up-down:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      right-left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      right:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      up:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      down:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      no-path:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
+        - "&e额外技能/武器抛射物伤害 +%6"

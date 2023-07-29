@@ -1,41 +1,36 @@
-# WARNING! Please note that this file will be changed
-# A LOT during the different phases of Guilds.
-# The layout and settings displayed here are NOT final!
+# 警告！请注意在不同阶段的公会中，该文件会发生很多变化。
+# 此处显示的布局和设置并非最终版本！
 
-# The prefix character needed for typing in the guild chat.
-# Guild Chat format can be found in 'messages.yml'
+# 在公会聊天中输入的前缀字符。
+# 公会聊天的格式可以在'messages.yml'中找到
 chat-prefix: "*"
 
-# Set to true if guild tags should automatically be
-# converted to Uppercase upon creation.
+# 如果公会标签应在创建时自动转换为大写，请设置为true。
 uppercase-tags: true
+
 rules:
     tag:
-        # The tag characters must match this RegEx string
-        # or the guild creation will fail.
-        # !!! If you don't know RegEx I wouldn't mess with this!
-        # You can always test your expression here: https://regexr.com/
+        # 标签字符必须匹配此正则表达式字符串
+        # 否则公会创建将失败。
+        # !!! 如果您不了解正则表达式，请不要修改这个！
+        # 您可以在此处测试您的表达式：https://regexr.com/
         matches: "[a-zA-Z-_!?]+"
-        # Minimum and Maximum lengt of a tag
+        # 标签的最小和最大长度
         min-length: 3
         max-length: 4
     name:
-        # The name characters must match this RegEx string
-        # or the guild creation will fail.
-        # !!! If you don't know RegEx I wouldn't mess with this!
-        # You can always test your expression here: https://regexr.com/
+        # 名称字符必须匹配此正则表达式字符串
+        # 否则公会创建将失败。
+        # !!! 如果您不了解正则表达式，请不要修改这个！
+        # 您可以在此处测试您的表达式：https://regexr.com/
         matches: "[a-zA-Z -_!?]+"
-        # Minimum and Maximum lengt of a tag
+        # 名称的最小和最大长度
         min-length: 3
         max-length: 14
 
-
-
-
-
-# Max allowed members
+# 公会最大允许的成员数
 max-size: 40
 
-# "Guilds 1.0 doesn't have the max members feature
-# A hotfix will be out before Christmas!"
+# "Guilds 1.0不具有最大成员数功能
+# 热补丁将在圣诞节前发布！"
 # - Aria

@@ -1,4 +1,4 @@
-#A list of experience source that can be loaded using 'from{source="test-exp-source"}'
+# 可以使用'from{source="test-exp-source"}'加载的经验来源列表
 test-exp-source:
   - 'damagedealt{type=physical;amount=250}'
   - 'move{type=WALK;amount=300}'

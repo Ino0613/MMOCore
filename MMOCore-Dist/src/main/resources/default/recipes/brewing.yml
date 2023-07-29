@@ -1,15 +1,15 @@
-# Every brewing recipe requires an empty water bottle.
-# Make sure every brewing recipe has a different ID.
-# It is only used as reference in the plugin, doesn't really matter.
+# 每个酿造配方都需要一个空的水瓶。
+# 确保每个酿造配方都有不同的ID。
+# 它只是在插件中用作参考，实际上并不重要。
 
-# Brewing recipe ID
+# 酿造配方ID
 mana-pot-recipe:
 
-    # Ingredient used to brew the empty water bottles.
-    ingredient: MATERIAL.MANA_FLOWER
-        
-    # Items replacing empty water bottles when brewing is complete.
-    result: CONSUMABLE.MANA_POTION
-        
-    # Time required to brew empty water bottles.
-    cook-time: 10
+  # 用于酿造空的水瓶的原料。
+  ingredient: MATERIAL.MANA_FLOWER
+
+  # 酿造完成时替换空的水瓶的物品。
+  result: CONSUMABLE.MANA_POTION
+
+  # 酿造空的水瓶所需的时间。
+  cook-time: 10

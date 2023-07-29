@@ -1,51 +1,48 @@
+# 显示选项
+name: 炼金术
 
-# Display options
-name: Alchemy
-
-# Experience given to the main level
-# when leveling up this profession
+# 升级此专业时为主等级提供的经验值
 experience:
     base: 20
     per-level: 3
 
-# Must match an existing exp curve filename from the 'expcurves' folder
+# 必须与“expcurves”文件夹中现有的经验曲线文件名匹配
 exp-curve: levels
 
 exp-sources:
 - 'brewpotion{effect=SPEED}'
 
-# When brewing a potion, players earn Alchemy experience.
-# Experience earned depends on the effect you give to your
-# potion, if you upgrade/extend its duration, etc.
+# 当酿造药水时，玩家会获得炼金术经验值。
+# 获得的经验值取决于您赋予药水的效果，是否升级/延长持续时间等。
 alchemy-experience:
 
     special:
         
-        # When brewing a potion into a splash potion,
-        # only 40% of the base EXP is earned.
+        # 将药水酿造成溅射药水时，
+        # 只获得基础经验值的40%。
         splash: 40
         
-        # When brewing a potion into a splash potion,
-        # only 40% of the base EXP is earned.
+        # 将药水酿造成悬浮药水时，
+        # 只获得基础经验值的40%。
         lingering: 40
         
-        # When extending a pot duration,
-        # only 40% of base EXP is earned.
+        # 延长药水持续时间时，
+        # 只获得基础经验值的40%。
         extend: 40
         
-        # When upgrading a potion level,
-        # only 40% of base EXP is earned.
+        # 升级药水等级时，
+        # 只获得基础经验值的40%。
         upgrade: 40
 
-    # Base EXP of potions
+    # 药水的基础经验值
     effects:
         
-        # Water bottles
+        # 水瓶
         AWKWARD: 5
         MUNDANE: 5
         THICK: 5
         
-        # Potion effects
+        # 药水效果
         NIGHT_VISION: 10
         INVISIBILITY: 10
         JUMP: 10

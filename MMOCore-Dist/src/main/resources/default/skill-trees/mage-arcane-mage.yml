@@ -1,16 +1,16 @@
 id: 'mage-arcane-mage'
-name: '&4Mage'
+name: '&4法师'
 type: 'custom'
 item: 'DIAMOND_AXE'
 lore: 
-- '&6This skill tree is used for Mage & Arcane Mage class only!'
+- '&6这个技能树仅适用于法师和奥术法师职业！'
 max-point-spent: 21
 
 nodes:
 
 #### A
   a1:
-    name: 'Mana Regeneration'
+    name: '法力回复'
     coordinates:
       x: 1
       y: -2
@@ -25,11 +25,11 @@ nodes:
           - 'stat{stat="MANA_REGENERATION";amount=1;type="FLAT"}'
     lores:
       0:
-        - "&eMana regen in pts/sec +1"
+        - "&e每秒法力回复 +1 点"
       1:
-        - "&eMana regen in pts/sec +1"
+        - "&e每秒法力回复 +1 点"
   a2:
-    name: 'Mana Regeneration'
+    name: '法力回复'
     coordinates:
       x: 0
       y: -2
@@ -47,11 +47,11 @@ nodes:
           - 'stat{stat="MANA_REGENERATION";amount=2;type="FLAT"}'
     lores:
       0:
-        - "&eMana regen in pts/sec +2"
+        - "&e每秒法力回复 +2 点"
       1:
-        - "&eMana regen in pts/sec +2"
+        - "&e每秒法力回复 +2 点"
   a3:
-    name: 'Mana Regeneration'
+    name: '法力回复'
     coordinates:
       x: -1
       y: -2
@@ -69,14 +69,14 @@ nodes:
           - 'stat{stat="MANA_REGENERATION";amount=2;type="FLAT"}'
     lores:
       0:
-        - "&eMana regen in pts/sec +2"
+        - "&e每秒法力回复 +2 点"
       1:
-        - "&eMana regen in pts/sec +2"
+        - "&e每秒法力回复 +2 点"
 
 ## B
 
   b1:
-    name: 'Skill Damage'
+    name: '技能伤害'
     coordinates:
       x: -2
       y: -1
@@ -94,11 +94,11 @@ nodes:
           - 'stat{stat="SKILL_DAMAGE";amount=5;type="FLAT"}'
     lores:
       0:
-        - "&eAdditional ability damage in +%5"
+        - "&e技能伤害额外增加 +%5"
       1:
-        - "&eAdditional ability damage in +%5"
+        - "&e技能伤害额外增加 +%5"
   b2:
-    name: 'Skill Damage'
+    name: '技能伤害'
     coordinates:
       x: -3
       y: 0
@@ -116,11 +116,11 @@ nodes:
           - 'stat{stat="SKILL_DAMAGE";amount=5;type="FLAT"}'
     lores:
       0:
-        - "&eAdditional ability damage in +%5"
+        - "&e技能伤害额外增加 +%5"
       1:
-        - "&eAdditional ability damage in +%5"
+        - "&e技能伤害额外增加 +%5"
   b3:
-    name: 'Skill Damage'
+    name: '技能伤害'
     coordinates:
       x: -2
       y: 1
@@ -138,14 +138,14 @@ nodes:
           - 'stat{stat="SKILL_DAMAGE";amount=10;type="FLAT"}'
     lores:
       0:
-        - "&eAdditional ability damage in +%10"
+        - "&e技能伤害额外增加 +%10"
       1:
-        - "&eAdditional ability damage in +%10"
+        - "&e技能伤害额外增加 +%10"
 
 ## C
 
   c1:
-    name: 'Spell Vampirism'
+    name: '法术吸血'
     coordinates:
       x: -2
       y: 2
@@ -163,11 +163,11 @@ nodes:
           - 'stat{stat="SPELL_VAMPIRISM";amount=2;type="FLAT"}'
     lores:
       0:
-        - "&ePercentage of damage you gain back as health when inflicting skill damage +%2"
+        - "&e当施加技能伤害时，你回复的生命值百分比 +2%"
       1:
-        - "&ePercentage of damage you gain back as health when inflicting skill damage +%2"
+        - "&e当施加技能伤害时，你回复的生命值百分比 +2%"
   c2:
-    name: 'Spell Vampirism'
+    name: '法术吸血'
     coordinates:
       x: -1
       y: 2
@@ -185,11 +185,11 @@ nodes:
           - 'stat{stat="SPELL_VAMPIRISM";amount=2;type="FLAT"}'
     lores:
       0:
-        - "&ePercentage of damage you gain back as health when inflicting skill damage +%2"
+        - "&e当施加技能伤害时，你回复的生命值百分比 +2%"
       1:
-        - "&ePercentage of damage you gain back as health when inflicting skill damage +%2"
+        - "&e当施加技能伤害时，你回复的生命值百分比 +2%"
   c3:
-    name: 'Spell Vampirism'
+    name: '法术吸血'
     coordinates:
       x: 0
       y: 2
@@ -207,14 +207,16 @@ nodes:
           - 'stat{stat="SPELL_VAMPIRISM";amount=6;type="FLAT"}'
     lores:
       0:
-        - "&ePercentage of damage you gain back as health when inflicting skill damage +%6"
+        - "&e当施加技能伤害时，你回复的生命值百分比 +6%"
       1:
-        - "&ePercentage of damage you gain back as health when inflicting skill damage +%6"
+        - "&e当施加技能伤害时，你回复的生命值百分比 +6%"
+
+## D
 
 ## D
 
   d1:
-    name: 'Additional Experience'
+    name: '额外经验获取'
     coordinates:
       x: 0
       y: 1
@@ -232,11 +234,11 @@ nodes:
           - 'stat{stat="ADDITIONAL_EXPERIENCE";amount=2;type="FLAT"}'
     lores:
       0:
-        - "&eAdditional MMOCore main class experience +%2"
+        - "&e额外获得MMOCore主职业经验 +%2"
       1:
-        - "&eAdditional MMOCore main class experience +%2"
+        - "&e额外获得MMOCore主职业经验 +%2"
   d2:
-    name: 'Additional Experience'
+    name: '额外经验获取'
     coordinates:
       x: 0
       y: 0
@@ -254,11 +256,11 @@ nodes:
           - 'stat{stat="ADDITIONAL_EXPERIENCE";amount=3;type="FLAT"}'
     lores:
       0:
-        - "&eAdditional MMOCore main class experience +%3"
+        - "&e额外获得MMOCore主职业经验 +%3"
       1:
-        - "&eAdditional MMOCore main class experience +%3"
+        - "&e额外获得MMOCore主职业经验 +%3"
   d3:
-    name: 'Additional Experience'
+    name: '额外经验获取'
     coordinates:
       x: 1
       y: 0
@@ -276,14 +278,14 @@ nodes:
           - 'stat{stat="ADDITIONAL_EXPERIENCE";amount=5;type="FLAT"}'
     lores:
       0:
-        - "&eAdditional MMOCore main class experience +%5"
+        - "&e额外获得MMOCore主职业经验 +%5"
       1:
-        - "&eAdditional MMOCore main class experience +%5"
+        - "&e额外获得MMOCore主职业经验 +%5"
 
 ## E
 
   e1:
-    name: 'Magic Damage Reduction'
+    name: '魔法伤害减免'
     coordinates:
       x: 2
       y: 0
@@ -301,11 +303,11 @@ nodes:
           - 'stat{stat="MAGIC_DAMAGE_REDUCTION";amount=5;type="FLAT"}'
     lores:
       0:
-        - "&eReduce magic damage dealt by potions %5"
+        - "&e减少药水造成的魔法伤害 %5"
       1:
-        - "&eReduce magic damage dealt by potions %5"
+        - "&e减少药水造成的魔法伤害 %5"
   e2:
-    name: 'Magic Damage Reduction'
+    name: '魔法伤害减免'
     coordinates:
       x: 2
       y: 1
@@ -323,11 +325,11 @@ nodes:
           - 'stat{stat="MAGIC_DAMAGE_REDUCTION";amount=5;type="FLAT"}'
     lores:
       0:
-        - "&eReduce magic damage dealt by potions %5"
+        - "&e减少药水造成的魔法伤害 %5"
       1:
-        - "&eReduce magic damage dealt by potions %5"
+        - "&e减少药水造成的魔法伤害 %5"
   e3:
-    name: 'Magic Damage Reduction'
+    name: '魔法伤害减免'
     coordinates:
       x: 2
       y: 2
@@ -345,14 +347,16 @@ nodes:
           - 'stat{stat="MAGIC_DAMAGE_REDUCTION";amount=10;type="FLAT"}'
     lores:
       0:
-        - "&eReduce magic damage dealt by potions %10"
+        - "&e减少药水造成的魔法伤害 %10"
       1:
-        - "&eReduce magic damage dealt by potions %10"
+        - "&e减少药水造成的魔法伤害 %10"
+
+## F
 
 ## F
 
   f1:
-    name: 'Skill Critical Strike Chance'
+    name: '技能暴击几率'
     coordinates:
       x: 3
       y: 2
@@ -370,11 +374,11 @@ nodes:
           - 'stat{stat="SKILL_CRITICAL_STRIKE_CHANCE";amount=5;type="FLAT"}'
     lores:
       0:
-        - "&eIncreases the chance of dealing skill crits +%5"
+        - "&e增加技能暴击几率 +%5"
       1:
-        - "&eIncreases the chance of dealing skill crits +%5"
+        - "&e增加技能暴击几率 +%5"
   f2:
-    name: 'Skill Critical Strike Chance'
+    name: '技能暴击几率'
     coordinates:
       x: 4
       y: 2
@@ -392,11 +396,11 @@ nodes:
           - 'stat{stat="SKILL_CRITICAL_STRIKE_CHANCE";amount=10;type="FLAT"}'
     lores:
       0:
-        - "&eIncreases the chance of dealing skill crits +%10"
+        - "&e增加技能暴击几率 +%10"
       1:
-        - "&eIncreases the chance of dealing skill crits +%10"
+        - "&e增加技能暴击几率 +%10"
   f3:
-    name: 'Skill Critical Strike Chance'
+    name: '技能暴击几率'
     coordinates:
       x: 4
       y: 1
@@ -414,14 +418,14 @@ nodes:
           - 'stat{stat="SKILL_CRITICAL_STRIKE_CHANCE";amount=15;type="FLAT"}'
     lores:
       0:
-        - "&eIncreases the chance of dealing skill crits +%15"
+        - "&e增加技能暴击几率 +%15"
       1:
-        - "&eIncreases the chance of dealing skill crits +%15"
+        - "&e增加技能暴击几率 +%15"
 
 ## G
 
   g1:
-    name: 'Magic Damage'
+    name: '魔法伤害'
     coordinates:
       x: 4
       y: 0
@@ -439,11 +443,11 @@ nodes:
           - 'stat{stat="MAGIC_DAMAGE";amount=1;type="FLAT"}'
     lores:
       0:
-        - "&eAdditional magic skill damage in +%1"
+        - "&e额外魔法技能伤害 +%1"
       1:
-        - "&eAdditional magic skill damage in +%1"
+        - "&e额外魔法技能伤害 +%1"
   g2:
-    name: 'Magic Damage'
+    name: '魔法伤害'
     coordinates:
       x: 4
       y: -1
@@ -461,11 +465,13 @@ nodes:
           - 'stat{stat="MAGIC_DAMAGE";amount=2;type="FLAT"}'
     lores:
       0:
-        - "&eAdditional magic skill damage in +%2"
+        - "&e额外魔法技能伤害 +%2"
       1:
-        - "&eAdditional magic skill damage in +%2"
+        - "&e额外魔法技能伤害 +%2"
+## G
+
   g3:
-    name: 'Magic Damage'
+    name: '魔法伤害'
     coordinates:
       x: 4
       y: -2
@@ -483,306 +489,6 @@ nodes:
           - 'stat{stat="MAGIC_DAMAGE";amount=2;type="FLAT"}'
     lores:
       0:
-        - "&eAdditional magic skill damage in +%2"
+        - "&e额外魔法技能伤害 +%2"
       1:
-        - "&eAdditional magic skill damage in +%2"
-
-
-
-
-
-
-
-
-# This section is to have a specific display for the skill tree in the GUI.
-# It is optional as if you don't fill it the config in gui/skill-tree.yml will be used.
-# For each node it will first look if the node has a specific display, if not it will look if
-# the display is defined in this section. If not it will use the default display in gui/skill-tree.yml.
-#
-#display:
-#  paths:
-#    unlocked:
-#      up:
-#        item: "WHITE_DYE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "WHITE_DYE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "WHITE_DYE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "WHITE_DYE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "WHITE_DYE"
-#        custom-model-data: 0
-#      right:
-#        item: "WHITE_DYE"
-#        custom-model-data: 0
-#      default:
-#        item: "WHITE_DYE"
-#        custom-model-data: 0
-#    unlockable:
-#      up:
-#        item: "BLUE_DYE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "BLUE_DYE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "BLUE_DYE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "BLUE_DYE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "BLUE_DYE"
-#        custom-model-data: 0
-#      right:
-#        item: "BLUE_DYE"
-#        custom-model-data: 0
-#      default:
-#        item: "BLUE_DYE"
-#        custom-model-data: 0
-#    locked:
-#      up:
-#        item: "GRAY_DYE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "GRAY_DYE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "GRAY_DYE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "GRAY_DYE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "GRAY_DYE"
-#        custom-model-data: 0
-#      right:
-#        item: "GRAY_DYE"
-#        custom-model-data: 0
-#      default:
-#        item: "GRAY_DYE"
-#        custom-model-data: 0
-#    fully-locked:
-#      up:
-#        item: "BLACK_DYE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "BLACK_DYE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "BLACK_DYE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "BLACK_DYE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "BLACK_DYE"
-#        custom-model-data: 0
-#      right:
-#        item: "BLACK_DYE"
-#        custom-model-data: 0
-#      default:
-#        item: "BLACK_DYE"
-#        custom-model-data: 0
-#  nodes:
-#    unlocked:
-#      up-right-down-left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      up-right-down:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      up-right-left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      up-down-left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      down-right-left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      up-down:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      right-left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      right:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      left:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      up:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      down:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#      no-path:
-#        item: "WHITE_CONCRETE"
-#        custom-model-data: 0
-#    locked:
-#      up-right-down-left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      up-right-down:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      up-right-left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      up-down-left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      down-right-left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      up-down:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      right-left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      right:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      left:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      up:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      down:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#      no-path:
-#        item: "GRAY_CONCRETE"
-#        custom-model-data: 0
-#    unlockable:
-#      up-right-down-left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      up-right-down:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      up-right-left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      up-down-left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      down-right-left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      up-down:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      right-left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      right:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      left:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      up:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      down:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#      no-path:
-#        item: "BLUE_CONCRETE"
-#        custom-model-data: 0
-#    fully-locked:
-#      up-right-down-left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      up-right-down:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      up-right-left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      up-down-left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      down-right-left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      up-right:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      up-down:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      up-left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      down-right:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      down-left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      right-left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      right:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      left:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      up:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      down:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
-#      no-path:
-#        item: "BLACK_CONCRETE"
-#        custom-model-data: 0
+        - "&e额外魔法技能伤害 +%2"

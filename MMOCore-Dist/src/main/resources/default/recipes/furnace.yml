@@ -1,14 +1,14 @@
-# Make sure every furnace recipe has a different ID.
-# It is only used as reference in the plugin, doesn't really matter.
+# 确保每个熔炉配方都有不同的ID。
+# 它只是在插件中用作参考，实际上并不重要。
 
-# Furnace recipe ID
+# 熔炉配方ID
 emerald-recipe:
 
-    # Item being smelted.
-    ingredient: MATERIAL.EMERALD_GEODE
-        
-    # Item given as output.
-    result: MATERIAL.SHINY_EMERALD
-        
-    # Time required to smelt the item.
-    cook-time: 10
+  # 被熔炼的物品。
+  ingredient: MATERIAL.EMERALD_GEODE
+
+  # 熔炼完成时的产物。
+  result: MATERIAL.SHINY_EMERALD
+
+  # 熔炼该物品所需的时间。
+  cook-time: 10

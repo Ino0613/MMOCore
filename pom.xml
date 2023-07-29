@@ -13,7 +13,7 @@
     </modules>
 
     <name>MMOCore</name>
-    <description>Offer your players a brand new RPG experience!!</description>
+    <description>为您的玩家提供全新的角色扮演游戏体验</description>
 
     <properties>
         <downloadSources>false</downloadSources>

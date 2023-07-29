@@ -1,4 +1,3 @@
-# Caution, these are very case sensitive!
 default:
     ATTACK_DAMAGE:
         base: 1
@@ -28,7 +27,7 @@ default:
         base: .1
         per-level: 0
 
-    # Max Resource
+    # 最大资源值
     MAX_MANA:
         base: 20
         per-level: 0
@@ -39,7 +38,7 @@ default:
         base: 20
         per-level: 0
 
-    # Resource Regeneration
+    # 资源值回复
     MANA_REGENERATION:
         base: .166
         per-level: .03
@@ -50,65 +49,64 @@ default:
         base: .01
         per-level: 0
 
-    # Increases main class experience earned.
+    # 增加主职业经验获取量
     ADDITIONAL_EXPERIENCE:
         base: 0
         per-level: 0
 
-    # Reduces skill cooldowns by X%
+    # 减少技能冷却时间百分比
     COOLDOWN_REDUCTION:
         base: 0
         per-level: 0
 
-    #Increases chance to have rare loot chests
+    # 增加获得稀有战利品箱子的概率
     CHANCE:
         base: 0
         per-level: 0
 
-    # Dealt by skills
+    # 技能造成的伤害
     SKILL_DAMAGE:
         base: 0
         per-level: 0
 
-    # Physical skill damage
+    # 物理技能伤害
     PHYSICAL_DAMAGE:
         base: 0
         per-level: 0
 
-    # Magic skill damage
+    # 魔法技能伤害
     MAGIC_DAMAGE:
         base: 0
         per-level: 0
 
-    # Dealt by any weapon
+    # 任何武器造成的伤害
     WEAPON_DAMAGE:
         base: 0
         per-level: 0
 
-    # Dealt by projectile skills or weapons
+    # 弹射技能或武器造成的伤害
     PROJECTILE_DAMAGE:
         base: 0
         per-level: 0
 
-    # Reduces the amount of tugs needed to fish fishes.
-    # (When set to 30, 30% of the tugs will be removed).
+    # 减少钓鱼所需拉动的次数
+    # （当设置为30时，将减少30％的拉动次数）。
     FISHING_STRENGTH:
         base: 0
         per-level: 0.3
         min: 0
         max: 40
 
-    # Chance of instantly fishing.
+    # 瞬间钓鱼的几率
     CRITICAL_FISHING_CHANCE:
         base: 5
         per-level: 0
         min: 0
         max: 70
 
-    # Chance of being dragged in the waters
-    # by the fish when trying to catch it,
-    # once the player has NOT successfully
-    # fished (conditional probability).
+    # 尝试捕捉鱼时，被鱼拖入水中的几率，
+    # 当玩家未成功捕获时，
+    # 该几率为条件概率。
     CRITICAL_FISHING_FAILURE_CHANCE:
         base: 3
         per-level: -.01

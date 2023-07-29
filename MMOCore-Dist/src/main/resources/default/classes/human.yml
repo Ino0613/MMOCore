@@ -1,42 +1,38 @@
-
-# Display options, it's not displayed anywhere so pointless.
-# Just need the name for reference and PAPI placeholders.
+# 显示选项，此处没有实际显示，只需提供名称用于参考和PAPI占位符。
 display:
-    name: 'Human'
+  name: '人类'
 
-# This is the default class which players have when
-# joining the server. They can level it up, but they
-# cannot choose this class again after changing their
-# class because it is not displayed in /class
+# 这是玩家加入服务器时的默认职业。
+# 他们可以提升职业等级，但在更改职业后不能再次选择此职业，因为它不会在/class中显示。
 options:
-    default: true
-    display: false
-    needs-permission: false # False by default
-    
-    # Only regens when out of combat
-    off-combat-health-regen: false
-    off-combat-mana-regen: false
+  default: true
+  display: false
+  needs-permission: false # 默认为false
+  
+  # 仅在脱离战斗状态时恢复生命和法力
+  off-combat-health-regen: false
+  off-combat-mana-regen: false
 
-# Must match an existing exp curve filename from the 'expcurves' folder
+# 必须与“expcurves”文件夹中现有的经验曲线文件名匹配
 exp-curve: levels
 
 exp-table: class_exp_table
 
 skill-slots:
-    1:
-        name: "&aSkill Slot I"
-        unlocked-by-default: true
-    2:
-        name: "&aSkill Slot II"
-        unlocked-by-default: true
-    3:
-        name: "&aSkill Slot III"
-        unlocked-by-default: true
-    4:
-        name: "&aSkill Slot IV"
-        unlocked-by-default: true
+  1:
+    name: "&a技能槽 I"
+    unlocked-by-default: true
+  2:
+    name: "&a技能槽 II"
+    unlocked-by-default: true
+  3:
+    name: "&a技能槽 III"
+    unlocked-by-default: true
+  4:
+    name: "&a技能槽 IV"
+    unlocked-by-default: true
 
-# Experience sources for main class experience.
+# 主职业经验的来源
 main-exp-sources:
 - 'killmob{type=ZOMBIE;amount=1-3}'
 - 'killmob{type=ENDERMAN;amount=6-9}'

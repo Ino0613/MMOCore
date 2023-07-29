@@ -1,13 +1,12 @@
-# Display options
-name: Smelting
+# 显示选项
+name: 熔炼
 
-# Experience given to the main level
-# when leveling up this profession
+# 升级此专业时为主等级提供的经验值
 experience:
   base: 20
   per-level: 3
 
-# Must match an existing exp curve filename from the 'expcurves' folder
+# 必须与“expcurves”文件夹中现有的经验曲线文件名匹配
 exp-curve: levels
 
 exp-sources:
