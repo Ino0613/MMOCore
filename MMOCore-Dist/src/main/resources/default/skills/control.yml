@@ -1,12 +1,12 @@
-name: Control
+name: 控制
 lore:
-- Your target is temporarily slowed for &8{duration} &7seconds.
-- As soon as you left click, it gets
-- pushed back where you are looking at.
-- 'Knockback force: &f{knockback}%'
+- 你的目标将在&8{duration}秒内暂时减速。
+- 一旦你左击，它会被推向你的视线所指方向。
+- '击退力量: &f{knockback}%'
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: MAGENTA_DYE
 duration:
   base: 2.0

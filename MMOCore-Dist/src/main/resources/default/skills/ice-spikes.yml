@@ -1,12 +1,13 @@
-name: Ice Spikes
+name: 寒冰尖刺
 lore:
-- Ice spikes summon from the ground
-- and shatter, each dealing &9{damage} &7damage
-- to hit enemies and slowing them down
-- for &9{slow} &7seconds.
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+  - "寒冰尖刺从地面升腾而起"
+  - "然后破碎，每一支造成 &9{伤害} &7的伤害"
+  - "打击敌人并减缓他们的速度"
+  - "持续 &9{减速} &7秒。"
+  - ""
+  - "&e{冷却}s 冷却时间"
+  - "&9消耗 {法力值} {法力名称}"
+
 material: SNOWBALL
 damage:
   base: 3.0

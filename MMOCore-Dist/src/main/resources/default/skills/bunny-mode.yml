@@ -1,10 +1,11 @@
-name: Bunny Mode
+name: 兔子模式
 lore:
-- Move quickly by hopping 
-- around with great agility
+- 通过跳跃快速移动，
+- 并且拥有极强的敏捷性。
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: RABBIT_FOOT
 duration:
   base: 6

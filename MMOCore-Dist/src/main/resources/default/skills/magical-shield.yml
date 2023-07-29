@@ -1,10 +1,11 @@
-name: Magical Shield
+name: 魔法护盾
 lore:
-- Erect a powerful and ephemeral
-- dome-shaped shield of magical power
+- 竖起一个强大而短暂的
+- 圆顶形魔法屏障
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 10

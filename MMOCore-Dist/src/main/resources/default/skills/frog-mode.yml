@@ -1,12 +1,12 @@
-name: Frog Mode
+name: 蛙形态
 lore:
-- Use this agility-based ability to dive 
-- in and out of water with ease, 
-- granting you a crucial advantage
-- in aquatic environments.
+- 使用这项基于敏捷的能力，
+- 轻松地在水中潜水和跃出水面，
+- 为你在水下环境中提供关键优势。
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 10

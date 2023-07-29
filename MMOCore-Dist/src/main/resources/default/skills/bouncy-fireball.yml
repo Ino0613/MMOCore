@@ -1,11 +1,11 @@
-name: Bouncy Fireball
+name: 弹跳火球
 lore:
-- Unleash a bouncing fireball that
-- tracks and hits its target, 
-- creating a devastating impact.
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+  - 解放一个能够反弹的火球，
+  - 追踪并击中目标，
+  - 造成毁灭性的冲击。
+  - ''
+  - '&e{cooldown}秒 冷却时间'
+  - '&9消耗 {mana} {mana_name}'
 material: FIRE_CHARGE
 timer:
   base: 2

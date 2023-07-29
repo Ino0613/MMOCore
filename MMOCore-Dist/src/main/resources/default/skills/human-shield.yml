@@ -1,13 +1,13 @@
-name: Human Shield
+name: 人类之盾
 lore:
-- Casts a protection charm onto target ally,
-- reducing damage taken by &a{reduction}%&7.
-- '&a{redirect}% &7of this damage is redirected to you.'
-- Charm is cancelled when reaching &c{low}%&7 health.
-- Lasts &a{duration} &7seconds.
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- "对目标盟友施放保护符咒，减少受到的伤害 &a{reduction}%&7。"
+- "'&a{redirect}% &7的伤害将转移给你。'"
+- "当生命值降至 &c{low}%&7 以下时，咒语将解除。"
+- "持续时间为 &a{duration} &7秒。"
+- "''"
+- "'&e{cooldown}s 冷却时间'"
+- "'&9消耗 {mana} {mana_name} 能量'"
+
 material: TOTEM_OF_UNDYING
 redirect:
   base: 30.0

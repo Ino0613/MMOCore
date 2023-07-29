@@ -1,3 +1,4 @@
+# 中文重制版 By Happy Github: https://github.com/Happy-clo/
 # 可以使用'from{source="test-exp-source"}'加载的经验来源列表
 test-exp-source:
   - 'damagedealt{type=physical;amount=250}'

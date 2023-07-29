@@ -1,11 +1,10 @@
-name: Ignite
+name: 点燃
 lore:
-- Set your target aflame with
-- a fierce blaze using this
-- powerful ability
+- 使用这个强大的能力，
+- 让你的目标陷入熊熊烈火之中。
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{冷却}s 冷却时间'
+- '&9消耗 {法力值} {法力名称}'
 material: BOOK
 duration:
   base: 2

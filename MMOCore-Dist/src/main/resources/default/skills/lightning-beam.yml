@@ -1,11 +1,11 @@
-name: Lightning Beam
+name: 闪电光束
 lore:
-- Summon a powerful
-- and eletricfying beam of
-- lightning from the heavens
+- 召唤一道强大的、电力四射的
+- 闪电光束从天空降临
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

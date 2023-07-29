@@ -1,11 +1,12 @@
-name: Weaken
+name: "虚弱"
 lore:
-- The target is weakened for
-- '&8{duration} &7seconds and is dealt'
-- '&7extra &8{ratio}% &7damage.'
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+  - "目标将被虚弱状态影响，持续"
+  - "'&8{duration} &7秒，并受到额外'"
+  - "'&7&8{ratio}% &7伤害。"
+  - ""
+  - "&e{cooldown}秒冷却时间"
+  - "&9消耗 {mana} {mana_name}"
+
 material: MAGENTA_DYE
 duration:
   base: 10.0

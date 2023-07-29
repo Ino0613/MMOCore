@@ -1,11 +1,11 @@
-name: Shock
+name: 电击
 lore:
-- Inflict a painful effect
-- wearing down your enemy
-- 
+- 给予敌人一个痛苦的效果，
+- 削弱你的敌人
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 6

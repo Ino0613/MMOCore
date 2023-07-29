@@ -1,18 +1,15 @@
-name: Power Mark
+name: 强能印记
 lore:
-- Attacking an enemy applies a deadly
-- magical mark which spreads accross the
-- ground. This mark accumulates &6{ratio}%
-- of the damage dealt to the initial
-- target over &6{duration} &7seconds.
+- 攻击敌人会施加一个致命的魔法印记，
+- 这个印记会在地面上蔓延。这个印记会累积造成初始目标的
+- '&6{ratio}% 的伤害，在 &6{duration} &7秒内。'
 - ''
-- After this duration, the mark bursts, dealing
-- accumulated damage to nearby enemies and
-- stunning them for &6{stun}+ &7seconds.
+- 在持续时间结束后，印记会爆发，将累积的伤害
+- 对附近的敌人造成伤害，并使其昏迷 &6{stun}+ &7秒。
 - ''
-- The more damage, the longer the stun.
+- 伤害越高，昏迷时间越长。
 - ''
-- '&e{cooldown}s Cooldown'
+- '&e{cooldown}秒冷却时间'
 material: WITHER_SKELETON_SKULL
 duration:
   base: 10.0

@@ -1,9 +1,10 @@
-name: Burn
+name: 灼烧
 lore:
-- Ignite your target with a burst of flames
+- 用一团火焰点燃你的目标
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 4

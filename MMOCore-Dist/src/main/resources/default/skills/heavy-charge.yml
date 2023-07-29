@@ -1,11 +1,10 @@
-name: Heavy Charge
+name: 重型冲锋
 lore:
-- Charge forward at lightning speeds
-- towards your target. Dealing devasting
-- damage upon impact
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- "以闪电般的速度向目标前冲。撞击时造成毁灭性的伤害。"
+- "''"
+- "'&e{cooldown}s 冷却时间'"
+- "'&9消耗 {mana} {mana_name} 能量'"
+
 material: BOOK
 timer:
   base: 0

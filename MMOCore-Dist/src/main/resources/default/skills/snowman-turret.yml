@@ -1,13 +1,14 @@
-name: Snowman Turret
+name: 雪人炮塔
 lore:
-- Summon a hired snowman
-- to aid in your attack
+- 召唤一名雇佣的雪人
+- 来帮助你攻击
 - ''
-- 'Unleashing a flurry'
-- 'of snowballs'
+- '释放一阵'
+- '雪球攻击'
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 6

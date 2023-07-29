@@ -1,11 +1,10 @@
-name: Holy Missile
+name: 圣洁飞弹
 lore:
-- Launch a swift and sacred projectile
-- towards your intended target
-- inflicting divine damage upon impact
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- "发射一枚迅捷而神圣的飞弹"
+- "朝着你的目标飞去，在撞击时造成神圣伤害。"
+- "''"
+- "'&e{cooldown}s 冷却时间'"
+- "'&9消耗 {mana} {mana_name} 能量'"
 material: BOOK
 duration:
   base: 4

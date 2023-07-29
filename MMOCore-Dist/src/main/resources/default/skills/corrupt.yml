@@ -1,10 +1,11 @@
-name: Corrupt
+name: 腐化
 lore:
-- Create a magical circle that 
-- inflicts ongoing damage to the target
+- 创造一个魔法圈，
+- 对目标造成持续伤害
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 4

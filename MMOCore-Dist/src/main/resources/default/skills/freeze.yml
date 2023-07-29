@@ -1,11 +1,11 @@
-name: Freeze
+name: 冻结
 lore:
-- Launch a rapid snowball
-- that inflicts a slowing effect
-- on any entity within its range
+- 投掷一颗迅速的雪球，
+- 对范围内的所有实体造成减速效果
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: SNOWBALL
 duration:
   base: 5

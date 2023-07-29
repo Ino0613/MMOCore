@@ -1,11 +1,11 @@
-name: Ice Crystal
+name: 冰晶体
 lore:
-- Unleash a frigid crystal projectile
-- that ones in on your target. Encasing them
-- in ice and slows them down
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- "释放一颗寒冰晶体投射物，"
+- "准确地命中你的目标。将其包裹在冰中，使其减速。"
+- "''"
+- "'&e{cooldown}s 冷却时间'"
+- "'&9消耗 {mana} {mana_name} 能量'"
+
 material: BOOK
 duration:
   base: 4

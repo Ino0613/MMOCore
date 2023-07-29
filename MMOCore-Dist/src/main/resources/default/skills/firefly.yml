@@ -1,11 +1,11 @@
-name: Firefly
+name: 萤火
 lore:
-- Propel yourself forward like a rocket
-- and damage any targets who don't move out
-- the way in time
+- 像火箭一样向前推进，
+- 并对任何未及时避让的目标造成伤害
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: FLINT_AND_STEEL
 duration:
   base: 5

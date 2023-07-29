@@ -1,10 +1,10 @@
-name: Heal
+name: 治疗
 lore:
-- Use this ability for a rapid
-- healing effect
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- "使用该技能可获得迅速的治疗效果。"
+- "''"
+- "'&e{cooldown}s 冷却时间'"
+- "'&9消耗 {mana} {mana_name} 能量'"
+
 material: BOOK
 timer:
   base: 0

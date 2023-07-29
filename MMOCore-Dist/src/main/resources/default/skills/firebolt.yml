@@ -1,11 +1,11 @@
-name: Firebolt
+name: 火焰箭
 lore:
-- You conjure a flaming
-- ball and hurl it at
-- your targets
+- 你召唤一颗燃烧的火球，
+- 投掷向你的目标
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

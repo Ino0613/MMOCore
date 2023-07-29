@@ -1,12 +1,12 @@
-name: Light Dash
+name: 光影冲刺
 lore:
-- Propel yourself forward
-- at incredible speeds
-- striking and damaging any
-- entity in your path
+- 以惊人的速度将自己推进，
+- 打击并伤害路径上的任何
+- 生物
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

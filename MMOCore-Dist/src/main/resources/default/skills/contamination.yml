@@ -1,10 +1,11 @@
-name: Contamination
+name: 污染
 lore:
-- Affect your target's health by slowly 
-- infecting their body with this harmful ability
+- 通过慢慢侵蚀目标的身体，
+- 影响其健康，施加这种有害的技能
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: POTION
 duration:
   base: 4

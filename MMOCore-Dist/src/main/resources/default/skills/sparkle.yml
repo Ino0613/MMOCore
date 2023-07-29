@@ -1,11 +1,11 @@
-name: Sparkle
+name: 闪耀
 lore:
-- Send a shimmering blast
-- of damage, leaving them
-- reeling from the attack
+- 发射一道闪亮的冲击，
+- 使敌人在攻击中摇摆不定
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

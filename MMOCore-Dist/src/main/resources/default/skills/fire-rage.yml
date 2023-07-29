@@ -1,12 +1,13 @@
-name: Fire Rage
+name: 火焰狂怒
 lore:
-- For {duration} seconds, you slow down and are able
-- to cast up to {count} fireballs by left clicking.
+- 在{duration}秒内，你会减慢速度，
+- 并且能够通过左击释放最多{count}颗火球。
 - ''
-- Fireballs deal &c{damage} &7damage upon contact
-- and ignite your target for &c{ignite} &7seconds.
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- 火球接触时造成&c{damage} &7点伤害，
+- 并使目标着火，持续&c{ignite} &7秒。
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: FIRE_CHARGE
 duration:
   base: 8.0

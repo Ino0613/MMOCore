@@ -1,11 +1,10 @@
-name: Blink
+name: 闪现
 lore:
-- Teleport yourself
-- around by looking
-- at your destination
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+  - 通过凝视目的地
+  - 来将自己传送
+  - ''
+  - '&e{cooldown}秒 冷却时间'
+  - '&9消耗 {mana} {mana_name}'
 material: ENDER_PEARL
 timer:
   base: 0

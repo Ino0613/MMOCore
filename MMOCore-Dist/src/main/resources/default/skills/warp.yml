@@ -1,10 +1,11 @@
-name: Warp
+name: "传送"
 lore:
-- Teleports you to target location.
-- 'Max. Range: &5{range}'
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+  - "将您传送到目标位置。"
+  - "最大范围：&5{range}"
+  - ""
+  - "&e{cooldown}秒冷却时间"
+  - "&9消耗 {mana} {mana_name}"
+
 material: ENDER_PEARL
 mana:
   base: 8.0

@@ -1,11 +1,11 @@
-name: Sky Smash
+name: 天空碎击
 lore:
-- Launch your enemy skyward
-- with this visible, impactful, 
-- and, disorienting attack
+- 用这种明显、有冲击力、令人迷惑的攻击，
+- 将你的敌人抛向天空
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

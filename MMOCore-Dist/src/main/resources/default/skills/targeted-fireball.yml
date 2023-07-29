@@ -1,12 +1,11 @@
-name: Targeted Fireball
+name: 瞄准火球
 lore:
-- Launch a homing fireball
-- towards your target
-- causing them to fruitlessly
-- run away
+- 向目标投掷一颗跟踪火球，
+- 使其徒劳地逃跑
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

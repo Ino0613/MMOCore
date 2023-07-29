@@ -1,11 +1,11 @@
-name: Throw Up
+name: "呕吐术"
 lore:
-- Hurl pieces of decaying
-- flesh at your target
-- dealing damage on impact
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+  - "将腐烂的肉块呕吐至目标位置"
+  - "碰撞时造成伤害"
+  - ""
+  - "&e{cooldown}秒冷却时间"
+  - "&9消耗 {mana} {mana_name}"
+
 material: BOOK
 duration:
   base: 3

@@ -1,10 +1,10 @@
-name: Arcane Hail
+name: 秘法冰雹
 lore:
-- Surprise your foes with this
-- quick firing hail of magic
+- 用这个快速连续射击的魔法冰雹
+- 给你的敌人一个惊喜
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}s 冷却时间'
+- '&9消耗 {mana} {mana_name}'
 material: END_ROD
 duration:
   base: 4

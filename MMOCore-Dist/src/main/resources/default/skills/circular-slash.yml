@@ -1,10 +1,11 @@
-name: Circular Slash
+name: 循环斩击
 lore:
-- Unleash a powerful strike
-- that sends nearby targets flying
+- 发动强大的一击
+- 使附近的目标飞起
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: IRON_SWORD
 timer:
   base: 0

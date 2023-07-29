@@ -1,11 +1,11 @@
-name: Vampirism
+name: "吸血术"
 lore:
-- Gives health depending on
-- the amount of damage
-- you dealt to your target
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+  - "根据对目标造成的伤害"
+  - "为您提供相应的生命值恢复"
+  - ""
+  - "&e{cooldown}秒冷却时间"
+  - "&9消耗 {mana} {mana_name}"
+
 material: BOOK
 timer:
   base: 2

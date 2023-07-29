@@ -1,11 +1,11 @@
-name: Explosive Turkey
+name: 爆炸火鸡
 lore:
-- Launch an explosive turkey
-- by aiming at the ground
-- near your target
+- 通过瞄准你的目标附近的地面，
+- 发射一只爆炸火鸡
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 4

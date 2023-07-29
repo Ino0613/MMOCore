@@ -1,10 +1,11 @@
-name: Furtive Strike
+name: 暗袭打击
 lore:
-- Deals &c{damage} &7damage, increased by &c{extra}% &7if
-- there are not any enemies within &c{radius} &7blocks.
+- 造成&c{damage} &7点伤害，如果&c{radius} &7格范围内没有其他敌人，
+- 则伤害增加&c{extra}% &7。
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: COAL
 damage:
   base: 5.0

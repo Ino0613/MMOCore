@@ -1,11 +1,11 @@
-name: Tactical Grenade
+name: 战术手榴弹
 lore:
-- Launch a homing grenade
-- at your target, propelling
-- them into the air upon impact
+- 向目标投掷一颗跟踪手榴弹，
+- 在着陆时将其抛向空中
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

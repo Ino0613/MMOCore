@@ -1,10 +1,11 @@
-name: Arcane Rift
+name: 秘法裂隙
 lore:
-- Summon a magical rift
-- to damage your enemy
+- 召唤一个魔法裂隙
+- 来伤害你的敌人
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}s 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 2

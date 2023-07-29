@@ -1,11 +1,11 @@
-name: Smite
+name: 神谴
 lore:
-- Harness the immense power
-- of lightning to smite your
-- enemies!
+- 运用强大的闪电之力来神谴你的
+- 敌人！
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

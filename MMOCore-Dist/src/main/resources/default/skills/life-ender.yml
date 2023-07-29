@@ -1,11 +1,12 @@
-name: Life Ender
+name: 终结之命
 lore:
-- Harness the power of the End
-- and summon a devasting meteor
-- from the sky with cataclysmic force
+- 运用末地的力量
+- 召唤一颗毁灭性陨石
+- 从天空降临，带着毁灭之力
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

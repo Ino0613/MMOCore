@@ -1,10 +1,10 @@
-name: Grand Heal
+name: 强力治疗
 lore:
-- Restore health to yourself
-- and nearby allies
+- 为你自己和附近的盟友恢复生命值
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

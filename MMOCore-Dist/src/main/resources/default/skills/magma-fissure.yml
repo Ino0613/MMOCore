@@ -1,10 +1,11 @@
-name: Magma Fissure
+name: 岩浆裂缝
 lore:
-- Unleash a scorching and destructive
-- line of molten magma towards the target
+- 向目标释放一条灼热而毁灭性的
+- 岩浆裂缝
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

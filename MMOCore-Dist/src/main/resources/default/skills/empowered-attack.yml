@@ -1,12 +1,13 @@
-name: Empowered Attack
+name: 强化攻击
 lore:
-- You charge your weapon with lightning.
-- Your next attack deals &f{extra}% &7extra damage
-- and spreads to enemies within &f{radius} &7blocks
-- for &f{ratio}% &7of the initial damage.
+- 你用闪电充能你的武器。
+- 你的下一次攻击额外造成&f{extra}% &7的伤害，
+- 并传播到&f{radius} &7格范围内的敌人，
+- 初始伤害的&f{ratio}% &7。
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BONE_MEAL
 mana:
   base: 4.0

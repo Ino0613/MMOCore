@@ -1,11 +1,11 @@
-name: Staff Attack
+name: 法杖攻击
 lore:
-- Launch a blazing fireball
-- dealing significant damage
-- upon impact
+- 发射一颗炽热的火球，
+- 着陆时造成可观的伤害
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

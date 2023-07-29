@@ -1,11 +1,12 @@
-name: Cursed Beam
+name: 咒怨光束
 lore:
-- Unleash a cursed beam of magic 
-- energy directly at your target
-- causing damage and negative effects
+- 释放一道被诅咒的魔法光束，
+- 直指你的目标，
+- 造成伤害和负面效果
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 3

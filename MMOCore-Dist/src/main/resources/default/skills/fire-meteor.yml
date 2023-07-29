@@ -1,11 +1,11 @@
-name: Fire Meteor
+name: 火焰陨石
 lore:
-- Unleash the fury of
-- hell with this devasting
-- meteor strike
+- 通过这场毁灭性的陨石打击，
+- 释放地狱的愤怒
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: FIRE_CHARGE
 timer:
   base: 0

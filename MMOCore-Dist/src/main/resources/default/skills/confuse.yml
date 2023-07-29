@@ -1,10 +1,11 @@
-name: Confuse
+name: 困惑
 lore:
-- Confuse your enemies by performing
-- a quick 180-degree flip on your target
+- 通过在目标身上迅速做出180度翻转，
+- 让你的敌人感到困惑
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 2

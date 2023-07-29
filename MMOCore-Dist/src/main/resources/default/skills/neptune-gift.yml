@@ -1,6 +1,7 @@
-name: Neptune's Gift
+name: 海神的恩赐
 lore:
-- Resource regeneration is increased by &8{extra}% &7when standing in water.
+- 在水中站立时，资源回复速度增加 &8{extra}% &7。
+
 material: LILY_PAD
 extra:
   base: 30.0

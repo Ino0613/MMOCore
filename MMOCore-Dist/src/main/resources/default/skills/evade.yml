@@ -1,10 +1,11 @@
-name: Evade
+name: 闪避
 lore:
-- You become imune to damage for &8{duration} &7seconds.
-- Cancels when dealing weapon damage.
+- 你在&8{duration}秒内免疫伤害。
+- 造成武器伤害后取消效果。
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: LEATHER_BOOTS
 duration:
   base: 2.0

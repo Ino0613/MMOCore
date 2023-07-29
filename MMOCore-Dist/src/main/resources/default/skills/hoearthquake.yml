@@ -1,12 +1,11 @@
-name: Hoearthquake
+name: 地震之怒
 lore:
-- Unleash this ground moving projectile
-- that ripples the earth, damaging
-- and disorienting your enemies in
-- its path
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- "释放这个地动天摇的投射物，"
+- "让大地波动，伤害并迷惑沿途的敌人。"
+- "''"
+- "'&e{cooldown}s 冷却时间'"
+- "'&9消耗 {mana} {mana_name} 能量'"
+
 material: BOOK
 timer:
   base: 0

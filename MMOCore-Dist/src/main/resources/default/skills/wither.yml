@@ -1,10 +1,10 @@
-name: Wither
+name: "凋零"
 lore:
-- You will inflict your target
-- with the wither effect
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- "你将使目标陷入凋零效果"
+- ""
+- "'&e{冷却}s 冷却时间'"
+- "'&9消耗 {法力值} {法力名称}'"
+
 material: BOOK
 duration:
   base: 6

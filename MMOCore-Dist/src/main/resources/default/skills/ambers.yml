@@ -1,11 +1,11 @@
-name: Mana Ambers
+name: 梦娜·琥珀
 lore:
-- Dealing magic damage has &630% &7chance
-- of dropping an amber on the ground.
+- 造成魔法伤害有 &630% &7几率
+- 掉落琥珀在地面上。
 - ''
-- When picked up, ambers refund &9{percent}% &7of your missing mana.
+- 当捡起时，琥珀会返还你已损失法力值的 &9{percent}%。
 - ''
-- '&e{cooldown}s Cooldown'
+- '&e{cooldown}s 冷却时间'
 material: EMERALD
 mana:
   base: 2.0

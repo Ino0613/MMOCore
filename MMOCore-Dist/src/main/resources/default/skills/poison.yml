@@ -1,12 +1,13 @@
-name: Poison
+name: 毒素
 lore:
-- Launch venomous and debilitating
-- poison attack upon your attack
+- 对你的攻击施放有毒且削弱效果的
+- 毒素攻击
 - ''
-- Inflicting ongoing damage
+- 造成持续伤害
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 10

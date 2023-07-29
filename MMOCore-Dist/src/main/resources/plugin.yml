@@ -1,3 +1,4 @@
+# 中文重制版 By Happy Github: https://github.com/Happy-clo/
 name: MMOCore
 version: ${project.version}
 main: net.Indyuce.mmocore.MMOCore

@@ -1,11 +1,11 @@
-name: Corrupted Fangs
+name: 腐化之牙
 lore:
-- Summon the fangs of the underworld
-- with your magic and use them
-- to attack your target
+- 用你的魔法召唤来自地狱的獠牙，
+- 并用它们来攻击你的目标
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

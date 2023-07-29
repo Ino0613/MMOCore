@@ -1,12 +1,11 @@
-name: Void Zapper
+name: "虚空电击"
 lore:
-- Drawing devasting power
-- from the void, attack
-- your enemy with this
-- zapper
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+  - "从虚空汲取毁灭性的力量"
+  - "用这个电击器攻击您的敌人"
+  - ""
+  - "&e{cooldown}秒冷却时间"
+  - "&9消耗 {mana} {mana_name}"
+
 material: BOOK
 timer:
   base: 0

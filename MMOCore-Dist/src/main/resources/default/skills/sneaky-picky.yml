@@ -1,9 +1,10 @@
-name: Sneaky Picky
+name: 鬼鬼祟祟
 lore:
-- Your attack is empowered by &f{extra}% &7when
-- delivering the first blow during a fight.
+- 在战斗开始时第一击攻击时，你的攻击
+- 会获得额外 &f{extra}% &7的威力加成。
 - ''
-- '&9Costs {mana} {mana_name}'
+- '&9消耗 {mana} {mana_name}'
+
 material: DIAMOND_SWORD
 mana:
   base: 8.0

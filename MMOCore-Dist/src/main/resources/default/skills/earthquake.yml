@@ -1,9 +1,10 @@
-name: Earthquake
+name: 地震
 lore:
-- Unleash a rippling wave of energy
+- 释放一道波动的能量波
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 5

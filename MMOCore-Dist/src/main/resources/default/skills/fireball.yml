@@ -1,15 +1,16 @@
-name: Fireball
+name: 火球术
 lore:
-- Casts a deadly fireball onto your
-- target, dealing &c{damage} &7damage upon contact
-- and igniting it for &c{ignite} &7seconds.
+- 向目标施放致命的火球，
+- 接触时造成&c{damage} &7点伤害，
+- 并使其着火，持续&c{ignite} &7秒。
 - ''
-- Shatters into 3 blazing hot shards which stick
-- to walls and explode 3 seconds later, dealing
-- '&c{ratio}% &7of the initial spell damage.'
+- 火球会分裂成3个炙热的碎片，
+- 附着在墙上，3秒后爆炸，
+- 造成'&c{ratio}% &7初始法术伤害量'的伤害。
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: FIRE_CHARGE
 damage:
   base: 5.0

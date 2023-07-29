@@ -1,11 +1,11 @@
 name: Blizzard
 lore:
-- Launch a barrage of
-- snowballs directly at
-- your enemies. Aim true!
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+  - 发射一连串的
+  - 雪球直接朝着
+  - 你的敌人。准确瞄准！
+  - ''
+  - '&e{cooldown}秒 冷却时间'
+  - '&9消耗 {mana} {mana_name}'
 material: SNOWBALL
 duration:
   base: 5

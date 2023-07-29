@@ -1,11 +1,12 @@
-name: Item Bomb
+name: 物品炸弹
 lore:
-- Channel your power and transmute the
-- object in your hand, into an volatile
-- explosive that can be thrown
+- 将你的力量引导，将手中的物品
+- 转化为一枚不稳定的
+- 炸弹，可投掷
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

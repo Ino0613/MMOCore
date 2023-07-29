@@ -1,11 +1,12 @@
-name: Burning Hands
+name: 燃烧之手
 lore:
-- Gather your magical energy
-- and unleash a horizontal line
--  of flames towards your target
+- 聚集你的魔法能量
+- 并释放一道横向的火焰
+- 朝着你的目标
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: CAMPFIRE
 duration:
   base: 2

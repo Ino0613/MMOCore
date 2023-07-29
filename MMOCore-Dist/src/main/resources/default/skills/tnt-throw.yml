@@ -1,12 +1,12 @@
-name: Tnt Throw
+name: "TNT投掷"
 lore:
-- Hurl a powerful explosive
-- obliterating the target
-- and blocks around the
-- point of impact
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+  - "投掷强大的爆炸物"
+  - "摧毁目标及周围方块"
+  - "在碰撞点"
+  - ""
+  - "&e{cooldown}秒冷却时间"
+  - "&9消耗 {mana} {mana_name}"
+
 material: BOOK
 timer:
   base: 0

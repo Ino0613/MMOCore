@@ -1,11 +1,11 @@
-name: Shockwave
+name: 冲击波
 lore:
-- Send your target soaring
-- into the sky with a stunning
-- and forceful blow
+- 用一击令目标被震飞
+- 伴随着震撼和强力的打击
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

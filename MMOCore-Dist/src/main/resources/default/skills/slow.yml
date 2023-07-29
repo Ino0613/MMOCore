@@ -1,12 +1,11 @@
-name: Slow
+name: 减速
 lore:
-- Impose a debilitating slowdown
-- effect upon your enemy. Reducing
-- their movement speed and leaving them
-- vulnerable to attacks
+- 对你的敌人施加令人衰弱的减速效果。
+- 降低他们的移动速度，使其易受攻击
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 10

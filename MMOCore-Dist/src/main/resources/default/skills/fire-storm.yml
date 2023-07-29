@@ -1,12 +1,12 @@
-name: Fire Storm
+name: 火焰风暴
 lore:
-- Casts a flurry of 6 fire projectiles onto
-- nearby enemies, proritizing the initial
-- target. Each projectile deals &c{damage} &7damage
-- and ignite the target for &c{ignite} &7seconds.
+- 向附近的敌人投射一连串6个火焰投射物，
+- 优先攻击初始目标。每个投射物造成&c{damage} &7点伤害，
+- 并使目标着火，持续&c{ignite} &7秒。
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BLAZE_POWDER
 damage:
   base: 5.0

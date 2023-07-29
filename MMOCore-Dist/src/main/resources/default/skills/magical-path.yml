@@ -1,11 +1,11 @@
-name: Magical Path
+name: 魔法之径
 lore:
-- Manifest a solid magical platform
-- in midair, allowing you
-- to traverse inaccessible areas
+- 在半空中显化一个坚实的魔法平台，
+- 让你穿越无法到达的区域
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 5

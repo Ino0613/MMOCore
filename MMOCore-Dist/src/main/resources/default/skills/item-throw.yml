@@ -1,11 +1,11 @@
-name: Item Throw
+name: 物品投掷
 lore:
-- Swiftly hurl the object in your
-- hand at your target with
-- dealy accuracy
+- 迅速将手中的物品投向目标，
+- 准确无比地命中
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

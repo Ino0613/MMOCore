@@ -1,11 +1,12 @@
-name: Telekinesy
+name: 念力控制
 lore:
-- You take the control over your target
-- for &9{duration} &7seconds. Left click to throw him.
-- 'Knockback force: &f{knockback}%'
+- 你将在接下来的 &9{duration} &7秒内控制目标。
+- 左键点击扔掉目标。
+- '击退力量：&f{knockback}%'
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: MAGENTA_DYE
 duration:
   base: 3.0

@@ -1,6 +1,6 @@
-name: Fire Berserker
+name: 火焰狂战士
 lore:
-- You deal &c{extra}% &7more damage when on fire.
+- 当你着火时，你造成额外&c{extra}% &7的伤害。
 material: FLINT_AND_STEEL
 mana:
   base: 2.0

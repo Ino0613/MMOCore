@@ -1,11 +1,11 @@
-name: Freezing Curse
+name: 冰冻诅咒
 lore:
-- Swiftly inscribe a cursed circle of
-- magic, which momentarily inflicts
-- your target with slowness
+- 迅速刻下一道被诅咒的魔法圈，
+- 暂时让你的目标陷入缓慢状态
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: SNOWBALL
 duration:
   base: 3

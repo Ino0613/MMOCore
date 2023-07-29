@@ -1,10 +1,11 @@
-name: Greater Healings
+name: 强效治疗
 lore:
-- Instantly grants &a{heal} &7HP to the
-- target. Sneak to cast it on yourself.
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- "立即为目标恢复 &a{heal} &7点生命值。"
+- "潜行使用可对自己施放。"
+- "''"
+- "'&e{cooldown}s 冷却时间'"
+- "'&9消耗 {mana} {mana_name} 能量'"
+
 material: GOLDEN_APPLE
 mana:
   base: 4.0

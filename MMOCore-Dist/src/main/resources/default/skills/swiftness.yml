@@ -1,11 +1,11 @@
-name: Swiftness
+name: 迅捷
 lore:
-- Grant yourself a burst
-- agility with a quick boost
-- of speed and jump boost
+- 给予自己一阵爆发性的
+- 敏捷能力，提供快速移动和跳跃加速
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 10

@@ -1,14 +1,14 @@
-name: Overload
+name: 超载
 lore:
-- Channel an explosive
-- and volatile power
-- within yourself
+- 在自己身体内聚集爆炸性
+- 和不稳定的力量
 - ''
-- Transforming yourself into a living bomb
-- that unleases a devasting blast of damage
+- 将自己转化为一个活体炸弹，
+- 释放出毁灭性的伤害爆炸
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 timer:
   base: 0

@@ -1,11 +1,11 @@
-name: Thrust
+name: "刺击"
 lore:
-- Charge forward towards
-- your target, dealing significant
-- damage upon impact
-- ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+  - "向前冲刺直指目标"
+  - "碰撞时造成重大伤害"
+  - ""
+  - "&e{cooldown}秒冷却时间"
+  - "&9消耗 {mana} {mana_name}"
+
 material: BOOK
 timer:
   base: 0

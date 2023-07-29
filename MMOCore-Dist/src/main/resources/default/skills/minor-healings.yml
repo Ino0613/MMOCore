@@ -1,10 +1,11 @@
-name: Minor Healings
+name: 轻微治疗
 lore:
-- Instantly grants &a{heal} &7HP to the
-- target. Sneak to cast it on yourself.
+- 立即为目标恢复 &a{heal} &7点生命值。
+- 潜行状态下可以对自己使用。
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: GOLDEN_APPLE
 mana:
   base: 4.0

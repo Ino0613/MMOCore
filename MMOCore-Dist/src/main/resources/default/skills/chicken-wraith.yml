@@ -1,10 +1,11 @@
-name: Chicken Wraith
+name: 鸡之困吧
 lore:
-- Unleash chaos by using
-- this rapid egg shooter
+- 通过使用这个快速的蛋发射器
+- 释放混乱的力量
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: EGG
 duration:
   base: 4

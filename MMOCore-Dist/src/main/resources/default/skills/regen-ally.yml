@@ -1,11 +1,11 @@
-name: Regen Ally
+name: 同伴回复
 lore:
-- Provide a potent and restorative
-- healing effact to any ally
-- in close proximity
+- 为附近的任何盟友提供强效的
+- 恢复治疗效果
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 5

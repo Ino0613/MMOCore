@@ -1,10 +1,11 @@
-name: Combo Attack
+name: 连击攻击
 lore:
-- Violenty slashes your target &8{count}
-- times for a total of &8{damage} &7damage.
+- 猛烈地对你的目标进行{count}次斩击，
+- 总计造成{damage}点伤害。
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: IRON_SWORD
 damage:
   base: 9.0

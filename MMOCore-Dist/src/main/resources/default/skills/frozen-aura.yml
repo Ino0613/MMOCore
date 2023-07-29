@@ -1,11 +1,11 @@
-name: Frozen Aura
+name: 冰冻光环
 lore:
-- Sorrund yourself with a 
-- frigid aura that slows
-- down nearby entities
+- 围绕自己散发寒冷的光环，
+- 使附近的实体减慢速度
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 10

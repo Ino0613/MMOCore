@@ -1,6 +1,6 @@
+# 中文重制版 By Happy Github: https://github.com/Happy-clo/
 # 格式 = 声音,音量,音调
 # 如果仅指定声音名称，则音量和音调将设置为1。
-
 level-up: ENTITY_PLAYER_LEVELUP,1,2
 
 warp-cancelled: ENTITY_VILLAGER_NO,1,0.5

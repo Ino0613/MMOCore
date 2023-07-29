@@ -1,11 +1,11 @@
-name: Deep Wound
+name: 深度伤口
 lore:
-- You puncture your target, dealing &c{damage} &7damage.
-- Damage is increased up to &c+{extra}% &7based
-- on your target's missing health.
+- 你刺穿目标，造成&c{damage} &7点伤害。
+- 伤害根据目标缺失的生命值增加，最高增加&c+{extra}%&7。
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: REDSTONE
 damage:
   base: 5.0

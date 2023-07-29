@@ -1,12 +1,12 @@
-name: Black Hole
+name: 黑洞
 lore:
-- Trap anyone in a black hole
-- they will be unable to move
-- for the duration of this
-- move
+- 困住任何人在一个黑洞中
+- 他们将无法移动
+- 在此技能持续时间内
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}s 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BLACK_DYE
 duration:
   base: 4

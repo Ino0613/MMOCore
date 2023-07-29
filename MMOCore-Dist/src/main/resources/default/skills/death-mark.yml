@@ -1,9 +1,10 @@
-name: Death Mark
+name: 死亡印记
 lore:
-- Mark your target with a death hex
+- 用死亡咒语标记你的目标
 - ''
-- '&e{cooldown}s Cooldown'
-- '&9Costs {mana} {mana_name}'
+- '&e{cooldown}秒 冷却时间'
+- '&9消耗 {mana} {mana_name}'
+
 material: BOOK
 duration:
   base: 5

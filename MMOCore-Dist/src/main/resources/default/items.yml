@@ -1,3 +1,4 @@
+# 中文重制版 By Happy Github: https://github.com/Happy-clo/
 # 默认物品模板，MMOCore不使用，但它包含了您可以用来配置物品的所有选项。
 TEMPLATE:
   item: BOOK
