@@ -1,0 +1,20 @@
+# GUI 显示名称
+name: 好友删除
+
+
+# 在您的背包中的格子数。必须在 9 到 54 之间，并且必须是 9 的倍数。
+slots: 27
+
+items:
+    yes:
+        slots: [12]
+        item: RED_TERRACOTTA
+        function: 'yes'
+        name: '&a删除 {name}'
+        lore: {}
+    back:
+        slots: [14]
+        item: GREEN_TERRACOTTA
+        function: 'back'
+        name: '&a保留 {name}'
+        lore: {}

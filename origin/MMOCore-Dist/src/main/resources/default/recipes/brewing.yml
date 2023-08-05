@@ -1,0 +1,16 @@
+# 中文重制版 By Happy Github: https://github.com/Happy-clo/
+# 每个酿造配方都需要一个空的水瓶。
+# 确保每个酿造配方都有不同的ID。
+# 它只是在插件中用作参考，实际上并不重要。
+
+# 酿造配方ID
+mana-pot-recipe:
+
+  # 用于酿造空的水瓶的原料。
+  ingredient: MATERIAL.MANA_FLOWER
+
+  # 酿造完成时替换空的水瓶的物品。
+  result: CONSUMABLE.MANA_POTION
+
+  # 酿造空的水瓶所需的时间。
+  cook-time: 10

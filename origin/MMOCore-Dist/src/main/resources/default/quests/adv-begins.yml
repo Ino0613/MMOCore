@@ -1,0 +1,30 @@
+# 中文重制版 By Happy Github: https://github.com/Happy-clo/
+# 显示选项
+name: '冒险的开始'
+lore:
+- '又一个任务示例。'
+- ''
+- '&e奖励:'
+- '&7► 石制工具'
+- '&7► 30经验值'
+
+# 父任务
+parent:
+- '教程'
+
+# 任务目标
+objectives:
+    1:
+        type: 'goto{world="world";x=120;y=46;z=652;range=10}'
+        lore: '前往营地。'
+        triggers:
+        - 'message{format="干得好！"}'
+    2:
+        type: 'talkto{npc=0}'
+        lore: '去找铁匠交谈。'
+        triggers:
+        - 'message{format="铁匠叫你来找我……?"}'
+        - 'item{type=STONE_SWORD}'
+        - 'item{type=STONE_AXE}'
+        - 'item{type=STONE_PICKAXE}'
+        - 'experience{amount=30}'

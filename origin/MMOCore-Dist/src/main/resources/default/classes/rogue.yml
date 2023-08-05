@@ -1,0 +1,101 @@
+# 中文重制版 By Happy Github: https://github.com/Happy-clo/
+display:
+  name: '盗贼'
+  lore:
+  - '他重要的爆发伤害潜力和'
+  - '他缺乏生命值，迫使他在被击败之前'
+  - '在一击之内解决目标。'
+  attribute-lore:
+  - '&a+ &7攻击速度'
+  - '&c- &7最大生命'
+  - '&c- &7移动速度'
+  - ''
+  - '&8&l力量'
+  - '&7  攻击伤害： &c1 &7(+&c0&7)'
+  - '&7  攻击速度： &c4.2 &7(+&c0.05&7)'
+  - '&7  最大生命： &c18 &7(+&c0&7)'
+  - ''
+  - '&8&l灵巧'
+  - '&7  击退抗性： &a0% &7(+&a0%&7)'
+  - '&7  移动速度： &a21 &7(+&a0&7)'
+  - '&7  减少速度减益： &a0% &7(+&a0%&7)'
+  - ''
+  - '&8&l智力'
+  - '&7  最大法力： &920 &7(+&90&7)'
+  - '&7  生命回复： &90.1 &7(+&90&7)'
+  - '&7  法力回复： &90.166 &7(+&90&7)'
+  item: LEATHER_BOOTS
+
+exp-curve: levels
+
+max-level: 100
+
+exp-table: class_exp_table
+
+skill-slots:
+  1:
+    name: "&a技能槽 I"
+    unlocked-by-default: true
+  2:
+    name: "&a技能槽 II"
+    unlocked-by-default: true
+  3:
+    name: "&a技能槽 III"
+    unlocked-by-default: true
+  4:
+    name: "&a技能槽 IV"
+    unlocked-by-default: true
+
+skill-trees:
+  - '通用'
+  - '盗贼-神射手'
+
+options:
+  # 只有在战斗外时才应用法力和生命值回复
+  off-combat-mana-regen: true
+  off-combat-health-regen: true
+  needs-permission: false
+
+cast-particle:
+  particle: SPELL_WITCH
+
+skills:
+  DEEP_WOUND:
+    level: 1
+    max-level: 30
+  WEAKEN:
+    level: 3
+    max-level: 30
+  EMPOWERED_ATTACK:
+    level: 5
+    max-level: 30
+  COMBO_ATTACK:
+    level: 7
+    max-level: 30
+  EVADE:
+    level: 9
+    max-level: 30
+  FURTIVE_STRIKE:
+    level: 4
+    max-level: 30
+  MINOR_HEALINGS:
+    level: 10
+    max-level: 30
+  SNEAKY_PICKY:
+    level: 2
+    max-level: 20
+
+attributes:
+  attack-speed:
+    base: 4.2
+    per-level: 0.05
+  max-health:
+    base: 18
+    per-level: 0
+  movement-speed:
+    base: .105
+    per-level: 0
+
+main-exp-sources:
+- 'killmob{type=ZOMBIE;amount=1-3}'
+- 'killmob{type=ENDERMAN;amount=6-9}'

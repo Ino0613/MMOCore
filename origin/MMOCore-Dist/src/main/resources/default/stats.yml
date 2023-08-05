@@ -1,0 +1,115 @@
+# 中文重制版 By Happy Github: https://github.com/Happy-clo/
+default:
+    ATTACK_DAMAGE:
+        base: 1
+        per-level: 0
+    ATTACK_SPEED:
+        base: 4
+        per-level: 0
+    MAX_HEALTH:
+        base: 20
+        per-level: 0
+    MOVEMENT_SPEED:
+        base: .1
+        per-level: 0
+    ARMOR:
+        base: 0
+        per-level: 0
+    ARMOR_TOUGHNESS:
+        base: 0
+        per-level: 0
+    KNOCKBACK_RESISTANCE:
+        base: 0
+        per-level: 0
+    SPEED_MALUS_REDUCTION:
+        base: 0
+        per-level: 0
+    HEALTH_REGENERATION:
+        base: .1
+        per-level: 0
+
+    # 最大资源值
+    MAX_MANA:
+        base: 20
+        per-level: 0
+    MAX_STAMINA:
+        base: 20
+        per-level: 0
+    MAX_STELLIUM:
+        base: 20
+        per-level: 0
+
+    # 资源值回复
+    MANA_REGENERATION:
+        base: .166
+        per-level: .03
+    STAMINA_REGENERATION:
+        base: .166
+        per-level: .03
+    STELLIUM_REGENERATION:
+        base: .01
+        per-level: 0
+
+    # 增加主职业经验获取量
+    ADDITIONAL_EXPERIENCE:
+        base: 0
+        per-level: 0
+
+    # 减少技能冷却时间百分比
+    COOLDOWN_REDUCTION:
+        base: 0
+        per-level: 0
+
+    # 增加获得稀有战利品箱子的概率
+    CHANCE:
+        base: 0
+        per-level: 0
+
+    # 技能造成的伤害
+    SKILL_DAMAGE:
+        base: 0
+        per-level: 0
+
+    # 物理技能伤害
+    PHYSICAL_DAMAGE:
+        base: 0
+        per-level: 0
+
+    # 魔法技能伤害
+    MAGIC_DAMAGE:
+        base: 0
+        per-level: 0
+
+    # 任何武器造成的伤害
+    WEAPON_DAMAGE:
+        base: 0
+        per-level: 0
+
+    # 弹射技能或武器造成的伤害
+    PROJECTILE_DAMAGE:
+        base: 0
+        per-level: 0
+
+    # 减少钓鱼所需拉动的次数
+    # （当设置为30时，将减少30％的拉动次数）。
+    FISHING_STRENGTH:
+        base: 0
+        per-level: 0.3
+        min: 0
+        max: 40
+
+    # 瞬间钓鱼的几率
+    CRITICAL_FISHING_CHANCE:
+        base: 5
+        per-level: 0
+        min: 0
+        max: 70
+
+    # 尝试捕捉鱼时，被鱼拖入水中的几率，
+    # 当玩家未成功捕获时，
+    # 该几率为条件概率。
+    CRITICAL_FISHING_FAILURE_CHANCE:
+        base: 3
+        per-level: -.01
+        min: 1
+        max: 100

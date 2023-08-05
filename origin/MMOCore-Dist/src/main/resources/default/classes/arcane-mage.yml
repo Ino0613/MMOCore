@@ -1,0 +1,120 @@
+# 中文重制版 By Happy Github: https://github.com/Happy-clo/
+# 显示选项
+display:
+  name: '奥术法师'
+  lore:
+  - '法师掌握了奥术的力量，使用强大的魔法和远程技能击败敌人。'
+  attribute-lore:
+  - '&a+ &7法力回复'
+  - '&a+ &7生命回复'
+  - '&a+ &7最大法力'
+  - '&c- &7最大生命'
+  - ''
+  - '&8&l力量'
+  - '&7  攻击伤害： &c1 &7(+&c0&7)'
+  - '&7  攻击速度： &c4 &7(+&c0&7)'
+  - '&7  最大生命： &c18 &7(+&c0&7)'
+  - ''
+  - '&8&l灵巧'
+  - '&7  击退抗性： &a0% &7(+&a0%&7)'
+  - '&7  移动速度： &a20 &7(+&a0&7)'
+  - '&7  减少速度减益： &a0% &7(+&a0%&7)'
+  - ''
+  - '&8&l智力'
+  - '&7  最大法力： &930 &7(+&91.3&7)'
+  - '&7  生命回复： &90.13 &7(+&90&7)'
+  - '&7  法力回复： &90.2 &7(+&90.04&7)'
+  item: BLAZE_POWDER:1 # 支持通过耐久度自定义模型数据/纹理
+
+# 必须与“expcurves”文件夹中现有的经验曲线文件名匹配
+exp-curve: levels
+
+skill-slots:
+  1:
+    name: "&a技能槽 I"
+    unlocked-by-default: true
+  2:
+    name: "&a技能槽 II"
+    unlocked-by-default: true
+  3:
+    name: "&a技能槽 III"
+    unlocked-by-default: true
+  4:
+    name: "&a技能槽 IV"
+    unlocked-by-default: true
+
+# 玩家可以达到的最高等级
+max-level: 100
+
+skill-trees:
+  - '通用'
+  - '法师-奥术法师'
+
+# 此类不能在/class中显示，因为它是法师的子类
+options:
+  display: false
+  needs-permission: false
+
+exp-table: class_exp_table
+
+attributes:
+  max-health:
+    base: 18
+    per-level: 0
+  max-mana:
+    base: 30
+    per-level: 1.3
+  mana-regeneration:
+    base: .2
+    per-level: .04
+  health-regeneration:
+    base: 0.13
+    per-level: 0
+
+skills:
+  FIRE_STORM:
+    level: 1
+    max-level: 30
+    damage:
+      base: 8.0
+      per-level: 4.0
+    ignite:
+      base: 2.0
+      per-level: 0.1
+    mana:
+      base: 15.0
+      per-level: 2.0
+    cooldown:
+      base: 5.0
+      per-level: -0.1
+      max: 5.0
+      min: 1.0
+  POWER_MARK:
+    level: 3
+    max-level: 30
+  FIREBALL:
+    level: 5
+    max-level: 30
+  MINOR_HEALINGS:
+    level: 6
+    max-level: 30
+  ICE_SPIKES:
+    level: 8
+    max-level: 30
+  AMBERS:
+    level: 9
+    max-level: 30
+  WEAKEN:
+    level: 10
+    max-level: 30
+  WARP:
+    level: 13
+    max-level: 30
+  GREATER_HEALINGS:
+    level: 15
+    max-level: 30
+
+# 主职业经验的来源
+main-exp-sources:
+- 'killmob{type=ZOMBIE;amount=1-3}'
+- 'killmob{type=ENDERMAN;amount=6-9}'

@@ -1,0 +1,65 @@
+# 中文重制版 By Happy Github: https://github.com/Happy-clo/
+# 显示选项
+name: 附魔
+
+# 升级此专业时为主等级提供的经验值
+experience:
+    base: 10
+    per-level: 2
+
+# 必须与“expcurves”文件夹中现有的经验曲线文件名匹配
+exp-curve: levels
+
+# 从行配置中删除'enchant'参数，以使专业获得任何附魔的经验。
+
+# 指定附魔项，可以创建不同的附魔专业，例如DESTRUCTION专业用于进攻附魔
+# （惩戒、亚瑟之灭、锋利、力量、火焰）和ALTERATION专业用于策略性附魔。
+#
+# 使用enchantitem{}使其适用于任何附魔。
+#
+# 使用enchantitem{enchant="sharpness,power"}指定多个附魔
+exp-sources:
+- 'enchantitem{}'
+
+# 当附魔物品时，玩家会获得附魔经验值。
+# 物品提供的经验值是每个额外附魔所提供的经验值之和。
+# 附魔经验值取决于附魔本身 + 附魔等级。
+# 附魔经验 = <附魔等级> * <基础附魔经验值>
+base-enchant-exp:
+    fire_protection: 10
+    sharpness: 10
+    flame: 10
+    aqua_affinity: 10
+    punch: 10
+    loyalty: 10
+    depth_strider: 10
+    vanishing_curse: 10
+    unbreaking: 10
+    knockback: 10
+    luck_of_the_sea: 10
+    binding_curse: 10
+    fortune: 10
+    protection: 10
+    efficiency: 10
+    mending: 10
+    frost_walker: 10
+    lure: 10
+    looting: 10
+    piercing: 10
+    blast_protection: 10
+    smite: 10
+    multishot: 10
+    fire_aspect: 10
+    channeling: 10
+    sweeping: 10
+    thorns: 10
+    bane_of_arthropods: 10
+    respiration: 10
+    riptide: 10
+    silk_touch: 10
+    quick_charge: 10
+    projectile_protection: 10
+    impaling: 10
+    feather_falling: 10
+    power: 10
+    infinity: 10

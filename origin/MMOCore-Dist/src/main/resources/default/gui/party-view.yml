@@ -1,0 +1,31 @@
+# GUI 显示名称
+name: Party ({players}/{max})
+
+# 在您的背包中的格子数。必须在 9 到 54 之间，并且必须是 9 的倍数。
+slots: 54
+
+items:
+    member:
+        slots: [10,12,14,16,28,30,32,34]
+        function: member
+        empty:  
+            item: GRAY_STAINED_GLASS_PANE
+            name: '&a没有玩家'
+        member:
+            item: PLAYER_HEAD
+            name: '&a{name}'
+            lore:
+            - '&7等级 {level} {class}'
+            - '&7上线时间: {since}'
+    leave:
+        slots: [50]
+        function: leave
+        item: REDSTONE
+        name: '&c离开队伍'
+        lore: {}
+    request:
+        slots: [48]
+        function: invite
+        item: WRITABLE_BOOK
+        name: '&a邀请玩家加入..'
+        lore: {}

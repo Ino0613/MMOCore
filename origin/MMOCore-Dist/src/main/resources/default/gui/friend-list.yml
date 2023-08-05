@@ -1,0 +1,40 @@
+# GUI 显示名称
+name: 好友列表
+
+# 在您的背包中的格子数。必须在 9 到 54 之间，并且必须是 9 的倍数。
+slots: 54
+
+items:
+    friend:
+        slots: [10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34]
+        function: friend
+        
+        # 没有好友
+        item: GRAY_STAINED_GLASS_PANE
+        name: '&c没有好友'
+        lore: {}
+        
+        # 在线好友
+        online:
+            item: PLAYER_HEAD
+            name: '&a[在线] &f{name}'
+            lore:
+            - '&7等级 {level} {class}'
+            - '&7在线时间: {online_since}'
+            - ''
+            - '&c右键点击移除好友.'
+            
+        # 离线好友
+        offline:
+            item: PLAYER_HEAD
+            name: '&c[离线] &f{name}'
+            lore:
+            - '&7上次在线: {last_seen} 之前'
+            - ''
+            - '&c右键点击移除好友.'
+    request:
+        slots: [49]
+        function: request
+        item: WRITABLE_BOOK
+        name: '&a新的好友请求'
+        lore: {}

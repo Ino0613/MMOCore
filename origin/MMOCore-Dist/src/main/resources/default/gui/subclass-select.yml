@@ -1,0 +1,21 @@
+# GUI显示名称
+name: 选择你的道路...
+
+# 背包槽位数量。必须在9和54之间，并且必须是9的倍数。
+slots: 27
+
+items:
+    back:
+        function: back
+        slots: [26]
+        item: RED_STAINED_GLASS_PANE
+        name: '&a返回职业选择'
+        lore: []
+    arcane-mage:
+        slots: [13]
+        function: sub-class-arcane-mage
+        name: '&a&l奥术法师'
+        lore:
+        - '{传说}'
+        - ''
+        - '{属性传说}'

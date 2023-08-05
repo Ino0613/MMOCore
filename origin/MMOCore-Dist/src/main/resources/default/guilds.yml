@@ -1,0 +1,37 @@
+# 中文重制版 By Happy Github: https://github.com/Happy-clo/
+# 警告！请注意在不同阶段的公会中，该文件会发生很多变化。
+# 此处显示的布局和设置并非最终版本！
+
+# 在公会聊天中输入的前缀字符。
+# 公会聊天的格式可以在'messages.yml'中找到
+chat-prefix: "*"
+
+# 如果公会标签应在创建时自动转换为大写，请设置为true。
+uppercase-tags: true
+
+rules:
+    tag:
+        # 标签字符必须匹配此正则表达式字符串
+        # 否则公会创建将失败。
+        # !!! 如果您不了解正则表达式，请不要修改这个！
+        # 您可以在此处测试您的表达式：https://regexr.com/
+        matches: "[a-zA-Z-_!?]+"
+        # 标签的最小和最大长度
+        min-length: 3
+        max-length: 4
+    name:
+        # 名称字符必须匹配此正则表达式字符串
+        # 否则公会创建将失败。
+        # !!! 如果您不了解正则表达式，请不要修改这个！
+        # 您可以在此处测试您的表达式：https://regexr.com/
+        matches: "[a-zA-Z -_!?]+"
+        # 名称的最小和最大长度
+        min-length: 3
+        max-length: 14
+
+# 公会最大允许的成员数
+max-size: 40
+
+# "Guilds 1.0不具有最大成员数功能
+# 热补丁将在圣诞节前发布！"
+# - Aria

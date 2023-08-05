@@ -1,0 +1,28 @@
+# 中文重制版 By Happy Github: https://github.com/Happy-clo/
+# 属性ID
+strength:
+
+    name: 力量
+    
+    # 玩家可以在此属性中花费的最大点数。
+    max-points: 40
+    
+    # 每花费1点在该特定属性上的属性点时提供的增益。
+    buff:
+        weapon_damage: 2
+        max_health: 1%
+
+dexterity:
+    name: 敏捷
+    max-points: 40
+    buff:
+        physical_damage: 1.5
+        projectile_damage: 1
+        attack_speed: 0.5%
+
+intelligence:
+    name: 智力
+    max-points: 40
+    buff:
+        magic_damage: 2
+        cooldown_reduction: 1
