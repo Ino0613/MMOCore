@@ -4,9 +4,9 @@ import io.lumine.mythic.lib.MythicLib;
 import io.lumine.mythic.lib.api.item.ItemTag;
 import io.lumine.mythic.lib.api.item.NBTItem;
 import net.Indyuce.mmocore.MMOCore;
+import net.Indyuce.mmocore.api.ConfigMessage;
 import net.Indyuce.mmocore.api.SoundEvent;
 import net.Indyuce.mmocore.api.player.PlayerData;
-import net.Indyuce.mmocore.skill.binding.SkillSlot;
 import net.Indyuce.mmocore.api.util.MMOCoreUtils;
 import net.Indyuce.mmocore.gui.api.EditableInventory;
 import net.Indyuce.mmocore.gui.api.GeneratedInventory;
@@ -16,6 +16,7 @@ import net.Indyuce.mmocore.gui.api.item.Placeholders;
 import net.Indyuce.mmocore.gui.api.item.SimplePlaceholderItem;
 import net.Indyuce.mmocore.skill.ClassSkill;
 import net.Indyuce.mmocore.skill.RegisteredSkill;
+import net.Indyuce.mmocore.skill.binding.SkillSlot;
 import org.apache.commons.lang.Validate;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -108,15 +109,40 @@ public class SkillList extends EditableInventory {
         public ItemStack display(SkillViewerInventory inv, int n) {
             if (inv.selected == null)
                 return new ItemStack(Material.AIR);
-            return new ItemStack(inv.selected.getSkill().getIcon());
+            Placeholders holders = getPlaceholders(inv, n);
+            ItemStack item = new ItemStack(inv.selected.getSkill().getIcon());
+            ItemMeta meta = item.getItemMeta();
+            int skillLevel = inv.getPlayerData().getSkillLevel(inv.selected.getSkill());
+            List<String> lore = new ArrayList<>();
+            boolean unlocked = inv.selected.getUnlockLevel() <= inv.getPlayerData().getLevel();
+            for (String str : getLore()) {
+                if ((str.startsWith("{unlocked}") && !unlocked) || (str.startsWith("{locked}") && unlocked) || (str.startsWith("{max_level}") && (!inv.selected.hasMaxLevel() || inv.selected.getMaxLevel() > inv.getPlayerData().getSkillLevel(inv.selected.getSkill()))))
+                    continue;
+                if (str.contains("{lore}"))
+                    for (String loreLine : inv.selected.calculateLore(inv.getPlayerData()))
+                        lore.add(ChatColor.GRAY + loreLine);
+                else
+                    lore.add(holders.apply(inv.getPlayer(), str));
+            }
+
+            meta.setDisplayName(MMOCore.plugin.placeholderParser.parse(inv.getPlayer(), getName().replace("{skill}", inv.selected.getSkill().getName())
+                    .replace("{roman}", MMOCoreUtils.intToRoman(skillLevel)).replace("{level}", "" + skillLevel)));
+            meta.addItemFlags(ItemFlag.values());
+            meta.setLore(lore);
+            item.setItemMeta(meta);
+            return item;
         }
 
         @Override
         public Placeholders getPlaceholders(SkillViewerInventory inv, int n) {
             Placeholders holders = new Placeholders();
             holders.register("selected", inv.selected.getSkill().getName());
+            holders.register("skill", inv.selected.getSkill().getName());
+            holders.register("unlock", "" + inv.selected.getUnlockLevel());
+            holders.register("level", "" + inv.getPlayerData().getSkillLevel(inv.selected.getSkill()));
             return holders;
         }
+
     }
 
     public class LevelItem extends InventoryItem<SkillViewerInventory> {
@@ -149,11 +175,11 @@ public class SkillList extends EditableInventory {
                 lore.add(index + j, skillLore.get(j));
 
             for (int j = 0; j < lore.size(); j++)
-                lore.set(j, ChatColor.GRAY + MythicLib.plugin.parseColors(lore.get(j)));
+                lore.set(j, ChatColor.GRAY + MMOCore.plugin.placeholderParser.parse(inv.getPlayer(), lore.get(j)));
 
             ItemStack item = new ItemStack(getMaterial());
             ItemMeta meta = item.getItemMeta();
-            meta.setDisplayName(MythicLib.plugin.parseColors(getName().replace("{skill}", skill.getSkill().getName())
+            meta.setDisplayName(MMOCore.plugin.placeholderParser.parse(inv.getPlayer(), getName().replace("{skill}", skill.getSkill().getName())
                     .replace("{roman}", MMOCoreUtils.intToRoman(skillLevel)).replace("{level}", "" + skillLevel)));
             meta.addItemFlags(ItemFlag.values());
             meta.setLore(lore);
@@ -172,12 +198,17 @@ public class SkillList extends EditableInventory {
 
     public class SlotItem extends InventoryItem<SkillViewerInventory> {
         private final String none;
-        private final int emptyCMD;
+        @Nullable
+        private final Material filledItem;
+        private final int filledCMD;
 
         public SlotItem(ConfigurationSection config) {
             super(config);
             none = MythicLib.plugin.parseColors(config.getString("no-skill"));
-            emptyCMD = config.getInt("empty-custom-model-data", getModelData());
+
+            filledItem = config.contains("filled-item") ? Material
+                    .valueOf(config.getString("filled-item").toUpperCase().replace("-", "_").replace(" ", "_")) : null;
+            filledCMD = config.getInt("filled-custom-model-data", getModelData());
         }
 
         @Override
@@ -187,12 +218,20 @@ public class SkillList extends EditableInventory {
                 return new ItemStack(Material.AIR);
 
             final @Nullable ClassSkill boundSkill = inv.getPlayerData().getBoundSkill(n + 1);
-            final ItemStack item = super.display(inv, n);
+            ItemStack item;
+            if (boundSkill == null)
+                item = super.display(inv, n);
+            else if (filledItem == null)
+                item = boundSkill.getSkill().getIcon();
+            else {
+                item = new ItemStack(filledItem);
+                if (MythicLib.plugin.getVersion().isStrictlyHigher(1, 13)) {
+                    ItemMeta meta = item.getItemMeta();
+                    meta.setCustomModelData(filledCMD);
+                    item.setItemMeta(meta);
+                }
+            }
             Placeholders holders = getPlaceholders(inv, n);
-
-            // Same material as skill
-            if (boundSkill != null)
-                item.setType(boundSkill.getSkill().getIcon().getType());
 
             final ItemMeta meta = item.getItemMeta();
             meta.setDisplayName(MMOCore.plugin.placeholderParser.parse(inv.getPlayerData().getPlayer(), skillSlot.getName()));
@@ -217,9 +256,6 @@ public class SkillList extends EditableInventory {
             for (int j = 0; j < lore.size(); j++)
                 lore.set(j, ChatColor.GRAY + holders.apply(inv.getPlayer(), lore.get(j)));
             meta.setLore(lore);
-            // Same CMD as skill icon
-            if (boundSkill != null && boundSkill.getSkill().getIcon().hasItemMeta() && boundSkill.getSkill().getIcon().getItemMeta().hasCustomModelData())
-                meta.setCustomModelData(boundSkill.getSkill().getIcon().getItemMeta().getCustomModelData());
 
             item.setItemMeta(meta);
             return item;
@@ -381,13 +417,13 @@ public class SkillList extends EditableInventory {
                 int spent = getPlayerData().countSkillPointsSpent();
 
                 if (spent < 1) {
-                    MMOCore.plugin.configManager.getSimpleMessage("no-skill-points-spent").send(player);
+                    ConfigMessage.fromKey("no-skill-points-spent").send(player);
                     MMOCore.plugin.soundManager.getSound(SoundEvent.NOT_ENOUGH_POINTS).playTo(getPlayer());
                     return;
                 }
 
                 if (playerData.getSkillReallocationPoints() < 1) {
-                    MMOCore.plugin.configManager.getSimpleMessage("not-skill-reallocation-point").send(player);
+                    ConfigMessage.fromKey("not-skill-reallocation-point").send(player);
                     MMOCore.plugin.soundManager.getSound(SoundEvent.NOT_ENOUGH_POINTS).playTo(getPlayer());
                     return;
                 }
@@ -397,7 +433,7 @@ public class SkillList extends EditableInventory {
 
                 playerData.giveSkillPoints(spent);
                 playerData.setSkillReallocationPoints(playerData.getSkillReallocationPoints() - 1);
-                MMOCore.plugin.configManager.getSimpleMessage("skill-points-reallocated", "points", "" + playerData.getSkillPoints()).send(player);
+                ConfigMessage.fromKey("skill-points-reallocated", "points", "" + playerData.getSkillPoints()).send(player);
                 MMOCore.plugin.soundManager.getSound(SoundEvent.RESET_SKILLS).playTo(getPlayer());
                 open();
             }
@@ -430,12 +466,12 @@ public class SkillList extends EditableInventory {
                 // unbind if there is a current spell.
                 if (context.getClickType() == ClickType.RIGHT) {
                     if (!playerData.hasSkillBound(index)) {
-                        MMOCore.plugin.configManager.getSimpleMessage("no-skill-bound").send(player);
+                        ConfigMessage.fromKey("no-skill-bound").send(player);
                         player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1, 2);
                         return;
                     }
                     if (!playerData.getProfess().getSkillSlot(index).canManuallyBind()) {
-                        MMOCore.plugin.configManager.getSimpleMessage("cant-manually-bind").send(player);
+                        ConfigMessage.fromKey("cant-manually-bind").send(player);
                         player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1, 2);
                         return;
                     }
@@ -446,19 +482,19 @@ public class SkillList extends EditableInventory {
                 }
 
                 if (!playerData.hasUnlockedLevel(selected)) {
-                    MMOCore.plugin.configManager.getSimpleMessage("skill-level-not-met").send(player);
+                    ConfigMessage.fromKey("skill-level-not-met").send(player);
                     player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1, 2);
                     return;
                 }
 
                 if (!skillSlot.canManuallyBind()) {
-                    MMOCore.plugin.configManager.getSimpleMessage("cant-manually-bind").send(player);
+                    ConfigMessage.fromKey("cant-manually-bind").send(player);
                     player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1, 2);
                     return;
                 }
 
                 if (!skillSlot.acceptsSkill(selected)) {
-                    MMOCore.plugin.configManager.getSimpleMessage("not-compatible-skill").send(player);
+                    ConfigMessage.fromKey("not-compatible-skill").send(player);
                     player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1, 2);
                     return;
                 }
@@ -474,26 +510,26 @@ public class SkillList extends EditableInventory {
                 int shiftCost = ((UpgradeItem) item).shiftCost;
 
                 if (!playerData.hasUnlockedLevel(selected)) {
-                    MMOCore.plugin.configManager.getSimpleMessage("skill-level-not-met").send(player);
+                    ConfigMessage.fromKey("skill-level-not-met").send(player);
                     player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1, 2);
                     return;
                 }
 
                 if (playerData.getSkillPoints() < 1) {
-                    MMOCore.plugin.configManager.getSimpleMessage("not-enough-skill-points").send(player);
+                    ConfigMessage.fromKey("not-enough-skill-points").send(player);
                     player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1, 2);
                     return;
                 }
 
                 if (selected.hasMaxLevel() && playerData.getSkillLevel(selected.getSkill()) >= selected.getMaxLevel()) {
-                    MMOCore.plugin.configManager.getSimpleMessage("skill-max-level-hit").send(player);
+                    ConfigMessage.fromKey("skill-max-level-hit").send(player);
                     player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1, 2);
                     return;
                 }
 
                 if (context.getClickType().isShiftClick()) {
                     if (playerData.getSkillPoints() < shiftCost) {
-                        MMOCore.plugin.configManager.getSimpleMessage("not-enough-skill-points-shift", "shift_points", "" + shiftCost).send(player);
+                        ConfigMessage.fromKey("not-enough-skill-points-shift", "shift_points", "" + shiftCost).send(player);
                         player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1, 2);
                         return;
                     }
@@ -505,7 +541,7 @@ public class SkillList extends EditableInventory {
                     playerData.setSkillLevel(selected.getSkill(), playerData.getSkillLevel(selected.getSkill()) + 1);
                 }
 
-                MMOCore.plugin.configManager.getSimpleMessage("upgrade-skill", "skill", selected.getSkill().getName(), "level",
+                ConfigMessage.fromKey("upgrade-skill", "skill", selected.getSkill().getName(), "level",
                         "" + playerData.getSkillLevel(selected.getSkill())).send(player);
                 player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 2);
                 open();

@@ -1,94 +1,113 @@
-# 中文重制版 By Happy Github: https://github.com/Happy-clo/
+# 显示选项
 display:
-  name: '神射手'
-  lore:
-  - '神射手是敏捷准确的远程战士，箭矢从不会错失目标。'
-  attribute-lore:
-  - '&a+ &7击退抗性'
-  - '&a+ &7减少速度减益'
-  - '&c- &7最大生命'
-  - '&c- &7移动速度'
-  - ''
-  - '&8&l力量'
-  - '&7  攻击伤害： &c1 &7(+&c0&7)'
-  - '&7  攻击速度： &c4 &7(+&c0&7)'
-  - '&7  最大生命： &c18 &7(+&c0&7)'
-  - ''
-  - '&8&l灵巧'
-  - '&7  击退抗性： &a15% &7(+&a1%&7)'
-  - '&7  移动速度： &a21 &7(+&a0&7)'
-  - '&7  减少速度减益： &a10% &7(+&a2%&7)'
-  - ''
-  - '&8&l智力'
-  - '&7  最大法力： &920 &7(+&90&7)'
-  - '&7  生命回复： &90.1 &7(+&90&7)'
-  - '&7  法力回复： &90.166 &7(+&90&7)'
-  item: BOW
+    name: '神射手'
+    lore:
+    - '神射手是一个迅捷和精准的'
+    - '远程战士，箭无虚发。'
+    attribute-lore:
+    - '&a+ &7击退抗性'
+    - '&a+ &7速度减益减少'
+    - '&c- &7最大生命'
+    - '&c- &7移动速度'
+    - ''
+    - '&8&l力量'
+    - '&7  攻击伤害：&c1 &7(+&c0&7)'
+    - '&7  攻击速度：&c4 &7(+&c0&7)'
+    - '&7  最大生命：&c18 &7(+&c0&7)'
+    - ''
+    - '&8&l灵巧'
+    - '&7  击退抗性：&a15% &7(+&a1%&7)'
+    - '&7  移动速度：&a21 &7(+&a0&7)'
+    - '&7  速度减益减少：&a10% &7(+&a2%&7)'
+    - ''
+    - '&8&l智力'
+    - '&7  最大法力：&920 &7(+&90&7)'
+    - '&7  生命再生：&90.1 &7(+&90&7)'
+    - '&7  法力再生：&90.166 &7(+&90&7)'
+    item: BOW
 
+# 必须与'expcurves'文件夹中现有的经验曲线文件名匹配
 exp-curve: levels
 
+# 玩家能够达到的最高等级
 max-level: 100
 
 exp-table: class_exp_table
 
 skill-slots:
-  1:
-    name: "&a技能槽 I"
-    unlocked-by-default: true
-  2:
-    name: "&a技能槽 II"
-    unlocked-by-default: true
-  3:
-    name: "&a技能槽 III"
-    unlocked-by-default: true
-  4:
-    name: "&a技能槽 IV"
-    unlocked-by-default: true
+    1:
+        name: "&a技能槽 I"
+        unlocked-by-default: true
+        lore: []
+    2:
+        name: "&a技能槽 II"
+        unlocked-by-default: true
+        lore: []
+    3:
+        name: "&a技能槽 III"
+        unlocked-by-default: true
+        lore: []
+    4:
+        name: "&a技能槽 IV"
+        unlocked-by-default: true
+        lore: []
 
 skill-trees:
-  - '通用'
-  - '盗贼-神射手'
+    - 'general'
+    - 'rogue-marksman'
 
+# 玩家进入施法模式时显示在周围的粒子效果。
 cast-particle:
-  particle: CRIT
+    particle: CRIT
 
+# 特殊资源再生：（当不在战斗中时），
+# 玩家可以恢复一定%的他们的耐力法力/丧失的耐力。
+# 这个%可以随着玩家的等级变化。
+# 它也适用于其他玩家资源：生命、星光和法力！
 resource:
-  stamina:
-    type: MISSING
-    value:
-      base: 5
-      per-level: .2
-      max: 13
-    off-combat: true
+    stamina:
+    
+        # 再生速度随着丧失的耐力成比例。
+        type: MISSING
+        
+        # 每秒从丧失的耐力的3%到10%再生
+        value:
+            base: 5
+            per-level: .2
+            max: 13
+        
+        # 只有在不在战斗中时才再生。
+        off-combat: true
 
 skills:
-  WEAKEN:
-    level: 3
-    max-level: 30
-  COMBO_ATTACK:
-    level: 7
-    max-level: 30
-  EVADE:
-    level: 9
-    max-level: 30
-  MINOR_HEALINGS:
-    level: 10
-    max-level: 30
+    WEAKEN:
+        level: 3
+        max-level: 30
+    COMBO_ATTACK:
+        level: 7
+        max-level: 30
+    EVADE:
+        level: 9
+        max-level: 30
+    MINOR_HEALINGS:
+        level: 10
+        max-level: 30
 
 attributes:
-  knockback-resistance:
-    base: .15
-    per-level: .01
-  speed-malus-reduction:
-    base: 10
-    per-level: 2
-  max-health:
-    base: 18
-    per-level: 0
-  movement-speed:
-    base: .105
-    per-level: 0
+    knockback-resistance:
+        base: .15
+        per-level: .01
+    speed-malus-reduction:
+        base: 10
+        per-level: 2
+    max-health:
+        base: 18
+        per-level: 0
+    movement-speed:
+        base: .105
+        per-level: 0
 
+# 主职业经验的经验来源
 main-exp-sources:
 - 'killmob{type=ZOMBIE;amount=1-3}'
 - 'killmob{type=ENDERMAN;amount=6-9}'

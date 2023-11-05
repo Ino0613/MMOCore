@@ -1,7 +1,10 @@
 package net.Indyuce.mmocore.gui;
 
 import net.Indyuce.mmocore.MMOCore;
+import net.Indyuce.mmocore.api.ConfigMessage;
+import net.Indyuce.mmocore.api.SoundEvent;
 import net.Indyuce.mmocore.api.player.PlayerData;
+import net.Indyuce.mmocore.api.quest.Quest;
 import net.Indyuce.mmocore.api.util.math.format.DelayFormat;
 import net.Indyuce.mmocore.experience.Profession;
 import net.Indyuce.mmocore.gui.api.EditableInventory;
@@ -10,14 +13,11 @@ import net.Indyuce.mmocore.gui.api.InventoryClickContext;
 import net.Indyuce.mmocore.gui.api.item.InventoryItem;
 import net.Indyuce.mmocore.gui.api.item.Placeholders;
 import net.Indyuce.mmocore.gui.api.item.SimplePlaceholderItem;
-import net.Indyuce.mmocore.api.quest.Quest;
-import net.Indyuce.mmocore.api.SoundEvent;
 import org.apache.commons.lang.Validate;
 import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.event.inventory.ClickType;
-import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
@@ -108,9 +108,7 @@ public class QuestViewer extends EditableInventory {
 
 			List<String> lore = new ArrayList<>(getLore());
 
-			/*
-			 * replace quest lore
-			 */
+			// Replace quest lore
 			index = lore.indexOf("{lore}");
 			if (index >= 0) {
 				lore.remove(index);
@@ -118,22 +116,20 @@ public class QuestViewer extends EditableInventory {
 					lore.add(index + j, quest.getLore().get(j));
 			}
 
-			/*
-			 * calculate quest info for later.
-			 */
+			// Calculate lore for later
 			int reqCount = quest.countLevelRestrictions();
 			boolean started = inv.getPlayerData().getQuestData().hasCurrent(quest), completed = inv.getPlayerData().getQuestData().hasFinished(quest),
 					cooldown = completed && inv.getPlayerData().getQuestData().checkCooldownAvailability(quest);
 
-			lore.removeIf(next -> (next.startsWith("{level_req}") && reqCount < 1) ||
-				(next.startsWith("{started}") && !started) || (next.startsWith("{!started}") && started)
-				|| (next.startsWith("{completed}") && !completed) || (next.startsWith("{completed_cannot_redo}") &&
-				!(completed && !quest.isRedoable())) || (next.startsWith("{completed_can_redo}") && !(cooldown && quest.isRedoable()))
-				|| (next.startsWith("{completed_delay}") && !(completed && !cooldown)));
+			lore.removeIf(next -> (next.startsWith("{level_req}") && reqCount < 1)
+					|| (next.startsWith("{started}") && !started)
+					|| (next.startsWith("{!started}") && started)
+					|| (next.startsWith("{completed}") && !completed)
+					|| (next.startsWith("{completed_cannot_redo}") && !(completed && !quest.isRedoable()))
+					|| (next.startsWith("{completed_can_redo}") && !(cooldown && quest.isRedoable()))
+					|| (next.startsWith("{completed_delay}") && !(completed && !cooldown)));
 
-			/*
-			 * replace level requirements
-			 */
+			// Replace level requirements
 			index = lore.indexOf("{level_req}{level_requirements}");
 			if (index >= 0) {
 				lore.remove(index);
@@ -149,28 +145,25 @@ public class QuestViewer extends EditableInventory {
 				}
 			}
 
-			Placeholders holders = getPlaceholders(inv.getPlayerData(), quest);
-
+			Placeholders holders = getPlaceholders(inv, n);
 			for (int j = 0; j < lore.size(); j++)
 				lore.set(j, ChatColor.GRAY + holders.apply(inv.getPlayer(), lore.get(j)));
 
-			/*
-			 * generate item
-			 */
-			ItemStack item = new ItemStack(getMaterial());
+			// Generate item
+			ItemStack item = super.display(inv, n);
 			ItemMeta meta = item.getItemMeta();
-			meta.setDisplayName(holders.apply(inv.getPlayer(), getName()));
-			meta.addItemFlags(ItemFlag.values());
 			meta.setLore(lore);
-
-
-			meta.getPersistentDataContainer().set(new NamespacedKey(MMOCore.plugin,"quest_id"), PersistentDataType.STRING,quest.getId());
+			meta.getPersistentDataContainer().set(new NamespacedKey(MMOCore.plugin, "quest_id"), PersistentDataType.STRING,quest.getId());
 			item.setItemMeta(meta);
 
 			return item;
 		}
 
-		private Placeholders getPlaceholders(PlayerData data, Quest quest) {
+		@Override
+		public Placeholders getPlaceholders(GeneratedInventory inv, int n) {
+            Quest quest = ((QuestInventory) inv).quests.get(n);
+            PlayerData data = inv.getPlayerData();
+
 			Placeholders holders = new Placeholders();
 			holders.register("name", quest.getName());
 			holders.register("total_level_req", quest.getLevelRestrictions().size() + (quest.getLevelRestriction(null) > 0 ? 1 : 0));
@@ -233,70 +226,53 @@ public class QuestViewer extends EditableInventory {
 
 				if (playerData.getQuestData().hasCurrent()) {
 
-					/*
-					 * check if the player is cancelling his ongoing quest.
-					 */
+					// Check if the player is cancelling his ongoing quest
 					if (playerData.getQuestData().hasCurrent(quest)) {
 						if (context.getClickType() == ClickType.RIGHT) {
 							playerData.getQuestData().start(null);
 							MMOCore.plugin.soundManager.getSound(SoundEvent.CANCEL_QUEST).playTo(player);
-							MMOCore.plugin.configManager.getSimpleMessage("cancel-quest").send(player);
+							ConfigMessage.fromKey("cancel-quest").send(player);
 							open();
 						}
 						return;
 					}
 
-					/*
-					 * the player cannot start a new quest if he is already
-					 * doing one.
-					 */
-					MMOCore.plugin.configManager.getSimpleMessage("already-on-quest").send(player);
+					// The player cannot start a new quest if he is already doing one
+					ConfigMessage.fromKey("already-on-quest").send(player);
 					return;
 				}
 
-				/*
-				 * check for level requirements.
-				 */
+				// Check for level requirements.
 				int level;
 				if (playerData.getLevel() < (level = quest.getLevelRestriction(null))) {
-					MMOCore.plugin.configManager.getSimpleMessage("quest-level-restriction", "level", "Lvl", "count", "" + level).send(player);
+					ConfigMessage.fromKey("quest-level-restriction", "level", "Lvl", "count", "" + level).send(player);
 					return;
 				}
 
-				for (Profession profession : quest.getLevelRestrictions())
-					if (playerData.getCollectionSkills().getLevel(profession) < (level = quest.getLevelRestriction(profession))) {
-						MMOCore.plugin.configManager
-								.getSimpleMessage("quest-level-restriction", "level", profession.getName() + " Lvl", "count", "" + level)
-								.send(player);
-						return;
-					}
+                for (Profession profession : quest.getLevelRestrictions())
+                    if (playerData.getCollectionSkills().getLevel(profession) < (level = quest.getLevelRestriction(profession))) {
+                        ConfigMessage.fromKey("quest-level-restriction", "level", profession.getName() + " Lvl", "count", "" + level)
+                                .send(player);
+                        return;
+                    }
 
 				if (playerData.getQuestData().hasFinished(quest)) {
 
-					/*
-					 * if the player has already finished this quest, he can't
-					 * start it again.
-					 */
+					// If the player has already finished this quest, he can't start it again
 					if (!quest.isRedoable()) {
-						MMOCore.plugin.configManager.getSimpleMessage("cant-redo-quest").send(player);
+						ConfigMessage.fromKey("cant-redo-quest").send(player);
 						return;
 					}
 
-					/*
-					*
-					*/
-					if (!playerData.getQuestData().checkCooldownAvailability(quest)) {
-						MMOCore.plugin.configManager
-								.getSimpleMessage("quest-cooldown", "delay", new DelayFormat(2).format(playerData.getQuestData().getDelayFeft(quest)))
-								.send(player);
-						return;
-					}
+                    // Has the player waited long enough
+                    if (!playerData.getQuestData().checkCooldownAvailability(quest)) {
+                        ConfigMessage.fromKey("quest-cooldown", "delay", new DelayFormat(2).format(playerData.getQuestData().getDelayFeft(quest))).send(player);
+                        return;
+                    }
 				}
 
-				/*
-				 * eventually start a new quest.
-				 */
-				MMOCore.plugin.configManager.getSimpleMessage("start-quest", "quest", quest.getName()).send(player);
+				// Eventually start the quest
+				ConfigMessage.fromKey("start-quest", "quest", quest.getName()).send(player);
 				MMOCore.plugin.soundManager.getSound(SoundEvent.START_QUEST).playTo(player);
 				playerData.getQuestData().start(quest);
 				open();

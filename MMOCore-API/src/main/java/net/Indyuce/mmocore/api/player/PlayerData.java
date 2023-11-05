@@ -25,10 +25,7 @@ import net.Indyuce.mmocore.api.quest.PlayerQuests;
 import net.Indyuce.mmocore.api.quest.trigger.StatTrigger;
 import net.Indyuce.mmocore.api.quest.trigger.Trigger;
 import net.Indyuce.mmocore.api.util.MMOCoreUtils;
-import net.Indyuce.mmocore.experience.EXPSource;
-import net.Indyuce.mmocore.experience.ExperienceObject;
-import net.Indyuce.mmocore.experience.ExperienceTableClaimer;
-import net.Indyuce.mmocore.experience.PlayerProfessions;
+import net.Indyuce.mmocore.experience.*;
 import net.Indyuce.mmocore.experience.droptable.ExperienceItem;
 import net.Indyuce.mmocore.experience.droptable.ExperienceTable;
 import net.Indyuce.mmocore.guild.provided.Guild;
@@ -153,9 +150,6 @@ public class PlayerData extends SynchronizedDataHolder implements OfflinePlayerD
         } catch (NullPointerException exception) {
             MMOCore.log(Level.SEVERE, "[Userdata] Could not find class " + getProfess().getId() + " while refreshing player data.");
         }
-        //We remove all the stats and buffs associated to triggers.
-        getMMOPlayerData().getStatMap().getInstances().forEach(statInstance -> statInstance.removeIf(key -> key.startsWith(Trigger.TRIGGER_PREFIX)));
-        getMMOPlayerData().getSkillModifierMap().getInstances().forEach(skillModifierInstance -> skillModifierInstance.removeIf(key -> key.startsWith(Trigger.TRIGGER_PREFIX)));
         final Iterator<Map.Entry<Integer, BoundSkillInfo>> ite = new HashMap(boundSkills).entrySet().iterator();
         while (ite.hasNext())
             try {
@@ -177,6 +171,23 @@ public class PlayerData extends SynchronizedDataHolder implements OfflinePlayerD
                 if (!nodeLevels.containsKey(node)) nodeLevels.put(node, 0);
 
         setupSkillTree();
+        setupRemovableTrigger();
+    }
+
+    public void setupRemovableTrigger() {
+        //We remove all the stats and buffs associated to triggers.
+        getMMOPlayerData().getStatMap().getInstances().forEach(statInstance -> statInstance.removeIf(Trigger.STAT_MODIFIER_KEY::equals));
+        getMMOPlayerData().getSkillModifierMap().getInstances().forEach(skillModifierInstance -> skillModifierInstance.removeIf(Trigger.STAT_MODIFIER_KEY::equals));
+
+        if (profess.hasExperienceTable())
+            profess.getExperienceTable().claimRemovableTrigger(this, profess);
+        for (Profession profession : MMOCore.plugin.professionManager.getAll())
+            if (profession.hasExperienceTable())
+                profession.getExperienceTable().claimRemovableTrigger(this, profession);
+        // Stat triggers setup
+        for (SkillTree skillTree : MMOCore.plugin.skillTreeManager.getAll())
+            for (SkillTreeNode node : skillTree.getNodes())
+                node.getExperienceTable().claimRemovableTrigger(this, node);
     }
 
     public void setupSkillTree() {
@@ -184,11 +195,6 @@ public class PlayerData extends SynchronizedDataHolder implements OfflinePlayerD
         // Node states setup
         for (SkillTree skillTree : getProfess().getSkillTrees())
             skillTree.setupNodeStates(this);
-
-        // Stat triggers setup
-        for (SkillTree skillTree : MMOCore.plugin.skillTreeManager.getAll())
-            for (SkillTreeNode node : skillTree.getNodes())
-                node.getExperienceTable().claimRemovableTrigger(this, node);
     }
 
     public int getPointSpent(SkillTree skillTree) {
@@ -244,7 +250,7 @@ public class PlayerData extends SynchronizedDataHolder implements OfflinePlayerD
             Iterator<StatModifier> iter = instance.getModifiers().iterator();
             while (iter.hasNext()) {
                 StatModifier modifier = iter.next();
-                if (modifier.getKey().startsWith(StatTrigger.TRIGGER_PREFIX)) iter.remove();
+                if (modifier.getKey().startsWith(StatTrigger.STAT_MODIFIER_KEY)) iter.remove();
             }
         }
     }
@@ -423,7 +429,7 @@ public class PlayerData extends SynchronizedDataHolder implements OfflinePlayerD
         boundSkills.forEach((slot, info) -> info.close());
 
         // Stop skill casting
-        if (isCasting()) leaveSkillCasting();
+        if (isCasting()) leaveSkillCasting(true);
     }
 
     public List<UUID> getFriends() {
@@ -720,7 +726,7 @@ public class PlayerData extends SynchronizedDataHolder implements OfflinePlayerD
 
         setLastActivity(PlayerActivity.FRIEND_REQUEST);
         FriendRequest request = new FriendRequest(this, target);
-        new ConfigMessage("friend-request").addPlaceholders("player", getPlayer().getName(), "uuid", request.getUniqueId().toString()).sendAsJSon(target.getPlayer());
+        ConfigMessage.fromKey("friend-request").addPlaceholders("player", getPlayer().getName(), "uuid", request.getUniqueId().toString()).send(target.getPlayer());
         MMOCore.plugin.requestManager.registerRequest(request);
     }
 
@@ -751,13 +757,13 @@ public class PlayerData extends SynchronizedDataHolder implements OfflinePlayerD
             public void run() {
                 if (!isOnline() || getPlayer().getLocation().getBlockX() != x || getPlayer().getLocation().getBlockY() != y || getPlayer().getLocation().getBlockZ() != z) {
                     MMOCore.plugin.soundManager.getSound(SoundEvent.WARP_CANCELLED).playTo(getPlayer());
-                    MMOCore.plugin.configManager.getSimpleMessage("warping-canceled").send(getPlayer());
+                    ConfigMessage.fromKey("warping-canceled").send(getPlayer());
                     giveStellium(cost, PlayerResourceUpdateEvent.UpdateReason.USE_WAYPOINT);
                     cancel();
                     return;
                 }
 
-                MMOCore.plugin.configManager.getSimpleMessage("warping-comencing", "left", String.valueOf((warpTime - t) / 20)).send(getPlayer());
+                ConfigMessage.fromKey("warping-comencing", "left", String.valueOf((warpTime - t) / 20)).send(getPlayer());
                 if (hasPerm || t++ >= warpTime) {
                     getPlayer().teleport(target.getLocation());
                     getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20, 1, false, false));
@@ -834,7 +840,7 @@ public class PlayerData extends SynchronizedDataHolder implements OfflinePlayerD
 
         // Experience hologram
         if (hologramLocation != null && isOnline())
-            MMOCoreUtils.displayIndicator(hologramLocation, MMOCore.plugin.configManager.getSimpleMessage("exp-hologram", "exp", MythicLib.plugin.getMMOConfig().decimal.format(event.getExperience())).message());
+            MMOCoreUtils.displayIndicator(hologramLocation, ConfigMessage.fromKey("exp-hologram", "exp", MythicLib.plugin.getMMOConfig().decimal.format(event.getExperience())).asLine());
 
         experience = Math.max(0, experience + event.getExperience());
 
@@ -858,7 +864,7 @@ public class PlayerData extends SynchronizedDataHolder implements OfflinePlayerD
         if (level > oldLevel) {
             Bukkit.getPluginManager().callEvent(new PlayerLevelUpEvent(this, null, oldLevel, level));
             if (isOnline()) {
-                new ConfigMessage("level-up").addPlaceholders("level", String.valueOf(level)).send(getPlayer());
+                ConfigMessage.fromKey("level-up").addPlaceholders("level", String.valueOf(level)).send(getPlayer());
                 MMOCore.plugin.soundManager.getSound(SoundEvent.LEVEL_UP).playTo(getPlayer());
                 new SmallParticleEffect(getPlayer(), Particle.SPELL_INSTANT);
             }
@@ -1006,23 +1012,16 @@ public class PlayerData extends SynchronizedDataHolder implements OfflinePlayerD
 
     @Deprecated
     public boolean setSkillCasting(@NotNull SkillCastingInstance skillCasting) {
-        Validate.isTrue(!isCasting(), "Player already in casting mode");
-        PlayerEnterCastingModeEvent event = new PlayerEnterCastingModeEvent(getPlayer());
-        Bukkit.getPluginManager().callEvent(event);
-        if (event.isCancelled()) return false;
-
-        skillCasting.close();
-        setSkillCasting();
-        return true;
+        return setSkillCasting();
     }
 
     /**
-     * @return true if the PlayerEnterCastingModeEvent successfully put the player into casting mode, otherwise if the event is cancelled, returns false.
-     * @apiNote Changed to a boolean to reflect the cancellation state of the event being fired
+     * @return If the PlayerEnterCastingModeEvent successfully put the player
+     *         into casting mode, otherwise if the event is cancelled, returns false.
      */
     public boolean setSkillCasting() {
         Validate.isTrue(!isCasting(), "Player already in casting mode");
-        PlayerEnterCastingModeEvent event = new PlayerEnterCastingModeEvent(getPlayer());
+        PlayerEnterCastingModeEvent event = new PlayerEnterCastingModeEvent(this);
         Bukkit.getPluginManager().callEvent(event);
         if (event.isCancelled()) return false;
 
@@ -1036,22 +1035,23 @@ public class PlayerData extends SynchronizedDataHolder implements OfflinePlayerD
     }
 
     /**
-     * API Method to leave casting mode and fire the PlayerExitCastingModeEvent
-     *
-     * @return true if the skill casting mode was left, or false if the event was cancelled, keeping the player in casting mode.
+     * @return If player successfully left skill casting i.e the Bukkit
+     *         event has not been cancelled
      */
     public boolean leaveSkillCasting() {
         return leaveSkillCasting(false);
     }
 
     /**
-     * @param skipEvent Skip Firing the PlayerExitCastingModeEvent
-     * @return true if the PlayerExitCastingModeEvent is not cancelled, or if the event is skipped.
+     * @param skipEvent Skip firing the exit event
+     * @return If player successfully left skill casting i.e the Bukkit
+     *         event has not been cancelled
      */
     public boolean leaveSkillCasting(boolean skipEvent) {
         Validate.isTrue(isCasting(), "Player not in casting mode");
+
         if (!skipEvent) {
-            PlayerExitCastingModeEvent event = new PlayerExitCastingModeEvent(getPlayer());
+            PlayerExitCastingModeEvent event = new PlayerExitCastingModeEvent(this);
             Bukkit.getPluginManager().callEvent(event);
             if (event.isCancelled()) return false;
         }
@@ -1063,8 +1063,13 @@ public class PlayerData extends SynchronizedDataHolder implements OfflinePlayerD
     }
 
     public void displayActionBar(String message) {
+        displayActionBar(message, false);
+    }
+
+    public void displayActionBar(String message, boolean raw) {
         setLastActivity(PlayerActivity.ACTION_BAR_MESSAGE);
-        getPlayer().spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
+        if (raw) MythicLib.plugin.getVersion().getWrapper().sendActionBarRaw(getPlayer(), message);
+        else getPlayer().spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
     }
 
     @Deprecated
@@ -1160,6 +1165,7 @@ public class PlayerData extends SynchronizedDataHolder implements OfflinePlayerD
         // Clear bound skills
         boundSkills.forEach((slot, info) -> info.close());
         boundSkills.clear();
+        setupRemovableTrigger();
 
         // Update stats
         if (isOnline()) getStats().updateStats();
@@ -1187,15 +1193,12 @@ public class PlayerData extends SynchronizedDataHolder implements OfflinePlayerD
      */
     public void bindSkill(int slot, @NotNull ClassSkill skill) {
         Validate.notNull(skill, "Skill cannot be null");
+        if (slot < 0) return;
 
-        if (slot >= 0) {
-
-            // Unbinds the previous skill (important for passive skills)
-            unbindSkill(slot);
-
-            final SkillSlot skillSlot = getProfess().getSkillSlot(slot);
-            boundSkills.put(slot, new BoundSkillInfo(skillSlot, skill, this));
-        }
+        // Unbinds the previous skill (important for passive skills)
+        unbindSkill(slot);
+        final SkillSlot skillSlot = getProfess().getSkillSlot(slot);
+        boundSkills.put(slot, new BoundSkillInfo(skillSlot, skill, this));
     }
 
     public void unbindSkill(int slot) {
@@ -1252,11 +1255,15 @@ public class PlayerData extends SynchronizedDataHolder implements OfflinePlayerD
         return getMMOPlayerData().hashCode();
     }
 
-    public static PlayerData get(OfflinePlayer player) {
+    public static PlayerData get(@NotNull MMOPlayerData playerData) {
+        return get(playerData.getPlayer());
+    }
+
+    public static PlayerData get(@NotNull OfflinePlayer player) {
         return get(player.getUniqueId());
     }
 
-    public static PlayerData get(UUID uuid) {
+    public static PlayerData get(@NotNull UUID uuid) {
         return MMOCore.plugin.dataProvider.getDataManager().get(uuid);
     }
 

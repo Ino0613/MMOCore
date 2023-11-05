@@ -64,6 +64,8 @@ public class YAMLPlayerDataHandler extends YAMLSynchronizedDataHandler<PlayerDat
         }
         if (config.contains("attribute"))
             data.getAttributes().load(config.getConfigurationSection("attribute"));
+        if (data.isOnline())
+            MMOCore.plugin.attributeManager.getAll().forEach(attribute -> data.getAttributes().getInstance(attribute).updateStats());
         if (config.contains("profession"))
             data.getCollectionSkills().load(config.getConfigurationSection("profession"));
         if (config.contains("quest"))
@@ -133,7 +135,7 @@ public class YAMLPlayerDataHandler extends YAMLSynchronizedDataHandler<PlayerDat
         data.setMana(config.contains("mana") ? config.getDouble("mana") : data.getStats().getStat("MAX_MANA"));
         data.setStamina(config.contains("stamina") ? config.getDouble("stamina") : data.getStats().getStat("MAX_STAMINA"));
         data.setStellium(config.contains("stellium") ? config.getDouble("stellium") : data.getStats().getStat("MAX_STELLIUM"));
-
+        data.setupRemovableTrigger();
         if (data.isOnline() && !data.getPlayer().isDead())
             data.getPlayer().setHealth(MMOCoreUtils.fixResource(config.getDouble("health"), data.getPlayer().getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue()));
     }
