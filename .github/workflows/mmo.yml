@@ -1,4 +1,4 @@
-name: Build MMO
+name: Build Origin Versiob
 
 on:
   push:
@@ -19,15 +19,18 @@ jobs:
         distribution: 'temurin'
         java-version: ${{ matrix.jdkversion }}
         cache: 'maven'
+        
+    - name: Configure Git User Details
+      run: git config --global user.email "actions@github.com" && git config --global user.name "Github Actions"
     - name: Remove
       run: rm target/* -f
- 
     - name: Build with Maven
       run: |
-          cd origin
+          git clone https://gitlab.com/phoenix-dvpmt/mmocore.git core
+          cd core
           mvn -V -B clean package --file pom.xml
     - name: upload
       uses: actions/upload-artifact@v3
       with:
        name: MMOCore
-       path: origin/target
+       path: core/target
