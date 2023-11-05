@@ -1,4 +1,4 @@
-name: Build Origin Versiob
+name: Build Origin Version
 
 on:
   push:
