@@ -28,10 +28,8 @@ import org.bukkit.persistence.PersistentDataType;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class ClassSelect extends EditableInventory {
     public ClassSelect() {
@@ -57,7 +55,7 @@ public class ClassSelect extends EditableInventory {
         private final PlayerClass playerClass;
 
         public ClassItem(ConfigurationSection config) {
-            super(Material.BARRIER, config);
+            super(config.contains("item") ? Material.valueOf(UtilityMethods.enumName(config.getString("item"))) : Material.BARRIER, config);
 
             Validate.isTrue(config.getString("function").length() > 6, "Couldn't find the class associated to: " + config.getString("function"));
             String classId = UtilityMethods.enumName(config.getString("function").substring(6));
@@ -72,7 +70,7 @@ public class ClassSelect extends EditableInventory {
 
         @Override
         public ItemStack display(ProfessSelectionInventory inv, int n) {
-            ItemStack item = playerClass.getIcon();
+            ItemStack item = n == 0 ? playerClass.getIcon() : super.display(inv, n);
             ItemMeta meta = item.getItemMeta();
             if (hideFlags())
                 meta.addItemFlags(ItemFlag.values());
@@ -125,19 +123,19 @@ public class ClassSelect extends EditableInventory {
 
                 if (profileRunnable == null && playerData.getClassPoints() < 1) {
                     MMOCore.plugin.soundManager.getSound(SoundEvent.CANT_SELECT_CLASS).playTo(player);
-                    new ConfigMessage("cant-choose-new-class").send(player);
+                    ConfigMessage.fromKey("cant-choose-new-class").send(player);
                     return;
                 }
 
                 if (profess.hasOption(ClassOption.NEEDS_PERMISSION) && !player.hasPermission("mmocore.class." + profess.getId().toLowerCase())) {
                     MMOCore.plugin.soundManager.getSound(SoundEvent.CANT_SELECT_CLASS).playTo(player);
-                    new ConfigMessage("no-permission-for-class").send(player);
+                    ConfigMessage.fromKey("no-permission-for-class").send(player);
                     return;
                 }
 
                 if (profess.equals(playerData.getProfess())) {
                     MMOCore.plugin.soundManager.getSound(SoundEvent.CANT_SELECT_CLASS).playTo(player);
-                    MMOCore.plugin.configManager.getSimpleMessage("already-on-class", "class", profess.getName()).send(player);
+                    ConfigMessage.fromKey("already-on-class", "class", profess.getName()).send(player);
                     return;
                 }
 

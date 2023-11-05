@@ -128,10 +128,7 @@ friend-request-cooldown: '&c请等待 {cooldown} 后再邀请 {player}。'
 cant-request-to-yourself: '&c你不能向自己发送请求。'
 already-friends: '&c你已经是 {player} 的好友了。'
 friend-request:
-  - '{"text":""}'
-  - '{"text":"&6{player} &e刚刚向你发送了好友请求！"}'
-  - '[{"text":"        ","hoverEvent":{}},{"text":"&8[&a&l接受&8]","clickEvent":{"action":"run_command","value":"/friends accept {uuid}"},"hoverEvent":{"action":"show_text","value":"&e点击接受！"}},{"text":"&r             ","hoverEvent":{}},{"text":"&8[&c&l拒绝&8]","clickEvent":{"action":"run_command","value":"/friends deny {uuid}"},"hoverEvent":{"action":"show_text","value":"&e点击拒绝。"}}]'
-  - '{"text":""}'
+  - '[{"text":"        "},{"text":"&8[&a&l接受&8]","clickEvent":{"action":"run_command","value":"/friends accept {uuid}"},"hoverEvent":{"action":"show_text","value":"&e点击接受!"}},{"text":"&r             "},{"text":"&8[&c&l拒绝&8]","clickEvent":{"action":"run_command","value":"/friends deny {uuid}"},"hoverEvent":{"action":"show_text","value":"&e点击拒绝."}}]'
 
 # 队伍
 party-chat: '&5[队伍] {player}: {message}'

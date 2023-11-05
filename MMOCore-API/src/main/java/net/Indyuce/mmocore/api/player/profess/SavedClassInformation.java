@@ -5,6 +5,7 @@ import io.lumine.mythic.lib.gson.JsonObject;
 import net.Indyuce.mmocore.MMOCore;
 import net.Indyuce.mmocore.api.player.PlayerData;
 import net.Indyuce.mmocore.api.player.attribute.PlayerAttribute;
+import net.Indyuce.mmocore.api.player.attribute.PlayerAttributes;
 import net.Indyuce.mmocore.api.util.MMOCoreUtils;
 import net.Indyuce.mmocore.player.ClassDataContainer;
 import net.Indyuce.mmocore.skill.RegisteredSkill;
@@ -107,7 +108,7 @@ public class SavedClassInformation implements ClassDataContainer {
             for (Entry<String, JsonElement> entry : json.getAsJsonObject("bound-skills").entrySet())
                 boundSkills.put(Integer.parseInt(entry.getKey()), entry.getValue().getAsString());
         if (json.has("unlocked-items"))
-            for ( JsonElement unlockedItem : json.get("unlocked-items").getAsJsonArray())
+            for (JsonElement unlockedItem : json.get("unlocked-items").getAsJsonArray())
                 unlockedItems.add(unlockedItem.getAsString());
     }
 
@@ -304,7 +305,8 @@ public class SavedClassInformation implements ClassDataContainer {
          * Resets information which much be reset after everything is saved.
          */
         player.mapSkillLevels().forEach((skill, level) -> player.resetSkillLevel(skill));
-        player.getAttributes().getInstances().forEach(ins -> ins.setBase(0));
+        for (PlayerAttribute attribute : MMOCore.plugin.attributeManager.getAll())
+            player.getAttributes().getInstance(attribute).setBase(0);
         player.clearSkillTreePoints();
         player.clearNodeLevels();
         player.clearNodeStates();
@@ -327,7 +329,10 @@ public class SavedClassInformation implements ClassDataContainer {
             player.bindSkill(slot, profess.getSkill(boundSkills.get(slot)));
 
         skillLevels.forEach(player::setSkillLevel);
-        attributeLevels.forEach((id, pts) -> player.getAttributes().setBaseAttribute(id, pts));
+        attributeLevels.forEach((id, pts) -> {
+            final PlayerAttributes.AttributeInstance ins = player.getAttributes().getInstance(id);
+            if (ins != null) ins.setBase(pts);
+        });
 
         // Careful, the global points must not be forgotten.
         player.setSkillTreePoints("global", skillTreePoints.getOrDefault("global", 0));
@@ -342,12 +347,6 @@ public class SavedClassInformation implements ClassDataContainer {
         // Add the values to the times claimed table and claims the corresponding stat triggers.
         nodeTimesClaimed.forEach((str, val) -> player.setClaims(str, val));
 
-        // We claim back the stats triggers for all the skill tree nodes of the new class.
-        for (SkillTree skillTree : profess.getSkillTrees())
-            for (SkillTreeNode node : skillTree.getNodes())
-                node.getExperienceTable().claimRemovableTrigger(player, node);
-        profess.getExperienceTable().claimRemovableTrigger(player, profess);
-
         // Unload current class information
         player.unloadClassInfo(profess);
 
@@ -356,7 +355,7 @@ public class SavedClassInformation implements ClassDataContainer {
         player.setMana(mana);
         player.setStellium(stellium);
         player.setStamina(stamina);
-
+        player.setupRemovableTrigger();
         // Updates level on exp bar
         player.refreshVanillaExp();
     }

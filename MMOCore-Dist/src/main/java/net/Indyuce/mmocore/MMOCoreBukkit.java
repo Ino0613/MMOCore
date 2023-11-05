@@ -9,8 +9,6 @@ import net.Indyuce.mmocore.listener.profession.FishingListener;
 import net.Indyuce.mmocore.listener.profession.PlayerCollectStats;
 import org.bukkit.Bukkit;
 
-import java.util.logging.Level;
-
 public class MMOCoreBukkit {
 
     /**
@@ -45,6 +43,7 @@ public class MMOCoreBukkit {
         Bukkit.getPluginManager().registerEvents(new FishingListener(), plugin);
         Bukkit.getPluginManager().registerEvents(new PlayerCollectStats(), plugin);
         Bukkit.getPluginManager().registerEvents(new PlayerPressKeyListener(), plugin);
+        Bukkit.getPluginManager().registerEvents(new MMOCoreSkillTriggers(), plugin);
         // Bukkit.getPluginManager().registerEvents(new ClassTriggers(), plugin);
     }
 }

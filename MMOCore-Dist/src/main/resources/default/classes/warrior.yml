@@ -1,139 +1,145 @@
-# 中文重制版 By Happy Github: https://github.com/Happy-clo/
+# 显示选项
 display:
-  name: '战士'
-  lore:
-  - '战士拥有非凡的战斗和成长能力，'
-  - '使他在每级上的属性比其他职业高得多。'
-  - ''
-  - '战士在施放技能时会收集怒气，'
-  - '暂时增加他的基础伤害。'
-  attribute-lore:
-  - '&a+ &7攻击伤害'
-  - '&a+ &7攻击速度'
-  - '&a+ &7最大生命'
-  - '&a+ &7减少速度减益'
-  - '&c- &7移动速度'
-  - ''
-  - '&8&l力量'
-  - '&7  攻击伤害： &c2 &7(+&c0.1&7)'
-  - '&7  攻击速度： &c4.2 &7(+&c0.05&7)'
-  - '&7  最大生命： &c24 &7(+&c0.5&7)'
-  - ''
-  - '&8&l灵巧'
-  - '&7  击退抗性： &a0% &7(+&a0%&7)'
-  - '&7  移动速度： &a19 &7(+&a0&7)'
-  - '&7  减少速度减益： &a40% &7(+&a2%&7)'
-  - ''
-  - '&8&l意志'
-  - '&7  最大怒气： &c20 &7(+&c1&7)'
-  - '&7  生命回复： &90.1 &7(+&90&7)'
-  - '&7  怒气消减： &9-0.5&7/s'
-  item: IRON_SWORD:0 # 支持自定义模型数据/质地通过耐久性
+    name: '战士'
+    lore:
+    - '战士具有非凡的战斗和'
+    - '进化能力，使他的每级状态比其他职业高得多。'
+    - ''
+    - '战士在施放技能时会积累怒气，'
+    - '暂时增加他的基础伤害。'
+    attribute-lore:
+    - '&a+ &7攻击伤害'
+    - '&a+ &7攻击速度'
+    - '&a+ &7最大生命'
+    - '&a+ &7速度减益减少'
+    - '&c- &7移动速度'
+    - ''
+    - '&8&l力量'
+    - '&7  攻击伤害：&c2 &7(+&c0.1&7)'
+    - '&7  攻击速度：&c4.2 &7(+&c0.05&7)'
+    - '&7  最大生命：&c24 &7(+&c0.5&7)'
+    - ''
+    - '&8&l灵巧'
+    - '&7  击退抗性：&a0% &7(+&a0%&7)'
+    - '&7  移动速度：&a19 &7(+&a0&7)'
+    - '&7  速度减益减少：&a40% &7(+&a2%&7)'
+    - ''
+    - '&8&l意志'
+    - '&7  最大怒气：&c20 &7(+&c1&7)'
+    - '&7  生命再生：&90.1 &7(+&90&7)'
+    - '&7  怒气衰减：&9-0.5&7/s'
+    item: IRON_SWORD:0 # 支持通过耐久度的自定义模型数据/纹理
 
+# 必须与'expcurves'文件夹中现有的经验曲线文件名匹配
 exp-curve: levels
 
+# 玩家能够达到的最高等级
 max-level: 100
 
 skill-slots:
-  1:
-    name: "技能槽 I"
-    unlocked-by-default: true
-  2:
-    name: "技能槽 II"
-    unlocked-by-default: true
-  3:
-    name: "技能槽 III"
-    unlocked-by-default: true
-  4:
-    name: "技能槽 IV"
-    unlocked-by-default: true
+    1:
+        name: "技能槽 I"
+        unlocked-by-default: true
+        lore: []
+    2:
+        name: "技能槽 II"
+        unlocked-by-default: true
+        lore: []
+    3:
+        name: "技能槽 III"
+        unlocked-by-default: true
+        lore: []
+    4:
+        name: "技能槽 IV"
+        unlocked-by-default: true
+        lore: []
 
 skill-trees:
-  - '通用'
-  - '战士-圣骑士'
-  - '战斗'
+    - 'general'
+    - 'warrior-paladin'
+    - 'combat'
 
-# 战士拥有怒气，当施放技能时会获得怒气
-# 怒气增加技能伤害。使用<mmocore.rage>
-# 来获取玩家的怒气(MythicMobs公式)
+# 战士在施放法术时会积攒怒气
+# 怒气会增加技能伤害。使用<mmocore.rage>
+# 来获取玩家的怒气（MythicMobs公式）
 #
-# 'char'用于生成怒气栏消息的字符
-# 'color'也用于生成怒气栏的颜色
-# 'icon'是显示在玩家操作栏上的图标
-# 'name'基本上在任何地方都显示
+# 'char'是用于生成消息中法力条的字符
+# 'color'也是用于生成法力条的颜色
+# 'icon'是在玩家动作栏上显示的图标
+# 'name'基本上显示在所有地方
 mana:
-  char: ♦
-  icon: '&4♦'
-  color:
-    full: DARK_RED
-    half: RED
-    empty: WHITE
-  name: '怒气'
+    char: ♦
+    icon: '&4♦'
+    color:
+        full: DARK_RED
+        half: RED
+        empty: WHITE
+    name: '怒气'
 
 exp-table: class_exp_table
 
-# 当进行武器和物理伤害时，怒气值会增加
+# 当造成武器和物理伤害时，怒气会积累
 triggers:
-  weapon-damage:
-  - 'mana{operation=GIVE;amount=2-3}'
-  physical-damage:
-  - 'mana{operation=GIVE;amount=2-3}'
+    weapon-damage:
+    - 'mana{operation=GIVE;amount=2-3}'
+    physical-damage:
+    - 'mana{operation=GIVE;amount=2-3}'
 
 cast-particle:
-  particle: REDSTONE
-  color:
-    red: 255
-    green: 0
-    blue: 0
+    particle: REDSTONE
+    color:
+        red: 255
+        green: 0
+        blue: 0
 
-# 只有在战斗外时怒气值才会减少
+# 只有在战斗外怒气才会减少
 options:
-  off-combat-mana-regen: true
-  needs-permission: false
+    off-combat-mana-regen: true
+    needs-permission: false
 
 skills:
-  DEEP_WOUND:
-    level: 1
-    max-level: 30
-  WEAKEN:
-    level: 3
-    max-level: 30
-  EMPOWERED_ATTACK:
-    level: 5
-    max-level: 30
-  COMBO_ATTACK:
-    level: 7
-    max-level: 30
-  MINOR_HEALINGS:
-    level: 10
-    max-level: 30
-  FIRE_BERSERKER:
-    level: 15
-
+    DEEP_WOUND:
+        level: 1
+        max-level: 30
+    WEAKEN:
+        level: 3
+        max-level: 30
+    EMPOWERED_ATTACK:
+        level: 5
+        max-level: 30
+    COMBO_ATTACK:
+        level: 7
+        max-level: 30
+    MINOR_HEALINGS:
+        level: 10
+        max-level: 30
+    FIRE_BERSERKER:
+        level: 15
+    
 attributes:
-  mana-regeneration:
-    base: -0.5
-    per-level: 0
-  speed-malus-reduction:
-    base: 50
-    per-level: 2
-  max-mana:
-    base: 20
-    per-level: 1
-  max-health:
-    base: 24
-    per-level: 0.5
-  movement-speed:
-    base: .12
-    per-level: 0
-  attack-damage:
-    base: 2
-    per-level: 0.1
-  attack-speed:
-    base: 4.2
-    per-level: 0.05
+    mana-regeneration:
+        base: -0.5
+        per-level: 0
+    speed-malus-reduction:
+        base: 50
+        per-level: 2
+    max-mana:
+        base: 20
+        per-level: 1
+    max-health:
+        base: 24
+        per-level: 0.5
+    movement-speed:
+        base: .12
+        per-level: 0
+    attack-damage:
+        base: 2
+        per-level: 0.1
+    attack-speed:
+        base: 4.2
+        per-level: 0.05
 
-# 经验来源于主要职业经验
+# 主职业经验的经验来源
 main-exp-sources:
 - 'killmob{type=ZOMBIE;amount=1-3}'
 - 'killmob{type=ENDERMAN;amount=6-9}'

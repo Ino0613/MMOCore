@@ -49,6 +49,7 @@ import net.Indyuce.mmocore.script.mechanic.ManaMechanic;
 import net.Indyuce.mmocore.script.mechanic.StaminaMechanic;
 import net.Indyuce.mmocore.script.mechanic.StelliumMechanic;
 import net.Indyuce.mmocore.skill.cast.SkillCastingMode;
+import net.Indyuce.mmocore.skill.trigger.MMOCoreTriggerType;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -116,6 +117,7 @@ public class MMOCore extends JavaPlugin {
         MythicLib.plugin.getEntities().registerRelationHandler(new PartyRelationHandler());
         MythicLib.plugin.getEntities().registerRelationHandler(new GuildRelationHandler());
         MythicLib.plugin.getModifiers().registerModifierType("attribute", configObject -> new AttributeModifier(configObject));
+        MMOCoreTriggerType.registerAll();
 
         // Custom scripts
         MythicLib.plugin.getSkills().registerMechanic("mana", config -> new ManaMechanic(config));
@@ -238,9 +240,8 @@ public class MMOCore extends JavaPlugin {
 
         // Skill casting
         try {
-            SkillCastingMode mode = SkillCastingMode.valueOf(UtilityMethods.enumName(getConfig().getString("skill-casting.mode")));
+            final SkillCastingMode mode = SkillCastingMode.valueOf(UtilityMethods.enumName(getConfig().getString("skill-casting.mode")));
             mode.setCurrent(getConfig().getConfigurationSection("skill-casting"));
-
         } catch (RuntimeException exception) {
             getLogger().log(Level.WARNING, "Could not load skill casting: " + exception.getMessage());
         }
@@ -258,7 +259,7 @@ public class MMOCore extends JavaPlugin {
          * that after registering all the professses otherwise the player datas can't
          * recognize what profess the player has and professes will be lost
          */
-        playerDataManager.initialize(EventPriority.NORMAL, EventPriority.NORMAL);
+        playerDataManager.initialize(EventPriority.LOW, EventPriority.NORMAL);
 
         // load guild data after loading player data
         dataProvider.getGuildManager().load();

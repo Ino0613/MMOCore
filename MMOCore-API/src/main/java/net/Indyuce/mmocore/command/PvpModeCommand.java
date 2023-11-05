@@ -3,6 +3,7 @@ package net.Indyuce.mmocore.command;
 import io.lumine.mythic.lib.MythicLib;
 import io.lumine.mythic.lib.comp.flags.CustomFlag;
 import net.Indyuce.mmocore.MMOCore;
+import net.Indyuce.mmocore.api.ConfigMessage;
 import net.Indyuce.mmocore.api.player.PlayerData;
 import net.Indyuce.mmocore.command.api.RegisteredCommand;
 import net.Indyuce.mmocore.command.api.ToggleableCommand;
@@ -26,15 +27,15 @@ public class PvpModeCommand extends RegisteredCommand {
         }
 
         if (!sender.hasPermission("mmocore.pvpmode")) {
-            MMOCore.plugin.configManager.getSimpleMessage("not-enough-perms").send((Player) sender);
+            ConfigMessage.fromKey("not-enough-perms").send((Player) sender);
             return false;
         }
 
-        final PlayerData playerData = PlayerData.get(((Player) sender).getUniqueId());
+        final PlayerData playerData = PlayerData.get((Player) sender);
 
         // Command cooldown
         if (playerData.getCooldownMap().isOnCooldown(COOLDOWN_KEY)) {
-            MMOCore.plugin.configManager.getSimpleMessage("pvp-mode.cooldown", "remaining", MythicLib.plugin.getMMOConfig().decimal.format(playerData.getCooldownMap().getCooldown(COOLDOWN_KEY))).send((Player) sender);
+            ConfigMessage.fromKey("pvp-mode.cooldown", "remaining", MythicLib.plugin.getMMOConfig().decimal.format(playerData.getCooldownMap().getCooldown(COOLDOWN_KEY))).send((Player) sender);
             return true;
         }
 
@@ -45,12 +46,12 @@ public class PvpModeCommand extends RegisteredCommand {
         if (playerData.getCombat().isInPvpMode() &&
                 MythicLib.plugin.getFlags().isFlagAllowed(playerData.getPlayer(), CustomFlag.PVP_MODE)) {
             playerData.getCombat().setInvulnerable(MMOCore.plugin.configManager.pvpModeInvulnerabilityTimeCommand);
-            MMOCore.plugin.configManager.getSimpleMessage("pvp-mode.toggle.on-invulnerable", "time",
+            ConfigMessage.fromKey("pvp-mode.toggle.on-invulnerable", "time",
                     MythicLib.plugin.getMMOConfig().decimal.format(MMOCore.plugin.configManager.pvpModeInvulnerabilityTimeCommand)).send(playerData.getPlayer());
 
             // Just send message otherwise
         } else
-            MMOCore.plugin.configManager.getSimpleMessage("pvp-mode.toggle." + (playerData.getCombat().isInPvpMode() ? "on" : "off") + "-safe").send((Player) sender);
+            ConfigMessage.fromKey("pvp-mode.toggle." + (playerData.getCombat().isInPvpMode() ? "on" : "off") + "-safe").send((Player) sender);
         return true;
     }
 }

@@ -1,10 +1,10 @@
 package net.Indyuce.mmocore.skill.cast;
 
 import net.Indyuce.mmocore.MMOCore;
-import net.Indyuce.mmocore.skill.cast.listener.SkillBar;
-import net.Indyuce.mmocore.skill.cast.listener.KeyCombos;
-import net.Indyuce.mmocore.skill.cast.listener.SkillCastingDisabled;
-import net.Indyuce.mmocore.skill.cast.listener.SkillScroller;
+import net.Indyuce.mmocore.skill.cast.handler.KeyCombos;
+import net.Indyuce.mmocore.skill.cast.handler.SkillBar;
+import net.Indyuce.mmocore.skill.cast.handler.SkillCastingDisabled;
+import net.Indyuce.mmocore.skill.cast.handler.SkillScroller;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
@@ -42,7 +42,7 @@ public enum SkillCastingMode {
     /**
      * Entirely disables skill casting.
      */
-    NONE(config -> new SkillCastingDisabled());
+    NONE(config -> new SkillCastingDisabled(config));
 
     /**
      * Not implemented yet.
@@ -63,25 +63,22 @@ public enum SkillCastingMode {
 
     ;
 
-    private final Function<ConfigurationSection, SkillCastingListener> listenerLoader;
+    private final Function<ConfigurationSection, SkillCastingHandler> listenerLoader;
 
-    private static SkillCastingListener current;
+    private static SkillCastingHandler current;
 
-    SkillCastingMode(Function<ConfigurationSection, SkillCastingListener> listenerLoader) {
+    SkillCastingMode(Function<ConfigurationSection, SkillCastingHandler> listenerLoader) {
         this.listenerLoader = listenerLoader;
     }
 
     public void setCurrent(@NotNull ConfigurationSection config) {
         Validate.isTrue(current == null, "Skill casting mode already initialized");
         current = listenerLoader.apply(config);
-        if (this == NONE) return;
-
-        // Register listener
         Bukkit.getPluginManager().registerEvents(current, MMOCore.plugin);
     }
 
     @NotNull
-    public static SkillCastingListener getCurrent() {
+    public static SkillCastingHandler getCurrent() {
         return Objects.requireNonNull(current, "Skill casting mode hasn't been initialized yet");
     }
 }

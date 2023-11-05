@@ -14,9 +14,7 @@ import net.Indyuce.mmocore.manager.InventoryManager;
 import net.Indyuce.mmocore.api.player.profess.PlayerClass;
 import net.Indyuce.mmocore.api.ConfigMessage;
 import net.Indyuce.mmocore.api.SoundEvent;
-import net.Indyuce.mmocore.api.player.profess.Subclass;
 import org.apache.commons.lang.Validate;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.configuration.ConfigurationSection;
@@ -28,7 +26,6 @@ import org.bukkit.persistence.PersistentDataType;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class SubclassSelect extends EditableInventory {
     public SubclassSelect() {
@@ -50,7 +47,7 @@ public class SubclassSelect extends EditableInventory {
         private final PlayerClass playerClass;
 
         public ClassItem(ConfigurationSection config) {
-            super(Material.BARRIER, config);
+            super(config.contains("item") ? Material.valueOf(UtilityMethods.enumName(config.getString("item"))) : Material.BARRIER, config);
             Validate.isTrue(config.getString("function").length() > 10, "Couldn't find the class associated to: " + config.getString("function"));
             String classId = UtilityMethods.enumName(config.getString("function").substring(10));
             this.playerClass = Objects.requireNonNull(MMOCore.plugin.classManager.get(classId), classId + " does not correspond to any classId.");
@@ -64,7 +61,7 @@ public class SubclassSelect extends EditableInventory {
 
         @Override
         public ItemStack display(SubclassSelectionInventory inv, int n) {
-            ItemStack item = playerClass.getIcon();
+            ItemStack item = n == 0 ? playerClass.getIcon() : super.display(inv, n);
             ItemMeta meta = item.getItemMeta();
             if (hideFlags())
                 meta.addItemFlags(ItemFlag.values());
@@ -123,12 +120,12 @@ public class SubclassSelect extends EditableInventory {
                 if (playerData.getClassPoints() < 1) {
                     player.closeInventory();
                     MMOCore.plugin.soundManager.getSound(SoundEvent.CANT_SELECT_CLASS).playTo(getPlayer());
-                    new ConfigMessage("cant-choose-new-class").send(player);
+                    ConfigMessage.fromKey("cant-choose-new-class").send(player);
                     return;
                 }
                 if (profess.hasOption(ClassOption.NEEDS_PERMISSION) && !player.hasPermission("mmocore.class." + profess.getId().toLowerCase())) {
                     MMOCore.plugin.soundManager.getSound(SoundEvent.CANT_SELECT_CLASS).playTo(player);
-                    new ConfigMessage("no-permission-for-class").send(player);
+                    ConfigMessage.fromKey("no-permission-for-class").send(player);
                     return;
                 }
 

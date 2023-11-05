@@ -41,10 +41,9 @@ items:
       - '{tree-lore}'
       - ''
       - '--------------------'
-      - '&e◆最大点数&e: &6{max-point-spent}'
-      - '&e◆已使用点数&e:&6 {point-spent}'
-      - '&e◆当前{name} &e技能点数: &6{skill-tree-points}'
-      - '&e◆当前全局技能点数: &6{global-points}'
+      - '&e◆ 点数: &6{max-point-spent}&e/&6{point-spent}'
+      - '&e◆ 当前{name} &e点数: &6{skill-tree-points}'
+      - '&e◆ 当前全局点数: &6{global-points}'
 
   next-tree-list-page:
     function: 'next-tree-list-page'
@@ -76,6 +75,7 @@ items:
 
     function: 'skill-tree-node'
     slots: [ 1,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,19,20,21,22,23,24,25,26,28,29,30,31,32,33,34,35,37,38,39,40,41,42,43,44 ]
+    name: '&a{name}'
     # 在节点信息的下方显示的描述信息。
     # {node-lore}占位符将被替换为在技能树节点配置中指定的信息。
     # 这里出现的所有占位符也可以在节点信息中使用。
@@ -97,12 +97,12 @@ items:
       - '--------------------'
       - '{node-lore}'
       - '--------------------'
-      - '&e◆{skill-tree}最大点数: &6{max-point-spent}'
-      - '&e◆{skill-tree}已使用点数: &6{point-spent}'
-      - '&e◆当前{skill-tree}技能点数: &6{skill-tree-points}'
-      - '&e◆当前全局技能点数: &6{global-points}'
-    path-lore:
-      - ''
+      - '&e◆ {skill-tree}的最大点数: &6{max-point-spent}'
+      - '&e◆ {skill-tree}已花费点数: &6{point-spent}'
+      - '&e◆ 当前{skill-tree}点数: &6{skill-tree-points}'
+      - '&e◆ 当前&6全局&e点数: &6{global-points}'
+    path-lore: []
+
 
 # 这是每种状态将显示的名称。
 status-names:

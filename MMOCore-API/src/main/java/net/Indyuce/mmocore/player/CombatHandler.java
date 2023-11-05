@@ -2,12 +2,14 @@ package net.Indyuce.mmocore.player;
 
 import io.lumine.mythic.lib.util.Closeable;
 import net.Indyuce.mmocore.MMOCore;
+import net.Indyuce.mmocore.api.ConfigMessage;
 import net.Indyuce.mmocore.api.event.PlayerCombatEvent;
 import net.Indyuce.mmocore.api.player.PlayerData;
 import net.Indyuce.mmocore.command.PvpModeCommand;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitTask;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class CombatHandler implements Closeable {
@@ -30,18 +32,19 @@ public class CombatHandler implements Closeable {
 
         // Simply refreshing
         if (isInCombat()) {
-            Bukkit.getScheduler().cancelTask(task.getTaskId());
+            task.cancel();
             task = newTask();
 
             // Entering combat
         } else {
             lastEntry = System.currentTimeMillis();
-            MMOCore.plugin.configManager.getSimpleMessage("now-in-combat").send(player.getPlayer());
+            ConfigMessage.fromKey("now-in-combat").send(player.getPlayer());
             Bukkit.getPluginManager().callEvent(new PlayerCombatEvent(player, true));
             task = newTask();
         }
     }
 
+    @NotNull
     private BukkitTask newTask() {
         return Bukkit.getScheduler().runTaskLater(MMOCore.plugin, () -> quit(false), MMOCore.plugin.configManager.combatLogTimer / 50);
     }
@@ -102,20 +105,18 @@ public class CombatHandler implements Closeable {
      */
     private void quit(boolean cancelTask) {
         Validate.isTrue(isInCombat(), "Player not in combat");
-        if (cancelTask)
-            Bukkit.getScheduler().cancelTask(task.getTaskId());
+        if (cancelTask) task.cancel();
         task = null;
 
         if (player.isOnline()) {
             Bukkit.getPluginManager().callEvent(new PlayerCombatEvent(player, false));
-            MMOCore.plugin.configManager.getSimpleMessage("leave-combat").send(player.getPlayer());
+            ConfigMessage.fromKey("leave-combat").send(player.getPlayer());
         }
     }
 
     @Override
     public void close() {
-        if (isInCombat())
-            quit(true);
+        if (isInCombat()) quit(true);
 
         // Necessary steps when entering a town.
         lastHit = 0;

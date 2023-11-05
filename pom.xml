@@ -13,7 +13,7 @@
     </modules>
 
     <name>MMOCore</name>
-    <description>为您的玩家提供全新的角色扮演游戏体验</description>
+    <description>Offer your players a brand new RPG experience!!</description>
 
     <properties>
         <downloadSources>false</downloadSources>
@@ -27,7 +27,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>3.8.1</version>
                 <configuration>
                     <source>16</source>
                     <target>16</target>
@@ -42,7 +42,7 @@
             classes when building the same version again -->
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
-                <version>3.3.1</version>
+                <version>3.1.0</version>
                 <executions>
                     <execution>
                         <id>auto-clean</id>
